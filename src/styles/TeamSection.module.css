@@ -1,0 +1,127 @@
+.teamSection {
+  width: 100%;
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2vw;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 300px;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.9rem;
+  font-weight: 900;
+  color: #007c91;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.titleBlue {
+  color: #007c91;
+  font-weight: 900;
+}
+
+.teamImg {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ctaBtn {
+  background: #fa911c;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background-color: #e06d00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mailIcon {
+  font-size: 1.25rem;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.benefitIcon {
+  color: #fa911c;
+  font-size: 1.8rem;
+  min-width: 32px;
+}
+
+.benefitText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #505050;
+  line-height: 1.4;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left, .right {
+    align-items: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .benefitItem {
+    justify-content: center;
+  }
+}

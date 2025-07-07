@@ -1,0 +1,32 @@
+.introWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2.5rem auto;
+  padding: 2.5rem 0 0 0;
+  background: #fff;
+}
+
+.introText {
+  max-width: 900px;
+  text-align: center;
+  font-size: 1.55rem;
+  color: #555b6a;
+  font-weight: 400;
+  margin: 0 auto 2.2rem auto;
+  line-height: 1.4;
+}
+
+.highlight {
+  color: #1ca6a6;
+  font-weight: 700;
+}
+
+.logo {
+  width: 270px;
+  max-width: 90vw;
+  display: block;
+  margin: 0 auto;
+} 

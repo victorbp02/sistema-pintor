@@ -1,0 +1,19 @@
+.topbar {
+  width: 100%;
+  background: #f78c1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  justify-content: center;
+  gap: 2.5rem;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+} 
