@@ -1,0 +1,80 @@
+.Location-session {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.locationBaner {
+    width: 100%;
+    min-height: 220px;
+    background: linear-gradient(rgba(32, 94, 94, 0.7), rgba(32, 94, 94, 0.7)), url('../assets/hero-bg.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
+
+.title {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 3.5rem 0 2.5rem 0;
+    text-align: center;
+}
+
+.locationTextSession {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    background: url('../assets/img-ex.jpeg') center center/cover no-repeat;
+
+    h3 {
+        color:#F58120;
+        font-size: 1.6rem;
+        
+    }
+
+    p {
+        color: #363a44;
+        font-size: 1.2rem;
+    }
+}
+
+.textMap {
+    background-color: #f2f1f1;
+    margin-right: 100px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.17);
+}
+
+.mapSession {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.map {
+    border: none;
+    width: 100%;
+    height: 400px;
+    
+    
+}
+
+.footerLocation {
+    background-color: #168E97;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

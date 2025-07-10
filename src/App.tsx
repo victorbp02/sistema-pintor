@@ -1,14 +1,14 @@
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import AboutUs from './components/AboutUs';
-import Services from './components/Services';
-import Locations from './components/Locations';
-import Portfolio from './components/Portfolio';
-import Reviews from './components/Reviews';
-import Blog from './components/Blog';
-import ContactUs from './components/ContactUs';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Locations from './pages/Locations';
+import Portfolio from './pages/Portfolio';
+import Reviews from './pages/Reviews';
+import Blog from './pages/Blog';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
