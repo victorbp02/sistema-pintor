@@ -1,3 +1,10 @@
+import HeaderPages from "../components/HeaderPages"
+
 export default function Reviews() {
-  return <div style={{padding: '3rem'}}>Reviews Page (em construção)</div>;
+  return (
+    <div>
+      <HeaderPages/>
+      Reviews Page (em construção)
+    </div>
+  )
 } 

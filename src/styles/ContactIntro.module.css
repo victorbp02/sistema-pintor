@@ -30,3 +30,35 @@
   display: block;
   margin: 0 auto;
 } 
+
+.infoRow {
+  width: 100%;
+  background: #f6f8fc;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 7vw;
+  padding: 2.5rem 0 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  min-width: 220px;
+}
+
+.icon {
+  color: #f78c1f;
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoItem strong {
+  color: #444b5a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+} 

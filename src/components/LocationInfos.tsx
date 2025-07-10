@@ -1,12 +1,8 @@
-import styles from '../styles/LocationHeader.module.css'
+import styles from '../styles/Locationinfos.module.css'
 
-function LocationHeader() {
+function LocationInfos() {
   return (
-    <div className={styles.LocationHeader}>
-
-        <div className={styles.locationBaner}>
-            <h1 className={styles.title}>LOCATION</h1>
-        </div>
+    <div className={styles.LocationSession}>
 
         <div className={styles.locationTextSession}>
             <div className={styles.mapSession}>
@@ -36,4 +32,4 @@ function LocationHeader() {
   )
 }
 
-export default LocationHeader;
+export default LocationInfos;

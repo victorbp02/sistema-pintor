@@ -1,3 +1,10 @@
+import HeaderPages from "../components/HeaderPages";
+
 export default function AboutUs() {
-  return <div style={{padding: '3rem'}}>About Us Page (em construção)</div>;
-} 
+  return (
+    <div>
+      <HeaderPages/>
+      About Us Page (em construção)
+    </div>
+  )
+};

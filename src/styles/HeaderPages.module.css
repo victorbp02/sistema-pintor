@@ -1,0 +1,33 @@
+.HeaderPages {
+  position: relative;
+  width: 100%;
+  height: 200px; 
+  background-image: url('/src/assets/img-baner-services.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.HeaderPages::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 128, 128, 0.7); 
+  z-index: 1;
+}
+
+.HeaderPages h1 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
