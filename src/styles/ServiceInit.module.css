@@ -1,0 +1,21 @@
+.initSession {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f9ff;
+}
+
+.textSession {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 670px;
+
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+
