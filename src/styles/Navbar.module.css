@@ -11,7 +11,6 @@
 }
 
 .logoArea {
-  flex: 1 1 0;
   display: flex;
   align-items: center;
 }
@@ -58,28 +57,15 @@
 }
 
 .buttonArea {
-  flex: 1 1 0;
-  display: flex;
-  justify-content: flex-end;
-}
-.quoteBtn {
-  background: #f78c1f;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 999px;
-  padding: 0.7rem 2rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: background 0.2s;
+  justify-content: center;
+  position: relative;
+  bottom: 10px;
+  right: 20px;
 }
-.quoteBtn:hover {
-  background: #e06d00;
-}
+
+
 .iconMail {
   font-size: 1.2rem;
 } 

@@ -1,5 +1,6 @@
 import styles from '../styles/Navbar.module.css';
 import { Link } from 'react-router-dom';
+import RequestQuoteBtn from './RequestQuoteBtn';
 
 export default function Navbar() {
   return (
@@ -20,8 +21,8 @@ export default function Navbar() {
         </ul>
       </nav>
       <div className={styles.buttonArea}>
-        <Link to="/contact" className={styles.quoteBtn}>
-          Request A Quote <span className={styles.iconMail}>✉️</span>
+        <Link to="/contact">
+          <RequestQuoteBtn/>
         </Link>
       </div>
     </header>

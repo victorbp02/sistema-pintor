@@ -1,5 +1,5 @@
 import styles from '../styles/Hero.module.css';
-import { MdEmail } from 'react-icons/md';
+import RequestQuoteBtn from './RequestQuoteBtn';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
         Ready to give your home or business a makeover with a fresh coat of paint?
       </p>
       <Link to="/contact" className={styles.heroBtn}>
-        Request A Quote <span className={styles.iconMail}><MdEmail /></span>
+        <RequestQuoteBtn/>
       </Link>
     </section>
   );

@@ -1,6 +1,7 @@
 import styles from '../styles/ServicesSection.module.css';
 import { MdHome, MdApartment, MdBusiness, MdKitchen, MdBuild, MdColorLens, MdLocalCarWash, MdFormatPaint } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import RequestQuoteBtn from './RequestQuoteBtn';
 
 const services = [
   {
