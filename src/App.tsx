@@ -1,5 +1,3 @@
-import TopBar from "./components/TopBar";
-import Navbar from "./components/Navbar";
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -9,13 +7,15 @@ import Portfolio from './pages/Portfolio';
 import Reviews from './pages/Reviews';
 import Blog from './pages/Blog';
 import ContactUs from './pages/ContactUs';
+import MenuTop from "./components/MenuTop";
+import './styles/PagesContent.css';
 
 function App() {
   return (
     <>
-      <TopBar />
-      <Navbar />
-      <Routes>
+      <MenuTop/>
+      <div className='PagesContent'>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
@@ -24,7 +24,9 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<ContactUs />} />
-      </Routes>
+        </Routes>
+      </div>
+      
     </>
   );
 }

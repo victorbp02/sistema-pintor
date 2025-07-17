@@ -14,7 +14,7 @@ export default function TopBar() {
       </span>
       <span className={styles.item}>
         <MdEmail size={20} />
-        aaron@barbourpainting.com
+        aaron@worldpropainting.com
       </span>
     </div>
   );

@@ -1,8 +1,8 @@
 import styles from '../styles/ShowcaseSection.module.css';
 import { Link } from 'react-router-dom';
-import { MdEmail } from 'react-icons/md';
 import beforeImg from '../../src/assets/bannerPrincipal.jpeg';
 import afterImg from '../../src/assets/bannerPrincipal.jpeg';
+import RequestQuoteBtn from './RequestQuoteBtn';
 
 export default function ShowcaseSection() {
   return (
@@ -23,9 +23,9 @@ export default function ShowcaseSection() {
         <p className={styles.text}>Painting projects can be daunting. You need to find the right team for the job, pick the paint color and texture, then supervise the work—to say nothing of cleaning up the mess after.</p>
         <p className={styles.text}>With Barbour Painting, your next painting job will be a breeze. We are a Bay Area painting company serving residential and commercial customers throughout the Greater Bay Area. Our team of Bay Area painters provides a wide range of interior and exterior painting services, and we take care of everything, from the initial call all the way through project completion and site clean-up.</p>
         <p className={styles.text}>We will work directly with you and only call the job "finished" once you are happy with the final result. If you want full transparency, zero micromanagement, and top-quality workmanship, we are the team for you.</p>
-        <Link to="/contact" className={styles.ctaBtn}>
-          Request A Quote <MdEmail style={{marginLeft: 8, fontSize: '1.2em'}} />
-        </Link>
+        <Link to="/contact">
+          <RequestQuoteBtn />
+        </Link>\  
       </div>
     </section>
   );

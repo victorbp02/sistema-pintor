@@ -186,7 +186,7 @@
 .card:hover {
   box-shadow: 0 12px 40px 0 rgba(21,58,91,0.18);
   transform: translateY(-7px) scale(1.025);
-  border: 1.5px solid #f78c1f;
+  border: 1.5px solid #03C4D9;
 }
 
 .icon {
@@ -218,7 +218,7 @@
 }
 
 .readMore {
-  background: #f78c1f;
+  background: #03C4D9;
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
@@ -234,7 +234,7 @@
   box-shadow: 0 2px 8px rgba(247,140,31,0.08);
 }
 .readMore:hover {
-  background: #e06d00;
+  background: #03C4D9;
   box-shadow: 0 4px 16px 0 rgba(247,140,31,0.13);
 }
 
@@ -243,7 +243,7 @@
 }
 
 .highlight {
-  color: #f78c1f;
+  color: #03C4D9;
   font-weight: 900;
 }
 
