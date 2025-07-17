@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.3); /* overlay branco translúcido */
+  background: rgba(232, 232, 232, 0.337); /* overlay branco translúcido */
   z-index: 0;
 }
 
@@ -30,17 +30,20 @@
 .hero h1 {
   font-size: 3.7rem;
   font-weight: 900;
-  color: #f78c1f;
+  color: #142249;
   margin: 0 0 1.1rem 0;
   line-height: 1.06;
   letter-spacing: -1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.441);
 }
 
 .hero p {
-  font-size: 1.15rem;
-  color: #24272e;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
   margin: 0 0 2rem 0;
   font-weight: 400;
+  text-shadow: 3px 3px 4px rgb(0, 0, 0);
 }
 
 

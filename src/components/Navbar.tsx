@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.logoArea}>
-        <img src="/logo-barbour.png" alt="Barbour Painting" className={styles.logo} />
+        <div className={styles.logo} ></div>
       </div>
       <nav className={styles.menuArea}>
         <ul className={styles.menu}>

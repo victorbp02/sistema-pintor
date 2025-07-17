@@ -5,7 +5,7 @@ function RequestQuoteBtn() {
 
   return (
     <div className="Btn-Request">
-      Request A Quote <MdEmail style={{marginLeft: 8, fontSize: '1.2em'}} />
+      <span>Request A Quote <MdEmail style={{marginLeft: 8, fontSize: '1.2em'}} /></span>
     </div>
   )
 }

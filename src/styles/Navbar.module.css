@@ -13,10 +13,14 @@
 .logoArea {
   display: flex;
   align-items: center;
+  border: none;
 }
 .logo {
-  height: 44px;
-  width: auto;
+  height: 60px;
+  width: 150px;
+  background: url('../assets/WPP-LOGO.jpg') no-repeat center center;
+  background-size: cover;
+  border: none;
 }
 
 .menuArea {
@@ -40,7 +44,7 @@
   transition: color 0.2s;
 }
 .menu li:hover {
-  color: #f78c1f;
+  color: #03C4D9;
 }
 
 .menu li a {
@@ -53,7 +57,7 @@
   color: inherit;
 }
 .menu li a:hover {
-  color: #f78c1f;
+  color: #03C4D9;
 }
 
 .buttonArea {
