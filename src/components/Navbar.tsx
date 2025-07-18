@@ -1,11 +1,12 @@
 import styles from '../styles/Navbar.module.css';
 import { Link } from 'react-router-dom';
+import RequestQuoteBtn from './RequestQuoteBtn';
 
 export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.logoArea}>
-        <img src="/logo-barbour.png" alt="Barbour Painting" className={styles.logo} />
+        <div className={styles.logo} ></div>
       </div>
       <nav className={styles.menuArea}>
         <ul className={styles.menu}>
@@ -20,8 +21,8 @@ export default function Navbar() {
         </ul>
       </nav>
       <div className={styles.buttonArea}>
-        <Link to="/contact" className={styles.quoteBtn}>
-          Request A Quote <span className={styles.iconMail}>✉️</span>
+        <Link to="/contact">
+          <RequestQuoteBtn/>
         </Link>
       </div>
     </header>

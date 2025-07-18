@@ -1,0 +1,86 @@
+.GridSec {
+    max-width: 100vw;
+    padding: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.10);
+  padding: 2.1rem 1.3rem 2.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 270px;
+  position: relative;
+  transition: box-shadow 0.22s, transform 0.22s, border 0.22s;
+  border: 1.5px solid #f3f6fa;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 12px 40px 0 rgba(21,58,91,0.18);
+  transform: translateY(-7px) scale(1.025);
+  border: 1.5px solid #03C4D9;
+}
+
+.icon {
+  background: #eaf3fa;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 2px 8px 0 rgba(21,58,91,0.06);
+}
+
+.cardTitle {
+  color: #17948a;
+  font-size: 1.22rem;
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.5px;
+  margin-top: 0.7rem;
+}
+
+.cardDesc {
+  color: #444b5a;
+  font-size: 1.01rem;
+  margin-bottom: 1.3rem;
+  font-weight: 400;
+}
+
+.readMore {
+  background: #142249;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.6rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(247,140,31,0.08);
+}
+.readMore:hover {
+  background: #03C4D9;
+  box-shadow: 0 4px 16px 0 rgba(247,140,31,0.13);
+}
+
+.arrow {
+  font-size: 1.2em;
+}

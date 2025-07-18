@@ -1,6 +1,6 @@
 .topbar {
   width: 100%;
-  background: #f78c1f;
+  background: #142249;
   color: white;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
   justify-content: center;
   gap: 2.5rem;
   box-sizing: border-box;
+ 
 }
 
 .item {

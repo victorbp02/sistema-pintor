@@ -1,6 +1,7 @@
 import styles from '../styles/TeamSection.module.css';
 import { FiShield, FiMapPin, FiAward, FiUsers, FiSearch, FiCheckCircle, FiStar, FiMail } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import RequestQuoteBtn from './RequestQuoteBtn';
 
 const benefits = [
   { icon: <FiShield />, text: 'We are licensed and insured' },
@@ -27,8 +28,8 @@ export default function TeamSection() {
             alt="Team of painters"
             className={styles.teamImg}
           />
-          <Link to="/contact" className={styles.ctaBtn}>
-            Request A Quote <FiMail className={styles.mailIcon} />
+          <Link to="/contact">
+            <RequestQuoteBtn />
           </Link>
         </div>
         {/* Coluna Direita */}

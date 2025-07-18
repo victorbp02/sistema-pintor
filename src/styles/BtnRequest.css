@@ -1,0 +1,55 @@
+
+.Btn-Request {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 700;
+ font-size: 17px;
+ border-radius: 500px;
+ overflow: hidden;
+ background: #142249;
+ color: ghostwhite;
+ top: 10px;
+}
+
+.Btn-Request span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+ display: flex;
+ align-items: center;
+}
+
+.Btn-Request:hover span {
+ color: #fff;
+}
+
+.Btn-Request::before,
+.Btn-Request::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+.Btn-Request::before {
+ content: "";
+ background: #03C4D9;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.Btn-Request:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
