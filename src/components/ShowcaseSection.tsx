@@ -25,7 +25,7 @@ export default function ShowcaseSection() {
         <p className={styles.text}>We will work directly with you and only call the job "finished" once you are happy with the final result. If you want full transparency, zero micromanagement, and top-quality workmanship, we are the team for you.</p>
         <Link to="/contact">
           <RequestQuoteBtn />
-        </Link>\  
+        </Link> 
       </div>
     </section>
   );

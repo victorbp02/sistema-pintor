@@ -20,7 +20,9 @@ export default function ServicesSection() {
             Damaged drywall? Ugly-looking old kitchen cabinets? Moldy façade? Our expert Bay Area painters will take care of it all for you.
           </p>
           <Link to="/contact" className={styles.ctaBtnOutline}>
-            <MdFormatPaint size={18} style={{marginRight: 8}} /> Request A Quote
+            <span>
+              <MdFormatPaint size={18} style={{marginRight: 8}} /> Request A Quote
+            </span>
           </Link>
         </div>
         <ServicesGridSec/>
