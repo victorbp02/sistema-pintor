@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        String   @id @default(cuid())
+  nome      String
+  email     String   @unique
+  senha     String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("usuarios")
+}
+
+model Cliente {
+  id        String   @id @default(cuid())
+  nome      String
+  telefone  String
+  email     String   @unique
+  endereco  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  servicos Servico[]
+
+  @@map("clientes")
+}
+
+model Servico {
+  id          String   @id @default(cuid())
+  titulo      String
+  descricao   String
+  status      Status   @default(PENDENTE)
+  valor       Float
+  clienteId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  cliente Cliente @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+
+  @@map("servicos")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Status {
+  PENDENTE
+  EM_ANDAMENTO
+  CONCLUIDO
+  CANCELADO
+} 
