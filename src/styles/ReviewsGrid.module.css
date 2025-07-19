@@ -1,0 +1,180 @@
+.reviewsGrid {
+  width: 100%;
+  background: #f8fafc;
+  padding: 6rem 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #f78c1f 60%, #17948a 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(21,58,91,0.08);
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #142249;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  color: #03C4D9;
+  font-weight: 900;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #444b5a;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reviewCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.08);
+  border: 1px solid #f3f6fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px 0 rgba(21,58,91,0.12);
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.customerInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.customerImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customerName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #142249;
+  margin: 0 0 0.3rem 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.rating {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  fill: #fbbf24;
+}
+
+.serviceTag {
+  display: inline-block;
+  background: #eaf3fa;
+  color: #03C4D9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.reviewText {
+  font-size: 1rem;
+  color: #444b5a;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  font-style: italic;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviewsGrid {
+    padding: 4rem 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .reviewCard {
+    padding: 1.5rem;
+  }
+} 

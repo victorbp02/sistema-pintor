@@ -1,0 +1,171 @@
+.aboutHero {
+  width: 100%;
+  background: #fff;
+  padding: 4rem 0 6rem 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.textSection {
+  flex: 1;
+  min-width: 300px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #f78c1f 60%, #17948a 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(21,58,91,0.08);
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #142249;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  color: #03C4D9;
+  font-weight: 900;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #444b5a;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.imageSection {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.08);
+  border: 1px solid #f3f6fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px 0 rgba(21,58,91,0.12);
+}
+
+.statIcon {
+  color: #03C4D9;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #142249;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHero {
+    padding: 3rem 0 4rem 0;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .statCard {
+    padding: 1.5rem 1rem;
+  }
+} 

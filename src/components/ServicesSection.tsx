@@ -9,7 +9,7 @@ export default function ServicesSection() {
   return (
     <section className={styles.servicesBg}>
       <div className={styles.topDecor}>
-        <MdFormatPaint size={120} className={styles.bgIcon} />
+        <MdFormatPaint size={50} className={styles.bgIcon} />
       </div>
       <div className={styles.container}>
         <div className={styles.topArea}>

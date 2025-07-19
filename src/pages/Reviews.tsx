@@ -1,10 +1,15 @@
-import HeaderPages from "../components/HeaderPages"
+import HeaderPages from "../components/HeaderPages";
+import ReviewsHero from "../components/ReviewsHero";
+import ReviewsGrid from "../components/ReviewsGrid";
+import ReviewsCTA from "../components/ReviewsCTA";
 
 export default function Reviews() {
   return (
     <div>
       <HeaderPages/>
-      Reviews Page (em construção)
+      <ReviewsHero/>
+      <ReviewsGrid/>
+      <ReviewsCTA/>
     </div>
   )
 } 

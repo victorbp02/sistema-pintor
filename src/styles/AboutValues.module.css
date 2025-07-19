@@ -1,0 +1,192 @@
+.aboutValues {
+  width: 100%;
+  background: #f8fafc;
+  padding: 6rem 0;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #f78c1f 60%, #17948a 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(21,58,91,0.08);
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #142249;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  color: #03C4D9;
+  font-weight: 900;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #444b5a;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.valueCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.08);
+  border: 1px solid #f3f6fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px 0 rgba(21,58,91,0.12);
+}
+
+.valueIcon {
+  color: #03C4D9;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.valueTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #142249;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.valueDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.missionSection {
+  background: #fff;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.08);
+  border: 1px solid #f3f6fa;
+}
+
+.missionContent {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.missionText {
+  flex: 1;
+  min-width: 300px;
+}
+
+.missionTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #142249;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.missionDescription {
+  font-size: 1.1rem;
+  color: #444b5a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.missionImage {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .missionContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutValues {
+    padding: 4rem 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .valueCard {
+    padding: 2rem 1rem;
+  }
+  
+  .missionSection {
+    padding: 2rem;
+  }
+  
+  .missionTitle {
+    font-size: 1.8rem;
+  }
+} 
