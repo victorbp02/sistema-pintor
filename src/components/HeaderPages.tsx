@@ -7,12 +7,13 @@ function HeaderPages() {
   
   const titles = {
     "/about-us": "about-us",
+    "/residential": "residential",
+    "/hoa": "hoa",
+    "/multifamily": "multifamily",
+    "/commercial": "commercial",
     "/services": "services",
     "/locations": "location",
-    "/portfolio": "portfolio",
     "/reviews": "reviews",
-    "/blog": "blog",
-    "/contact": "contact",
   };
 
   const currentTitle = (location.pathname in titles ? titles[location.pathname as keyof typeof titles] : "Página");

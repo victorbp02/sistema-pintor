@@ -1,33 +1,44 @@
 .hero {
   width: 100%;
-  min-height: 70vh;
-  background: url('../assets/bannerPrincipal.jpeg') center center/cover no-repeat;
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  position: relative;
   padding: 4rem 1rem 3rem 6vw;
   box-sizing: border-box;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(232, 232, 232, 0.337); /* overlay branco translúcido */
-  z-index: 0;
+@media (max-width: 1024px) {
+  .hero {
+    height: 80vh;
+  }
 }
 
-.hero h1,
-.hero p,
-.heroBtn {
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    padding: 2rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh;
+  }
+}
+
+.heroContent {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
-.hero h1 {
+.heroContent h1 {
   font-size: 3.7rem;
   font-weight: 900;
   color: #142249;
@@ -37,7 +48,7 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.441);
 }
 
-.hero p {
+.heroContent p {
   font-size: 1.4rem;
   font-weight: 800;
   color: #ffffff;
@@ -47,6 +58,124 @@
 }
 
 
-.heroBtn .iconMail {
+.heroContent .heroBtn .iconMail {
   font-size: 1.2rem;
+}
+
+/* Formulário de orçamento */
+.formCard {
+  position: absolute;
+  top: 50%;
+  right: 6vw;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 380px;
+  z-index: 10;
+}
+
+.formCard h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #20b2aa;
+  box-shadow: 0 0 0 3px rgba(32, 178, 170, 0.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  width: 100%;
+  background: #20b2aa;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submitBtn:hover {
+  background: #1a9a94;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .formCard {
+    right: 2rem;
+    width: 320px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 0;
+    order: 2;
+  }
+  
+  .hero {
+    flex-direction: column;
+  }
+  
+  .heroContent {
+    order: 1;
+    margin-bottom: 1rem;
+  }
 } 

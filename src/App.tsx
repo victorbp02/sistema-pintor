@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Residential from './pages/Residential';
+import Hoa from './pages/Hoa';
+import Multifamily from './pages/Multifamily';
+import Commercial from './pages/Commercial';
 import Services from './pages/Services';
 import Locations from './pages/Locations';
-import Portfolio from './pages/Portfolio';
 import Reviews from './pages/Reviews';
-import Blog from './pages/Blog';
-import ContactUs from './pages/ContactUs';
 import MenuTop from "./components/MenuTop";
 import './styles/PagesContent.css';
 
@@ -18,12 +19,13 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/residential" element={<Residential />} />
+        <Route path="/hoa" element={<Hoa />} />
+        <Route path="/multifamily" element={<Multifamily />} />
+        <Route path="/commercial" element={<Commercial />} />
         <Route path="/services" element={<Services />} />
         <Route path="/locations" element={<Locations />} />
-        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/reviews" element={<Reviews />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>
       

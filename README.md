@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# Sistema Pintor - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o frontend do Sistema Pintor, desenvolvido em React com TypeScript e Vite.
 
-Currently, two official plugins are available:
+## 🚀 Deploy no Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Pré-requisitos
+- Conta no [Vercel](https://vercel.com)
+- Node.js 18+ instalado
+- Git configurado
 
-## Expanding the ESLint configuration
+### Passos para Deploy
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Instalar dependências:**
+   ```bash
+   npm install
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Testar build localmente:**
+   ```bash
+   npm run build
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+3. **Deploy no Vercel:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   **Opção 1 - Via CLI:**
+   ```bash
+   # Instalar Vercel CLI
+   npm i -g vercel
+   
+   # Fazer login
+   vercel login
+   
+   # Deploy
+   vercel
+   ```
+
+   **Opção 2 - Via GitHub:**
+   - Conecte seu repositório GitHub ao Vercel
+   - Configure as seguintes variáveis de ambiente se necessário:
+     - `NODE_ENV=production`
+
+4. **Configurações do Projeto:**
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+
+### Estrutura do Projeto
+
+```
+src/
+├── components/     # Componentes React
+├── pages/         # Páginas da aplicação
+├── styles/        # Arquivos CSS/SCSS
+├── assets/        # Imagens e recursos estáticos
+└── main.tsx       # Ponto de entrada
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Scripts Disponíveis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` - Inicia servidor de desenvolvimento
+- `npm run build` - Gera build de produção
+- `npm run preview` - Visualiza build de produção
+- `npm run lint` - Executa linter
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Tecnologias Utilizadas
+
+- React 19
+- TypeScript
+- Vite
+- React Router DOM
+- React Icons
+
+### Configurações do Vercel
+
+O arquivo `vercel.json` já está configurado com:
+- Build automático
+- Roteamento para SPA
+- Configurações de ambiente
+
+### Variáveis de Ambiente
+
+Se necessário, configure as seguintes variáveis no Vercel:
+- `VITE_API_URL` - URL da API backend
+- `NODE_ENV` - Ambiente (production/development)
+
+### Suporte
+
+Para dúvidas sobre o deploy, consulte a [documentação do Vercel](https://vercel.com/docs).
