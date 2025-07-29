@@ -3,75 +3,180 @@ import RequestQuoteBtn from './RequestQuoteBtn';
 import { Link } from 'react-router-dom';
 import HeroSlider from './HeroSlider';
 import { useState } from 'react';
+import { FiUser, FiMail, FiPhone, FiHome, FiCalendar, FiMessageSquare, FiDollarSign } from 'react-icons/fi';
 
 export default function Hero() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    serviceType: '',
+    projectSize: '',
     message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simular envio
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     console.log('Form data:', formData);
     // Aqui você pode enviar para um backend futuramente
+    
+    setIsSubmitting(false);
+    // Reset form
+    setFormData({ 
+      name: '', 
+      email: '', 
+      phone: '', 
+      serviceType: '', 
+      projectSize: '', 
+      message: '' 
+    });
   };
 
   return (
     <section className={styles.hero}>
       <HeroSlider />
 
-      {/* Formulário Transparente */}
+      {/* Formulário de Orçamento de Pintura */}
       <div className={styles.formCard}>
-        <h2>Solicite um Orçamento</h2>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Seu nome"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+        <div className={styles.formHeader}>
+          <h2>Orçamento Gratuito</h2>
+        </div>
+        
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <div className={styles.inputWrapper}>
+                <FiUser className={styles.inputIcon} />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nome completo"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className={styles.formInput}
+                />
+              </div>
+            </div>
+            
+            <div className={styles.formGroup}>
+              <div className={styles.inputWrapper}>
+                <FiPhone className={styles.inputIcon} />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Telefone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className={styles.formInput}
+                />
+              </div>
+            </div>
           </div>
+          
           <div className={styles.formGroup}>
-            <input
-              type="email"
-              name="email"
-              placeholder="Seu e-mail"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+            <div className={styles.inputWrapper}>
+              <FiMail className={styles.inputIcon} />
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className={styles.formInput}
+              />
+            </div>
           </div>
+          
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <div className={styles.inputWrapper}>
+                <FiHome className={styles.inputIcon} />
+                <select
+                  name="serviceType"
+                  value={formData.serviceType}
+                  onChange={handleChange}
+                  required
+                  className={styles.formSelect}
+                >
+                  <option value="">Tipo de serviço</option>
+                  <option value="residential">Residencial</option>
+                  <option value="commercial">Comercial</option>
+                  <option value="exterior">Pintura Externa</option>
+                  <option value="interior">Pintura Interna</option>
+                  <option value="texture">Textura</option>
+                  <option value="maintenance">Manutenção</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className={styles.formGroup}>
+              <div className={styles.inputWrapper}>
+                <FiCalendar className={styles.inputIcon} />
+                <select
+                  name="projectSize"
+                  value={formData.projectSize}
+                  onChange={handleChange}
+                  required
+                  className={styles.formSelect}
+                >
+                  <option value="">Tamanho do projeto</option>
+                  <option value="small">Pequeno (1-2 cômodos)</option>
+                  <option value="medium">Médio (3-5 cômodos)</option>
+                  <option value="large">Grande (6+ cômodos)</option>
+                  <option value="house">Casa completa</option>
+                  <option value="commercial">Comercial</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
           <div className={styles.formGroup}>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Seu telefone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
+            <div className={styles.inputWrapper}>
+              <FiMessageSquare className={styles.inputIcon} />
+              <textarea
+                name="message"
+                placeholder="Detalhes do projeto, cores desejadas..."
+                rows={3}
+                value={formData.message}
+                onChange={handleChange}
+                className={styles.formTextarea}
+              />
+            </div>
           </div>
-          <div className={styles.formGroup}>
-            <textarea
-              name="message"
-              placeholder="Escreva sua mensagem"
-              rows={3}
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className={styles.submitBtn}>
-            Enviar
+          
+          <button 
+            type="submit" 
+            className={`${styles.submitBtn} ${isSubmitting ? styles.submitting : ''}`}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <>
+                <div className={styles.spinner}></div>
+                Enviando...
+              </>
+            ) : (
+              <>
+                <div className={styles.btnContent}>
+                  <FiDollarSign className={styles.btnIcon} />
+                  <span className={styles.btnText}>Solicitar Orçamento</span>
+                </div>
+                <div className={styles.btnLiquid}></div>
+              </>
+            )}
           </button>
         </form>
       </div>

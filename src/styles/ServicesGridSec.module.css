@@ -12,9 +12,9 @@
 }
 
 .card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(21,58,91,0.10);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   padding: 2.1rem 1.3rem 2.2rem 1.3rem;
   display: flex;
   flex-direction: column;
@@ -22,14 +22,7 @@
   text-align: center;
   min-height: 270px;
   position: relative;
-  transition: box-shadow 0.22s, transform 0.22s, border 0.22s;
-  border: 1.5px solid #f3f6fa;
-  cursor: pointer;
-}
-.card:hover {
-  box-shadow: 0 12px 40px 0 rgba(21,58,91,0.18);
-  transform: translateY(-7px) scale(1.025);
-  border: 1.5px solid #03C4D9;
+  border: none;
 }
 
 .icon {

@@ -1,13 +1,18 @@
 .servicesBg {
   width: 100%;
-  background: #f8fafc;
+  max-width: 100vw;
+  background: transparent;
   padding: 5rem 0 5rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2vw;
+  box-sizing: border-box;
 }
 
 .topDecor {
@@ -37,34 +42,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .title {
   color: #142249;
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-size: 2.8rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 0.7rem;
-  letter-spacing: -1px;
-  position: relative;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
-.title::after {
-  content: '';
-  display: block;
-  margin: 1.1rem auto 0 auto;
-  width: 80px;
-  height: 4px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #142249 40%, #17948a 100%);
+
+.highlight {
+  color: #03C4D9;
+  font-weight: 700;
 }
 
 .subtitle {
-  color: #444b5a;
-  font-size: 1.13rem;
+  color: #64748b;
+  font-size: 1.1rem;
   text-align: center;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
   font-weight: 400;
   max-width: 700px;
   margin-left: auto;
@@ -110,41 +111,32 @@
 }
 
 .ctaBtn {
-  outline: none;
-  cursor: pointer;
-  border: none;
-  padding: 0.9rem 2rem;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  letter-spacing: 0.05rem;
-  font-weight: 700;
-  font-size: 17px;
-  border-radius: 500px;
-  overflow: hidden;
-  background: #142249;
-  color: ghostwhite;
+  background: #03C4D9;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
   text-decoration: none;
-  min-width: unset;
-  width: auto;
-  max-width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(3, 196, 217, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background: #02a8b8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 196, 217, 0.3);
+  color: #fff;
+  text-decoration: none;
 }
 
 .ctaBtn span {
-  position: relative;
-  z-index: 10;
-  transition: color 0.4s;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-
-.ctaBtn:hover span {
-  color: #fff;
+  font-weight: 600;
 }
 
 .ctaBtn::before,
@@ -157,18 +149,6 @@
   z-index: 0;
 }
 
-.ctaBtn::before {
-  content: "";
-  background: #03C4D9;
-  width: 120%;
-  left: -10%;
-  transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-}
-
-.ctaBtn:hover::before {
-  transform: translate3d(100%, 0, 0);
-}
 
 .ctaBtnOutline {
   outline: none;
@@ -312,11 +292,6 @@
   font-size: 1.2em;
 }
 
-.highlight {
-  color: #03C4D9;
-  font-weight: 900;
-}
-
 @media (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -334,6 +309,80 @@
   .icon {
     width: 48px;
     height: 48px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .ctaBtn {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .card {
+    padding: 1rem 0.5rem 1.2rem 0.5rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+  
+  .cardDesc {
+    font-size: 0.95rem;
+  }
+  
+  .readMore {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .ctaBtn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .card {
+    padding: 0.8rem 0.4rem 1rem 0.4rem;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+  }
+  
+  .cardDesc {
+    font-size: 0.9rem;
+  }
+  
+  .readMore {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
   }
 }
 

@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import Locations from './pages/Locations';
 import Reviews from './pages/Reviews';
 import MenuTop from "./components/MenuTop";
+import Footer from "./components/Footer";
 import './styles/PagesContent.css';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         </Routes>
       </div>
-      
+      <Footer />
     </>
   );
 }

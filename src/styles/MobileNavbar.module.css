@@ -1,0 +1,266 @@
+/* Navbar Mobile Fixa */
+.mobileHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99999999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 120px;
+  background: url('../assets/WPP-LOGO.jpg') no-repeat center center;
+  background-size: contain;
+  border: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Hambúrguer */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 99999999;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #142249;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu Mobile */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #142249 0%, #1a2a5e 50%, #2d1b69 100%);
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+  z-index: 99999999;
+  overflow-y: auto;
+  transform: translateZ(0);
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  -webkit-will-change: transform;
+  isolation: isolate;
+  contain: layout style paint;
+}
+
+.mobileMenuOpen {
+  left: 0;
+}
+
+/* Header do Menu Mobile */
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobileLogo .logo {
+  height: 50px;
+  width: 120px;
+  background: url('../assets/WPP-LOGO.jpg') no-repeat center center;
+  background-size: contain;
+  border-radius: 8px;
+}
+
+.mobileLogoText h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+}
+
+.mobileLogoText p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Lista de Itens do Menu */
+.mobileMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  flex: 1;
+}
+
+.mobileMenuList li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.mobileMenuOpen .mobileMenuList li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.mobileMenuItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  color: #03C4D9;
+}
+
+.menuIcon {
+  font-size: 1.2rem;
+  color: #03C4D9;
+  flex-shrink: 0;
+}
+
+.mobileMenuItem span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Área Social Mobile */
+.mobileSocialArea {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileSocialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobileSocialIcon:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobileSocialIcon:nth-child(1):hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+}
+
+.mobileSocialIcon:nth-child(2):hover {
+  background: #1877f2;
+  border-color: transparent;
+}
+
+/* Overlay Mobile */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999998;
+  backdrop-filter: blur(2px);
+}
+
+/* Responsividade - Esconder em desktop */
+@media (min-width: 769px) {
+  .mobileHeader {
+    display: none;
+  }
+} 

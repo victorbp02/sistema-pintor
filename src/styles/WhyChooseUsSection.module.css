@@ -1,0 +1,350 @@
+.whyChooseUs {
+  width: 100%;
+  max-width: 100vw;
+  background: #fff;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(3, 196, 217, 0.1);
+  color: #03C4D9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.badgeIcon {
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #142249;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #03C4D9;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.reasonCard {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.reasonCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #03C4D9, #02a8b8);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.reasonCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.reasonCard:hover::before {
+  transform: scaleX(1);
+}
+
+.reasonIcon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #03C4D9, #02a8b8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.reasonCard:hover .reasonIcon {
+  transform: scale(1.1);
+}
+
+.reasonCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #142249;
+  margin-bottom: 1rem;
+}
+
+.reasonCard p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.reasonStats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reasonStats span {
+  background: rgba(3, 196, 217, 0.1);
+  color: #03C4D9;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, #142249 0%, #1e3a5f 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.ctaContent h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ctaContent p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background: #03C4D9;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(3, 196, 217, 0.3);
+}
+
+.primaryButton:hover {
+  background: #02a8b8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 196, 217, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .reasonsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyChooseUs {
+    padding: 3rem 0;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .reasonCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .ctaSection {
+    padding: 2rem;
+  }
+  
+  .ctaContent h3 {
+    font-size: 1.5rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .reasonCard {
+    padding: 1.5rem;
+  }
+  
+  .reasonCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .reasonCard p {
+    font-size: 0.95rem;
+  }
+  
+  .reasonIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .ctaSection {
+    padding: 1.5rem;
+  }
+  
+  .ctaContent h3 {
+    font-size: 1.3rem;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .reasonCard {
+    padding: 1rem;
+  }
+  
+  .reasonCard h3 {
+    font-size: 1rem;
+  }
+  
+  .reasonCard p {
+    font-size: 0.9rem;
+  }
+  
+  .reasonIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .ctaSection {
+    padding: 1rem;
+  }
+  
+  .ctaContent h3 {
+    font-size: 1.2rem;
+  }
+} 

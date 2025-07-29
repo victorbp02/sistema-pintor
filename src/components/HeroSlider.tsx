@@ -6,10 +6,13 @@ export default function HeroSlider() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => 
-        prevSlide === 2 ? 0 : prevSlide + 1
-      );
-    }, 5000);
+      setCurrentSlide((prevSlide) => {
+        // Passa para a próxima imagem na ordem sequencial
+        const nextSlide = prevSlide + 1;
+        // Se chegou ao final, volta para a primeira (foto1slide)
+        return nextSlide >= 10 ? 0 : nextSlide;
+      });
+    }, 2500); // 4 segundos
 
     return () => clearInterval(interval);
   }, []);
@@ -18,42 +21,36 @@ export default function HeroSlider() {
     setCurrentSlide(index);
   };
 
+  // Array com as 10 imagens numeradas em ordem
+  const slides = [
+    '/src/assets/foto1slide.jpeg',
+    '/src/assets/foto2slide.jpeg',
+    '/src/assets/foto3slide.jpeg',
+    '/src/assets/foto4slide.jpeg',
+    '/src/assets/foto5slide.jpeg',
+    '/src/assets/foto6slide.jpeg',
+    '/src/assets/foto7slide.jpeg',
+    '/src/assets/foto8slide.jpeg',
+    '/src/assets/foto9slide.jpeg',
+    '/src/assets/foto10slide.jpeg'
+  ];
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.slides}>
-        <div 
-          className={`${styles.slide} ${currentSlide === 0 ? styles.active : ''}`}
-          style={{
-            backgroundImage: 'url(/bannerPrincipal.jpeg)'
-          }}
-        />
-        <div 
-          className={`${styles.slide} ${currentSlide === 1 ? styles.active : ''}`}
-          style={{
-            backgroundImage: 'url(/bannerPrincipal.jpeg)'
-          }}
-        />
-        <div 
-          className={`${styles.slide} ${currentSlide === 2 ? styles.active : ''}`}
-          style={{
-            backgroundImage: 'url(/bannerPrincipal.jpeg)'
-          }}
-        />
-      </div>
-      
-      <div className={styles.indicators}>
-        <button
-          className={`${styles.indicator} ${currentSlide === 0 ? styles.active : ''}`}
-          onClick={() => goToSlide(0)}
-        />
-        <button
-          className={`${styles.indicator} ${currentSlide === 1 ? styles.active : ''}`}
-          onClick={() => goToSlide(1)}
-        />
-        <button
-          className={`${styles.indicator} ${currentSlide === 2 ? styles.active : ''}`}
-          onClick={() => goToSlide(2)}
-        />
+        {slides.map((slide, index) => (
+          <div 
+            key={index}
+            className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
+            style={{
+              backgroundImage: `url(${slide})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: '#f0f0f0' // Fallback
+            }}
+          />
+        ))}
       </div>
     </div>
   );

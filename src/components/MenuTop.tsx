@@ -1,11 +1,15 @@
 import Navbar from "./Navbar";
+import MobileNavbar from "./MobileNavbar";
 import '../styles/MenuTop.css';
 
 function MenuTop() {
   return (
-    <div className="MenuTopAll">
+    <>
+      <div className="MenuTopAll">
         <Navbar />
-    </div>
+      </div>
+      <MobileNavbar />
+    </>
   )
 }
 
