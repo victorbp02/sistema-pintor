@@ -1,16 +1,17 @@
 import styles from '../styles/TeamSection.module.css';
-import { FiShield, FiMapPin, FiAward, FiUsers, FiSearch, FiCheckCircle, FiStar, FiMail } from 'react-icons/fi';
+import { FiDroplet, FiEdit, FiEye, FiHeart, FiStar, FiCheckCircle, FiMail } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import RequestQuoteBtn from './RequestQuoteBtn';
+import paletadecores from '../assets/paletadecores.jpeg';
 
-const benefits = [
-  { icon: <FiShield />, text: 'We are licensed and insured' },
-  { icon: <FiMapPin />, text: 'We are locally owned and operated' },
-  { icon: <FiAward />, text: 'We work with the highest-quality materials and paints' },
-  { icon: <FiUsers />, text: 'We value trust and relationships above all' },
-  { icon: <FiSearch />, text: 'We are extremely detail-oriented' },
-  { icon: <FiCheckCircle />, text: 'We take pride in our work' },
-  { icon: <FiStar />, text: 'We deliver exceptional customer service' },
+const colorServices = [
+  { icon: <FiDroplet />, text: 'Professional color consultation' },
+  { icon: <FiEdit />, text: 'Sample testing in your space' },
+  { icon: <FiEye />, text: 'Lighting analysis and color theory' },
+  { icon: <FiHeart />, text: 'Personalized color solutions' },
+  { icon: <FiStar />, text: 'Trend awareness and timeless classics' },
+  { icon: <FiCheckCircle />, text: 'Premium quality paints and materials' },
+  { icon: <FiMail />, text: 'Free color consultation available' },
 ];
 
 export default function TeamSection() {
@@ -20,12 +21,12 @@ export default function TeamSection() {
         {/* Coluna Esquerda */}
         <div className={styles.left}>
           <h2 className={styles.title}>
-            <span>Team Up with the Best</span><br />
-            <span className={styles.titleBlue}>Bay Area Painters</span>
+            <span>Transform Your Space with</span><br />
+            <span className={styles.titleBlue}>Perfect Colors</span>
           </h2>
           <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80"
-            alt="Team of painters"
+            src={paletadecores}
+            alt="Professional Color Palette"
             className={styles.teamImg}
           />
           <Link to="/contact">
@@ -35,10 +36,10 @@ export default function TeamSection() {
         {/* Coluna Direita */}
         <div className={styles.right}>
           <ul className={styles.benefitsList}>
-            {benefits.map((b, i) => (
+            {colorServices.map((service, i) => (
               <li className={styles.benefitItem} key={i}>
-                <span className={styles.benefitIcon}>{b.icon}</span>
-                <span className={styles.benefitText}>{b.text}</span>
+                <span className={styles.benefitIcon}>{service.icon}</span>
+                <span className={styles.benefitText}>{service.text}</span>
               </li>
             ))}
           </ul>

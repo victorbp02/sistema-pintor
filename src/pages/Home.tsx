@@ -15,9 +15,9 @@ export default function Home() {
       <ShowcaseSection />
       <WhyChooseUsSection />
       <ServicesSection />
-      <PartnersSection />
       <HomeReviewsSection />
       <TeamSection />
+      <PartnersSection />
     </>
   );
 } 

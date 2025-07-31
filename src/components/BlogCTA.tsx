@@ -61,7 +61,7 @@ export default function BlogCTA() {
               />
               <div className={styles.imageOverlay}>
                 <div className={styles.overlayContent}>
-                  <span className={styles.overlayText}>Free Estimate</span>
+                  <span className={styles.overlayText}>Request Estimate</span>
                   <span className={styles.overlaySubtext}>No Obligation</span>
                 </div>
               </div>

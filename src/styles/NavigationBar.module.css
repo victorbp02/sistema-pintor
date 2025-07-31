@@ -1,0 +1,119 @@
+.navigationContainer {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navList li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navList li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: #03C4D9;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navList li:hover::after {
+  width: 100%;
+}
+
+.navList li:hover {
+  transform: translateY(-2px);
+}
+
+.navList li a {
+  color: #03C4D9;
+  text-decoration: none;
+  font: inherit;
+  transition: all 0.3s ease;
+  padding: 0.08rem 0;
+  font-weight: 600;
+}
+
+.navList li a:visited {
+  color: #03C4D9;
+}
+
+.navList li a:hover {
+  color: #13244F;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .navigation {
+    padding: 0 1.5rem;
+  }
+  
+  .navList {
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0 1rem;
+  }
+  
+  .navList {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: 0 0.5rem;
+  }
+  
+  .navList {
+    gap: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navigation {
+    padding: 0 0.3rem;
+  }
+  
+  .navList {
+    gap: 0.6rem;
+    font-size: 0.7rem;
+  }
+} 

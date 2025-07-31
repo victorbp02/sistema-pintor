@@ -149,7 +149,7 @@ export default function Hero() {
               <FiMessageSquare className={styles.inputIcon} />
               <textarea
                 name="message"
-                placeholder="Detalhes do projeto, cores desejadas..."
+                placeholder="Project details, desired colors..."
                 rows={3}
                 value={formData.message}
                 onChange={handleChange}
@@ -166,13 +166,13 @@ export default function Hero() {
             {isSubmitting ? (
               <>
                 <div className={styles.spinner}></div>
-                Enviando...
+                Sending...
               </>
             ) : (
               <>
                 <div className={styles.btnContent}>
                   <FiDollarSign className={styles.btnIcon} />
-                  <span className={styles.btnText}>Solicitar Orçamento</span>
+                  <span className={styles.btnText}>Request Estimate</span>
                 </div>
                 <div className={styles.btnLiquid}></div>
               </>

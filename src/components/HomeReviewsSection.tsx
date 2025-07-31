@@ -5,32 +5,32 @@ import { useState, useEffect } from 'react';
 const reviews = [
   {
     name: "Maria Silva",
-    review: "Excelente trabalho! A equipe foi muito profissional e o resultado ficou perfeito.",
+    review: "Excellent work! The team was very professional and the result was perfect.",
     rating: 5
   },
   {
     name: "João Santos",
-    review: "Incrível atenção aos detalhes. Transformaram completamente nossa casa.",
+    review: "Incredible attention to detail. They completely transformed our house.",
     rating: 5
   },
   {
     name: "Ana Costa",
-    review: "Profissionais de primeira linha. O resultado superou nossas expectativas.",
+    review: "First-class professionals. The result exceeded our expectations.",
     rating: 5
   },
   {
     name: "Carlos Mendes",
-    review: "Serviço excepcional! Muito pontual e o resultado ficou incrível.",
+    review: "Exceptional service! Very punctual and the result was incredible.",
     rating: 5
   },
   {
     name: "Fernanda Lima",
-    review: "Incrível qualidade de trabalho. Recomendo fortemente!",
+    review: "Incredible quality of work. I highly recommend!",
     rating: 5
   },
   {
     name: "Roberto Alves",
-    review: "Profissionais competentes e muito respeitosos com nosso espaço.",
+    review: "Competent professionals and very respectful of our space.",
     rating: 5
   }
 ];
@@ -65,14 +65,14 @@ export default function HomeReviewsSection() {
     <section className={styles.reviewsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2>Veja o que nossos clientes falam do nosso serviço</h2>
+          <h2>See what our customers say about our service</h2>
           <p className={styles.subtitle}>
-            Valorizamos a satisfação e opinião de cada cliente. Nossa missão é superar 
-            expectativas e construir relacionamentos duradouros baseados na confiança e qualidade. 
-            Cada projeto é tratado com dedicação exclusiva, desde o primeiro contato até a 
-            finalização completa. Nossa equipe trabalha com transparência total, mantendo você 
-            informado em cada etapa do processo. O resultado? Clientes 100% satisfeitos que 
-            se tornam nossos melhores embaixadores.
+            We value the satisfaction and opinion of each customer. Our mission is to exceed 
+            expectations and build lasting relationships based on trust and quality. 
+            Each project is treated with exclusive dedication, from first contact to 
+            complete completion. Our team works with total transparency, keeping you 
+            informed at every stage of the process. The result? 100% satisfied customers who 
+            become our best ambassadors.
           </p>
           <div className={styles.rating}>
             <span className={styles.ratingText}>5.0</span>

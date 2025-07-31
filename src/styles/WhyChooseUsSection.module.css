@@ -57,14 +57,118 @@
   line-height: 1.6;
 }
 
-.reasonsGrid {
+.heroSection {
+  margin-bottom: 5rem;
+}
+
+.heroContent {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+}
+
+.heroText {
+  flex: 1;
+  text-align: left;
+}
+
+.heroText h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #142249;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.heroText p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.statsRow {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #03C4D9;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.heroSlider {
+  flex: 0 0 auto;
+  max-width: 700px;
+  min-width: 700px;
+  margin-left: auto;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #f8fafc;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.featuresSection {
+  margin-bottom: 5rem;
+}
+
+.featuresGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 
-.reasonCard {
+.featureCard {
   background: #f8fafc;
   border-radius: 16px;
   padding: 2.5rem 2rem;
@@ -75,7 +179,7 @@
   overflow: hidden;
 }
 
-.reasonCard::before {
+.featureCard::before {
   content: '';
   position: absolute;
   top: 0;
@@ -87,19 +191,19 @@
   transition: transform 0.3s ease;
 }
 
-.reasonCard:hover {
+.featureCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   background: white;
 }
 
-.reasonCard:hover::before {
+.featureCard:hover::before {
   transform: scaleX(1);
 }
 
-.reasonIcon {
-  width: 80px;
-  height: 80px;
+.featureIcon {
+  width: 70px;
+  height: 70px;
   background: linear-gradient(135deg, #03C4D9, #02a8b8);
   border-radius: 50%;
   display: flex;
@@ -107,54 +211,59 @@
   justify-content: center;
   margin: 0 auto 1.5rem;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   transition: all 0.3s ease;
 }
 
-.reasonCard:hover .reasonIcon {
+.featureCard:hover .featureIcon {
   transform: scale(1.1);
 }
 
-.reasonCard h3 {
-  font-size: 1.3rem;
+.featureContent h4 {
+  font-size: 1.2rem;
   font-weight: 600;
   color: #142249;
   margin-bottom: 1rem;
 }
 
-.reasonCard p {
+.featureContent p {
   font-size: 1rem;
   color: #64748b;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.reasonStats {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.reasonStats span {
-  background: rgba(3, 196, 217, 0.1);
-  color: #03C4D9;
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 0.3rem 0.8rem;
-  border-radius: 50px;
 }
 
 .ctaSection {
+  position: relative;
+}
+
+.ctaBackground {
   background: linear-gradient(135deg, #142249 0%, #1e3a5f 100%);
-  border-radius: 20px;
-  padding: 3rem;
+  border-radius: 24px;
+  padding: 4rem;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.5;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
 }
 
 .ctaContent h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -163,7 +272,10 @@
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ctaButtons {
@@ -183,6 +295,9 @@
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(3, 196, 217, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .primaryButton:hover {
@@ -191,6 +306,15 @@
   box-shadow: 0 6px 20px rgba(3, 196, 217, 0.4);
   color: white;
   text-decoration: none;
+}
+
+.buttonIcon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(3px);
 }
 
 .secondaryButton {
@@ -214,9 +338,37 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .reasonsGrid {
+  .heroContent {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .heroSlider {
+    max-width: 100%;
+    min-width: auto;
+    margin-left: 0;
+  }
+  
+  .sliderContainer {
+    height: 400px;
+  }
+  
+  .featuresGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+  
+  .statsRow {
+    justify-content: center;
+  }
+  
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statLabel {
+    text-align: center;
   }
 }
 
@@ -233,21 +385,33 @@
     font-size: 1.1rem;
   }
   
-  .reasonsGrid {
+  .heroText h3 {
+    font-size: 1.8rem;
+  }
+  
+  .heroText p {
+    font-size: 1rem;
+  }
+  
+  .sliderContainer {
+    height: 350px;
+  }
+  
+  .featuresGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .reasonCard {
+  .featureCard {
     padding: 2rem 1.5rem;
   }
   
-  .ctaSection {
-    padding: 2rem;
+  .ctaBackground {
+    padding: 2.5rem;
   }
   
   .ctaContent h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   
   .ctaButtons {
@@ -259,6 +423,26 @@
   .secondaryButton {
     width: 100%;
     max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .statsRow {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statNumber {
+    font-size: 1.5rem;
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -276,30 +460,42 @@
     font-size: 1rem;
   }
   
-  .reasonCard {
-    padding: 1.5rem;
+  .heroText h3 {
+    font-size: 1.6rem;
   }
   
-  .reasonCard h3 {
-    font-size: 1.1rem;
-  }
-  
-  .reasonCard p {
+  .heroText p {
     font-size: 0.95rem;
   }
   
-  .reasonIcon {
+  .sliderContainer {
+    height: 300px;
+  }
+  
+  .featureCard {
+    padding: 1.5rem;
+  }
+  
+  .featureCard h4 {
+    font-size: 1.1rem;
+  }
+  
+  .featureCard p {
+    font-size: 0.9rem;
+  }
+  
+  .featureIcon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
   }
   
-  .ctaSection {
-    padding: 1.5rem;
+  .ctaBackground {
+    padding: 2rem;
   }
   
   .ctaContent h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
   .ctaContent p {
@@ -310,6 +506,25 @@
   .secondaryButton {
     font-size: 0.95rem;
     padding: 0.8rem 1.5rem;
+  }
+  
+  .statsRow {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statNumber {
+    font-size: 1.3rem;
+  }
+  
+  .statLabel {
+    font-size: 0.75rem;
+    text-align: center;
   }
 }
 
@@ -322,29 +537,56 @@
     font-size: 0.95rem;
   }
   
-  .reasonCard {
-    padding: 1rem;
+  .heroText h3 {
+    font-size: 1.4rem;
   }
   
-  .reasonCard h3 {
-    font-size: 1rem;
-  }
-  
-  .reasonCard p {
+  .heroText p {
     font-size: 0.9rem;
   }
   
-  .reasonIcon {
+  .sliderContainer {
+    height: 250px;
+  }
+  
+  .featureCard {
+    padding: 1rem;
+  }
+  
+  .featureCard h4 {
+    font-size: 1rem;
+  }
+  
+  .featureCard p {
+    font-size: 0.85rem;
+  }
+  
+  .featureIcon {
     width: 50px;
     height: 50px;
     font-size: 1.3rem;
   }
   
-  .ctaSection {
-    padding: 1rem;
+  .ctaBackground {
+    padding: 1.5rem;
   }
   
   .ctaContent h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  
+  .statsRow {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statLabel {
+    text-align: center;
   }
 } 

@@ -19,7 +19,7 @@ export default function ReviewsCTA() {
             <div className={styles.features}>
               <div className={styles.feature}>
                 <FiStar className={styles.featureIcon} />
-                <span>Free Estimates</span>
+                <span>Request Estimate</span>
               </div>
               <div className={styles.feature}>
                 <FiMessageCircle className={styles.featureIcon} />

@@ -1,103 +1,82 @@
 .header {
-  height: 130px;
   width: 100%;
   max-width: 100vw;
+  background: #13244f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 9999999;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra Principal Azul Escura */
+.mainBar {
+  background: #13244f;
+  padding: 1rem 0;
+  border-bottom: 1px solid #1a2a5e;
+}
+
+.mainBarContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  padding: 0 2rem;
-  box-sizing: border-box;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1000;
-  overflow: hidden;
+  gap: 2rem;
 }
 
+/* Logo */
 .logoArea {
   display: flex;
   align-items: center;
-  border: none;
+  justify-content: center;
+  flex: 1;
 }
 
 .logo {
-  height: 80px;
-  width: 200px;
-  max-width: 200px;
-  min-width: 120px;
-  background: url('../assets/WPP-LOGO.jpg') no-repeat center center;
+  height: 180px;
+  width: 300px;
+  background: url('../assets/WPP-DARK-LOGO.jpg') no-repeat center center;
   background-size: contain;
   border: none;
-  transition: transform 0.3s ease;
+}
+
+/* Botão Request A Quote */
+.quoteButtonArea {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* Menu Desktop */
-.menuArea {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  min-width: 0;
-}
-
-.menu {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
+.quoteButton {
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.menu li {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  padding: 0.5rem 0;
-}
-
-.menu li::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #20b2aa;
-  transition: width 0.3s ease;
-}
-
-.menu li:hover::after {
-  width: 100%;
-}
-
-.menu li:hover {
-  color: #20b2aa;
-}
-
-.menu li a {
-  color: inherit;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #03C4D9;
+  color: #ffffff;
   text-decoration: none;
-  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 25px;
   transition: all 0.3s ease;
-  padding: 0.5rem 0;
+  border: 2px solid #03C4D9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.menu li a:visited {
-  color: inherit;
+.quoteButton:hover {
+  background: transparent;
+  color: #03C4D9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 196, 217, 0.3);
 }
 
-.menu li a:hover {
-  color: #20b2aa;
+.quoteIcon {
+  font-size: 1rem;
 }
 
 /* Área Social */
@@ -105,6 +84,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .socialIcon {
@@ -114,10 +95,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #f8f9fa;
-  color: #6c757d;
+  background: #13244F;
+  color: #ffffff;
   transition: all 0.3s ease;
   text-decoration: none;
+  border: 1px solid #1a2a5e;
 }
 
 .socialIcon:hover {
@@ -145,6 +127,177 @@
   color: white;
 }
 
+/* Barra Inferior Branca */
+.bottomBar {
+  background: #ffffff;
+  color: #333333;
+  padding: 0.5rem 0;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  overflow: visible;
+}
+
+.bottomBarContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Navegação na Barra Branca */
+.navigation {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 9999999;
+  overflow: visible;
+}
+
+.navList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 9999999;
+  overflow: visible;
+}
+
+.navList li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navList li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: #03C4D9;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navList li:hover::after {
+  width: 100%;
+}
+
+.navList li:hover {
+  transform: translateY(-2px);
+}
+
+.navLink {
+  color: #03C4D9;
+  text-decoration: none;
+  font: inherit;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navLink:visited {
+  color: #03C4D9;
+}
+
+.navLink:hover {
+  color: #13244F;
+  opacity: 1;
+}
+
+/* Dropdown Styles */
+.dropdownContainer {
+  position: relative;
+  z-index: 9999999;
+  padding-bottom: 40px;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  color: #03C4D9;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.dropdownButton:hover {
+  color: #13244F;
+}
+
+.dropdownArrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdownContainer:hover .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #03C4D9;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 9999999;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Menu Hambúrguer */
 .hamburger {
   display: none;
@@ -157,12 +310,15 @@
   cursor: pointer;
   padding: 0;
   z-index: 9999999;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
 }
 
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #142249;
+  background: #333333;
   border-radius: 2px;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -223,7 +379,7 @@
 .mobileLogo .logo {
   height: 50px;
   width: 120px;
-  background: url('../assets/WPP-LOGO.jpg') no-repeat center center;
+  background: url('../assets/WPP-DARK-LOGO.jpg') no-repeat center center;
   background-size: contain;
   border-radius: 8px;
 }
@@ -332,11 +488,11 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: #13244F;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #1a2a5e;
 }
 
 .mobileSocialIcon:hover {
@@ -369,137 +525,164 @@
 
 /* Responsividade */
 @media (max-width: 1024px) {
-  .header {
-    height: 100px;
+  .mainBarContent,
+  .bottomBarContent {
     padding: 0 1.5rem;
   }
   
-  .logo {
-    height: 60px;
-    width: 150px;
-    max-width: 150px;
-    min-width: 100px;
-  }
-  
-  .menu {
+  .navList {
     gap: 1.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
-  .socialIcon {
-    width: 35px;
-    height: 35px;
+  .logo {
+    width: 180px;
+    height: 70px;
+  }
+  
+  .logoMain {
+    font-size: 1.1rem;
+  }
+  
+  .logoSub {
+    font-size: 0.65rem;
+  }
+  
+  .quoteButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 768px) {
-  .header {
-    height: 80px;
+  .mainBarContent,
+  .bottomBarContent {
     padding: 0 1rem;
-    justify-content: space-between;
   }
   
-  .logo {
-    height: 50px;
-    width: 120px;
-    max-width: 120px;
-    min-width: 80px;
-  }
-  
-  .menu {
+  .mainBarContent {
+    flex-direction: column;
     gap: 1rem;
-    font-size: 0.9rem;
+    padding: 1rem;
   }
   
   .socialArea {
-    display: none;
+    order: 1;
   }
   
-  .socialIcon {
-    width: 35px;
-    height: 35px;
+  .logoArea {
+    order: 2;
   }
   
-  .menuArea {
-    display: none;
+  .quoteButtonArea {
+    order: 3;
+  }
+  
+  .navList {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 60px;
+  }
+  
+  .logoMain {
+    font-size: 1rem;
+  }
+  
+  .logoSub {
+    font-size: 0.6rem;
+  }
+  
+  .quoteButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
   }
   
   .hamburger {
     display: flex;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .header {
-    height: 70px;
+  .mainBarContent,
+  .bottomBarContent {
     padding: 0 0.8rem;
-    justify-content: space-between;
   }
   
-  .logo {
-    height: 45px;
-    width: 100px;
-    max-width: 100px;
-    min-width: 60px;
+  .mainBarContent {
+    padding: 0.8rem;
   }
   
-  .menu {
+  .navList {
     gap: 0.8rem;
     font-size: 0.8rem;
   }
   
-  .socialArea {
-    display: none;
+  .logo {
+    width: 120px;
+    height: 50px;
   }
   
-  .socialIcon {
-    width: 30px;
-    height: 30px;
+  .logoMain {
+    font-size: 0.9rem;
   }
   
-  .menuArea {
-    display: none;
+  .logoSub {
+    font-size: 0.55rem;
   }
   
-  .hamburger {
-    display: flex;
+  .quoteButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 }
 
 @media (max-width: 360px) {
-  .header {
-    height: 65px;
+  .mainBarContent,
+  .bottomBarContent {
     padding: 0 0.5rem;
-    justify-content: space-between;
   }
   
-  .logo {
-    height: 40px;
-    width: 90px;
-    max-width: 90px;
-    min-width: 50px;
+  .mainBarContent {
+    padding: 0.5rem;
   }
   
-  .menu {
+  .navList {
     gap: 0.6rem;
     font-size: 0.75rem;
   }
   
-  .socialArea {
-    display: none;
+  .logo {
+    width: 100px;
+    height: 40px;
   }
   
-  .socialIcon {
-    width: 28px;
-    height: 28px;
+  .logoMain {
+    font-size: 0.8rem;
   }
   
-  .menuArea {
-    display: none;
+  .logoSub {
+    font-size: 0.5rem;
+  }
+  
+  .quoteButton {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
   }
   
   .hamburger {
-    display: flex;
     width: 25px;
     height: 25px;
   }

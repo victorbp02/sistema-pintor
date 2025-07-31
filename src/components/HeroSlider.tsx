@@ -12,7 +12,7 @@ export default function HeroSlider() {
         // Se chegou ao final, volta para a primeira (foto1slide)
         return nextSlide >= 10 ? 0 : nextSlide;
       });
-    }, 2500); // 4 segundos
+    }, 4500); // 4.5 segundos
 
     return () => clearInterval(interval);
   }, []);

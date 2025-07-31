@@ -1,128 +1,153 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/WhyChooseUsSection.module.css';
-import { FiAward, FiUsers, FiClock, FiShield, FiCheckCircle, FiStar } from 'react-icons/fi';
+import { FiAward, FiUsers, FiClock, FiShield, FiCheckCircle, FiStar, FiArrowRight } from 'react-icons/fi';
 
 export default function WhyChooseUsSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => {
+        const nextSlide = prevSlide + 1;
+        return nextSlide >= 10 ? 0 : nextSlide;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const slides = [
+    '/src/assets/foto1slide.jpeg',
+    '/src/assets/foto2slide.jpeg',
+    '/src/assets/foto3slide.jpeg',
+    '/src/assets/foto4slide.jpeg',
+    '/src/assets/foto5slide.jpeg',
+    '/src/assets/foto6slide.jpeg',
+    '/src/assets/foto7slide.jpeg',
+    '/src/assets/foto8slide.jpeg',
+    '/src/assets/foto9slide.jpeg',
+    '/src/assets/foto10slide.jpeg'
+  ];
+
   return (
     <section className={styles.whyChooseUs}>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.badge}>
             <FiStar className={styles.badgeIcon} />
-            <span>Por que escolher a Sistema Pintor?</span>
+            <span>Why choose World Pro Painting?</span>
           </div>
           <h2 className={styles.title}>
-            <span className={styles.highlight}>Experiência</span> e <span className={styles.highlight}>Compromisso</span> em Cada Projeto
+            <span className={styles.highlight}>Excellence</span> in Every <span className={styles.highlight}>Detail</span>
           </h2>
           <p className={styles.subtitle}>
-            Descubra os diferenciais que nos tornam a escolha certa para seu projeto
+            We combine experience, quality materials, and dedicated service to deliver exceptional results
           </p>
         </div>
 
-        <div className={styles.reasonsGrid}>
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiAward />
+        <div className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroText}>
+              <h3>15+ Years of Excellence</h3>
+              <p>
+                With over a decade of experience in the Bay Area, we've perfected our craft 
+                to deliver painting services that exceed expectations. Our commitment to quality 
+                and attention to detail sets us apart in every project.
+              </p>
+              <div className={styles.statsRow}>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>500+</span>
+                  <span className={styles.statLabel}>Projects Completed</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>98%</span>
+                  <span className={styles.statLabel}>Client Satisfaction</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statNumber}>24/7</span>
+                  <span className={styles.statLabel}>Support Available</span>
+                </div>
+              </div>
             </div>
-            <h3>15+ Anos de Experiência</h3>
-            <p>
-              Mais de uma década de expertise em pintura profissional, 
-              com centenas de projetos concluídos com sucesso na Bay Area.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>500+ Projetos</span>
-              <span>98% Satisfação</span>
-            </div>
-          </div>
-
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiUsers />
-            </div>
-            <h3>Equipe Qualificada</h3>
-            <p>
-              Profissionais certificados e treinados nas melhores técnicas, 
-              garantindo qualidade superior em cada detalhe do projeto.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>Especialistas</span>
-              <span>Certificados</span>
-            </div>
-          </div>
-
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiShield />
-            </div>
-            <h3>Garantia Total</h3>
-            <p>
-              Oferecemos garantia completa em todos os nossos serviços, 
-              proporcionando tranquilidade e confiança total aos nossos clientes.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>100% Garantia</span>
-              <span>Suporte 24/7</span>
-            </div>
-          </div>
-
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiClock />
-            </div>
-            <h3>Prazos Cumpridos</h3>
-            <p>
-              Compromisso com cronogramas e comunicação transparente, 
-              mantendo você informado em cada etapa do projeto.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>Pontualidade</span>
-              <span>Transparência</span>
-            </div>
-          </div>
-
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiCheckCircle />
-            </div>
-            <h3>Materiais Premium</h3>
-            <p>
-              Utilizamos apenas materiais de primeira linha e técnicas 
-              profissionais para garantir durabilidade e acabamento perfeito.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>Qualidade Premium</span>
-              <span>Durabilidade</span>
-            </div>
-          </div>
-
-          <div className={styles.reasonCard}>
-            <div className={styles.reasonIcon}>
-              <FiStar />
-            </div>
-            <h3>Atendimento Personalizado</h3>
-            <p>
-              Cada projeto é único e recebe atenção especial, 
-              desde o orçamento até a finalização e limpeza completa.
-            </p>
-            <div className={styles.reasonStats}>
-              <span>Personalizado</span>
-              <span>Dedicação</span>
+            <div className={styles.heroSlider}>
+              <div className={styles.sliderContainer}>
+                <div className={styles.slides}>
+                  {slides.map((slide, index) => (
+                    <div 
+                      key={index}
+                      className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
+                      style={{
+                        backgroundImage: `url(${slide})`
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className={styles.ctaSection}>
-          <div className={styles.ctaContent}>
-            <h3>Pronto para começar seu projeto?</h3>
-            <p>Entre em contato conosco e descubra como podemos transformar seu espaço</p>
-          </div>
-          <div className={styles.ctaButtons}>
-            <a href="/contact" className={styles.primaryButton}>
-              Solicitar Orçamento
-            </a>
-            <a href="/about-us" className={styles.secondaryButton}>
-              Conheça Mais
-            </a>
+        <div className={styles.featuresSection}>
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiAward />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>Premium Quality</h4>
+                <p>We use only the finest materials and professional techniques to ensure lasting results.</p>
+              </div>
+            </div>
+
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiUsers />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>Expert Team</h4>
+                <p>Our certified professionals bring years of experience and specialized training.</p>
+              </div>
+            </div>
+
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiShield />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>Full Warranty</h4>
+                <p>Complete peace of mind with our comprehensive warranty on all services.</p>
+              </div>
+            </div>
+
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiClock />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>On-Time Delivery</h4>
+                <p>We respect your schedule and complete projects within agreed timelines.</p>
+              </div>
+            </div>
+
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiCheckCircle />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>Clean Process</h4>
+                <p>From preparation to final cleanup, we maintain a clean and organized workspace.</p>
+              </div>
+            </div>
+
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>
+                <FiStar />
+              </div>
+              <div className={styles.featureContent}>
+                <h4>Personalized Service</h4>
+                <p>Every project receives individual attention and customized solutions.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

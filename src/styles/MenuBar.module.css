@@ -1,0 +1,163 @@
+.menuBarContainer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.menuBar {
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: #03C4D9;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.menu li:hover::after {
+  width: 100%;
+}
+
+.menu li:hover {
+  transform: translateY(-2px);
+}
+
+.menu li a {
+  color: #03C4D9;
+  text-decoration: none;
+  font: inherit;
+  transition: all 0.3s ease;
+  padding: 0.08rem 0;
+  font-weight: 600;
+}
+
+.menu li a:visited {
+  color: #03C4D9;
+}
+
+.menu li a:hover {
+  color: #13244F;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .menuBar {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+  
+  .menu {
+    gap: 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .menu ul {
+    gap: 1.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuBar {
+    padding: 0 1rem;
+    width: 100%;
+  }
+  
+  .menu {
+    gap: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  .menu ul {
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuBar {
+    padding: 0 0.5rem;
+    width: 100%;
+  }
+  
+  .menu {
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  
+  .menu ul {
+    gap: 0.8rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .menuBar {
+    padding: 0 0.3rem;
+    width: 100%;
+  }
+  
+  .menu {
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  
+  .menu ul {
+    gap: 0.6rem;
+    width: 100%;
+  }
+} 
