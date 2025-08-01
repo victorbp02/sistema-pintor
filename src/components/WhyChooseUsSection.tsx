@@ -87,6 +87,60 @@ export default function WhyChooseUsSection() {
           </div>
         </div>
 
+        <div className={styles.middleSection}>
+          <div className={styles.middleContent}>
+            <div className={styles.middleText}>
+              <h3>Our Commitment to Excellence</h3>
+              <p>
+                At World Pro Painting, we understand that every project is unique and deserves 
+                our full attention. Our team of skilled professionals combines traditional 
+                craftsmanship with modern techniques to deliver results that not only meet 
+                but exceed your expectations.
+              </p>
+              <p>
+                We take pride in our attention to detail, from the initial consultation 
+                through the final inspection. Our comprehensive approach includes thorough 
+                surface preparation, premium quality materials, and meticulous application 
+                techniques that ensure lasting beauty and protection for your property.
+              </p>
+              <div className={styles.commitmentPoints}>
+                <div className={styles.commitmentPoint}>
+                  <FiCheckCircle className={styles.checkIcon} />
+                  <span>Comprehensive surface preparation and priming</span>
+                </div>
+                <div className={styles.commitmentPoint}>
+                  <FiCheckCircle className={styles.checkIcon} />
+                  <span>Premium paints and materials from trusted brands</span>
+                </div>
+                <div className={styles.commitmentPoint}>
+                  <FiCheckCircle className={styles.checkIcon} />
+                  <span>Professional application techniques and quality control</span>
+                </div>
+                <div className={styles.commitmentPoint}>
+                  <FiCheckCircle className={styles.checkIcon} />
+                  <span>Thorough cleanup and final inspection process</span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.middleStats}>
+              <div className={styles.statCard}>
+                <div className={styles.statIcon}>
+                  <FiAward />
+                </div>
+                <h4>Quality Guaranteed</h4>
+                <p>Every project is backed by our comprehensive quality guarantee</p>
+              </div>
+              <div className={styles.statCard}>
+                <div className={styles.statIcon}>
+                  <FiClock />
+                </div>
+                <h4>Fast & Efficient</h4>
+                <p>We complete projects on time without compromising quality</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.featuresSection}>
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>

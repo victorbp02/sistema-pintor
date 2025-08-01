@@ -10,8 +10,8 @@ export default function Footer() {
               <div className={styles.logo}></div>
             </div>
             <p className={styles.description}>
-              Specialists in residential, commercial and industrial painting. 
-              Professional quality and personalized service.
+              Professional painting services in the Bay Area. 
+              Residential, commercial, and industrial painting with quality and reliability.
             </p>
             <div className={styles.socialIcons}>
               <a href="https://instagram.com/worldpropainting" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
@@ -38,31 +38,31 @@ export default function Footer() {
           </div>
           
           <div className={styles.footerSection}>
+            <h3 className={styles.sectionTitle}>About Us</h3>
+            <div className={styles.aboutInfo}>
+              <p>✓ Licensed & Insured</p>
+              <p>✓ Free Estimates</p>
+              <p>✓ Quality Guarantee</p>
+              <p>✓ Professional Team</p>
+            </div>
+          </div>
+          
+          <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>Services</h3>
             <ul className={styles.footerLinks}>
-              <li><a href="/residential">Residential Painting</a></li>
+              <li><a href="/residential">Interior Painting</a></li>
+              <li><a href="/residential">Exterior Painting</a></li>
               <li><a href="/commercial">Commercial Painting</a></li>
-              <li><a href="/hoa">HOA Painting</a></li>
-              <li><a href="/multifamily">Multifamily Painting</a></li>
+              <li><a href="/multifamily">Multi-Family</a></li>
             </ul>
           </div>
           
           <div className={styles.footerSection}>
-            <h3 className={styles.sectionTitle}>Company</h3>
-            <ul className={styles.footerLinks}>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/portfolio">Portfolio</a></li>
-              <li><a href="/reviews">Reviews</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.footerSection}>
-            <h3 className={styles.sectionTitle}>Contato</h3>
+            <h3 className={styles.sectionTitle}>Contact</h3>
             <div className={styles.contactInfo}>
               <p>📞 +1 (650) 420-9772</p>
               <p>📧 Contact@worldpropainting.com</p>
-              <p>📍 Bay Area, Fremont, California</p>
+              <p>📍 Bay Area, California</p>
             </div>
           </div>
         </div>

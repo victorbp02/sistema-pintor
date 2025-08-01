@@ -28,16 +28,18 @@
 
 .logosContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 6rem;
+  gap: 4rem;
   flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .logo {
   flex: 1;
-  max-width: 200px;
-  min-width: 150px;
+  max-width: 180px;
+  min-width: 140px;
 }
 
 .logoPlaceholder {
@@ -72,12 +74,13 @@
   }
   
   .logosContainer {
-    gap: 3rem;
+    gap: 2.5rem;
+    max-width: 700px;
   }
   
   .logo {
-    max-width: 150px;
-    min-width: 120px;
+    max-width: 130px;
+    min-width: 100px;
   }
   
   .logoPlaceholder {
@@ -98,17 +101,17 @@
   
   .logosContainer {
     gap: 2rem;
-    flex-direction: column;
+    max-width: 500px;
   }
   
   .logo {
-    max-width: 200px;
-    min-width: 180px;
+    max-width: 90px;
+    min-width: 80px;
   }
   
   .logoPlaceholder {
-    height: 70px;
-    font-size: 1rem;
+    height: 60px;
+    font-size: 0.9rem;
   }
 }
 

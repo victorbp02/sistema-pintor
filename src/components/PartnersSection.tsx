@@ -21,6 +21,11 @@ export default function PartnersSection() {
               <span>Logo 3</span>
             </div>
           </div>
+          <div className={styles.logo}>
+            <div className={styles.logoPlaceholder}>
+              <span>Logo 4</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

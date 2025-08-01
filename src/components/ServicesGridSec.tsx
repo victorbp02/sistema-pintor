@@ -1,45 +1,54 @@
 import { MdHome, MdApartment, MdBusiness, MdKitchen, MdBuild, MdColorLens, MdLocalCarWash } from 'react-icons/md';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/ServicesGridSec.module.css';
 
 const services = [
   {
     icon: <MdHome size={44} color="#03C4D9" />,
-    title: 'Interior Painting',
-    desc: "The interior paint in your home or business helps determine your property's first impression on guests and clients.",
+    title: 'Residential',
+    desc: "Transform your home with our comprehensive residential painting services. From interior walls and ceilings to exterior facades, we deliver exceptional results that enhance your living space and increase your property value.",
+    dropdownItems: [
+      { name: 'Interior Painting', link: '/residential' },
+      { name: 'Exterior Painting', link: '/residential' },
+      { name: 'Gabinetes', link: '/residential' }
+    ]
   },
   {
     icon: <MdApartment size={44} color="#03C4D9" />,
-    title: 'Exterior Painting',
-    desc: 'From brick, wood, and stucco to vinyl, shingles, Hardie board, and aluminum siding, we handle all materials and surfaces on exterior walls, garage doors, decks, and porches.',
+    title: 'HOA',
+    desc: 'Specialized painting services for Homeowners Associations. We handle common areas, building exteriors, and community spaces with precision and care, ensuring compliance with HOA guidelines and maintaining property standards.',
+    dropdownItems: [
+      { name: 'Multi-Family', link: '/multifamily' }
+    ]
   },
   {
     icon: <MdBusiness size={44} color="#03C4D9" />,
-    title: 'Commercial Painting',
-    desc: 'Wow your partners, attract more customers, and create a beautiful work environment for your team with an expert commercial painting job.',
-  },
-  {
-    icon: <MdKitchen size={44} color="#03C4D9" />,
-    title: 'Cabinet Painting',
-    desc: 'Why throw away fully functional old cabinets? We will refresh, repaint, and breathe new life into your cabinets so they can serve you for many more years.',
+    title: 'Commercial',
+    desc: 'Professional commercial painting solutions for businesses of all sizes. Create an impressive work environment that attracts customers and boosts employee morale with our expert commercial painting services.',
+    isSimpleButton: true,
+    buttonLink: '/commercial'
   },
   {
     icon: <MdBuild size={44} color="#03C4D9" />,
-    title: 'Drywall Repair',
-    desc: 'Neither water damage nor holes in your drywall can stop this Concord painting company from ensuring a perfectly primed surface to paint on.',
-  },
-  {
-    icon: <MdColorLens size={44} color="#03C4D9" />,
-    title: 'Color Consultation',
-    desc: 'Ivory, eggshell, alabaster, powder: Is it all Greek to you? Not to worry. Our paint consultants will help you choose the best color for your project so that it matches your current palette perfectly.',
-  },
-  {
-    icon: <MdLocalCarWash size={44} color="#03C4D9" />,
-    title: 'Power Washing',
-    desc: 'We will remove any dirt, oil, mold, and old paint from your exterior surfaces to ensure that the new paint adheres well for a picture-perfect paint job.',
+    title: 'Other Services',
+    desc: 'Comprehensive painting solutions including cabinet refinishing, deck staining, texture application, color consultation, and specialized finishes. We handle all your painting needs with expertise and attention to detail.',
+    isSimpleButton: true,
+    buttonLink: '/services'
   },
 ];
 
 function ServicesGridSec() {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
+  const toggleDropdown = (index: number) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const closeDropdown = () => {
+    setOpenDropdown(null);
+  };
+
   return (
     <div className={styles.GridSec}>
       <div className={styles.grid}>
@@ -48,9 +57,38 @@ function ServicesGridSec() {
               <div className={styles.icon}>{service.icon}</div>
               <h3 className={styles.cardTitle}>{service.title}</h3>
               <p className={styles.cardDesc}>{service.desc}</p>
-              <button className={styles.readMore}>
-                Read More <span className={styles.arrow}>&#8594;</span>
-              </button>
+              <div className={styles.dropdownContainer}>
+                {service.isSimpleButton ? (
+                  <Link 
+                    to={service.buttonLink} 
+                    className={styles.dropdownBtn}
+                    onClick={closeDropdown}
+                  >
+                    View Services
+                  </Link>
+                ) : (
+                  <button 
+                    className={styles.dropdownBtn}
+                    onClick={() => toggleDropdown(i)}
+                  >
+                    View Services <span className={styles.arrow}>&#8595;</span>
+                  </button>
+                )}
+                {openDropdown === i && service.dropdownItems && (
+                  <div className={styles.dropdown}>
+                    {service.dropdownItems.map((item, index) => (
+                      <Link 
+                        key={index} 
+                        to={item.link} 
+                        className={styles.dropdownItem}
+                        onClick={closeDropdown}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

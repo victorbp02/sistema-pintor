@@ -1,35 +1,36 @@
 import styles from '../styles/HomeReviewsSection.module.css';
-import { FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
 const reviews = [
   {
-    name: "Maria Silva",
+    name: "Michael Johnson",
     review: "Excellent work! The team was very professional and the result was perfect.",
     rating: 5
   },
   {
-    name: "João Santos",
+    name: "Emily Carter",
     review: "Incredible attention to detail. They completely transformed our house.",
     rating: 5
   },
   {
-    name: "Ana Costa",
+    name: "James Anderson",
     review: "First-class professionals. The result exceeded our expectations.",
     rating: 5
   },
   {
-    name: "Carlos Mendes",
+    name: "Ashley Miller",
     review: "Exceptional service! Very punctual and the result was incredible.",
     rating: 5
   },
   {
-    name: "Fernanda Lima",
+    name: "Daniel Smith",
     review: "Incredible quality of work. I highly recommend!",
     rating: 5
   },
   {
-    name: "Roberto Alves",
+    name: "Jessica Brown",
     review: "Competent professionals and very respectful of our space.",
     rating: 5
   }
@@ -78,7 +79,7 @@ export default function HomeReviewsSection() {
             <span className={styles.ratingText}>5.0</span>
             <div className={styles.stars}>
               {[...Array(5)].map((_, i) => (
-                <FiStar key={i} className={styles.star} />
+                <FaStar key={i} className={styles.star} />
               ))}
             </div>
           </div>
@@ -91,7 +92,7 @@ export default function HomeReviewsSection() {
               <div key={index} className={styles.reviewCard}>
                 <div className={styles.stars}>
                   {[...Array(review.rating)].map((_, i) => (
-                    <FiStar key={i} className={styles.star} />
+                    <FaStar key={i} className={styles.star} />
                   ))}
                 </div>
                 <p className={styles.reviewText}>"{review.review}"</p>

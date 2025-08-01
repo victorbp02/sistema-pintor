@@ -1,11 +1,12 @@
 import styles from '../styles/Navbar.module.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { FiHome, FiUsers, FiMapPin, FiStar, FiSettings, FiInfo, FiX, FiMail, FiPhone, FiMapPin as FiLocation } from 'react-icons/fi';
+import { FiHome, FiStar, FiSettings, FiInfo, FiX, FiMail } from 'react-icons/fi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHoaDropdownOpen, setIsHoaDropdownOpen] = useState(false);
+  const [isResidentialDropdownOpen, setIsResidentialDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,14 +17,39 @@ export default function Navbar() {
   };
 
   const toggleHoaDropdown = () => {
-    console.log('Toggle dropdown clicked!');
     setIsHoaDropdownOpen(!isHoaDropdownOpen);
-    console.log('Dropdown state:', !isHoaDropdownOpen);
   };
 
   const closeHoaDropdown = () => {
     setIsHoaDropdownOpen(false);
   };
+
+  const toggleResidentialDropdown = () => {
+    setIsResidentialDropdownOpen(!isResidentialDropdownOpen);
+  };
+
+  const closeResidentialDropdown = () => {
+    setIsResidentialDropdownOpen(false);
+  };
+
+  // Fechar dropdown quando clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest(`.${styles.dropdownContainer}`)) {
+        setIsHoaDropdownOpen(false);
+        setIsResidentialDropdownOpen(false);
+      }
+    };
+
+    if (isHoaDropdownOpen || isResidentialDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isHoaDropdownOpen, isResidentialDropdownOpen]);
 
   // Fechar menu quando pressionar ESC
   useEffect(() => {
@@ -31,6 +57,7 @@ export default function Navbar() {
       if (event.key === 'Escape') {
         closeMenu();
         closeHoaDropdown();
+        closeResidentialDropdown();
       }
     };
 
@@ -54,7 +81,7 @@ export default function Navbar() {
     { path: '/multifamily', label: 'MULTIFAMILY', icon: FiHome },
     { path: '/commercial', label: 'COMMERCIAL', icon: FiHome },
     { path: '/services', label: 'SERVICES', icon: FiSettings },
-    { path: '/locations', label: 'LOCATIONS', icon: FiMapPin },
+    { path: '/locations', label: 'LOCATIONS', icon: FiHome },
     { path: '/reviews', label: 'REVIEWS', icon: FiStar },
     { path: '/about-us', label: 'ABOUT US', icon: FiInfo },
   ];
@@ -109,7 +136,33 @@ export default function Navbar() {
           <nav className={styles.navigation}>
             <ul className={styles.navList}>
               <li><Link to="/" className={styles.navLink}>HOME</Link></li>
-              <li><Link to="/residential" className={styles.navLink}>RESIDENTIAL</Link></li>
+              <li className={styles.dropdownContainer}>
+                <button 
+                  className={`${styles.navLink} ${styles.dropdownButton}`}
+                  onClick={toggleResidentialDropdown}
+                >
+                  RESIDENTIAL
+                  <span className={styles.dropdownArrow}>▼</span>
+                </button>
+                {isResidentialDropdownOpen && (
+                  <div className={styles.dropdown}>
+                    <Link 
+                      to="/residential/interior-painting" 
+                      className={styles.dropdownItem} 
+                      onClick={closeResidentialDropdown}
+                    >
+                      INTERIOR PAINTING
+                    </Link>
+                    <Link 
+                      to="/residential/exterior-painting" 
+                      className={styles.dropdownItem} 
+                      onClick={closeResidentialDropdown}
+                    >
+                      EXTERIOR PAINTING
+                    </Link>
+                  </div>
+                )}
+              </li>
               <li className={styles.dropdownContainer}>
                 <button 
                   className={`${styles.navLink} ${styles.dropdownButton}`}
@@ -119,13 +172,13 @@ export default function Navbar() {
                   <span className={styles.dropdownArrow}>▼</span>
                 </button>
                 {isHoaDropdownOpen && (
-                  <div className={styles.dropdown} style={{border: '2px solid red', background: 'red'}}>
+                  <div className={styles.dropdown}>
                     <Link 
                       to="/multifamily" 
                       className={styles.dropdownItem} 
                       onClick={closeHoaDropdown}
                     >
-                      MULTIFAMILY
+                      MULTI-FAMILY
                     </Link>
                   </div>
                 )}
