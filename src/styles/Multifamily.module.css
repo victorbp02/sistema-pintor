@@ -90,20 +90,22 @@
 .sectionTitle {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #13244f;
+  color: #03C4D9;
   margin-bottom: 2rem;
   line-height: 1.2;
   position: relative;
+  text-align: center;
 }
 
 .sectionTitle::after {
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 2px;
 }
 
@@ -249,9 +251,10 @@
 .qualityTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #13244f;
+  color: #03C4D9;
   margin-bottom: 2rem;
   position: relative;
+  text-align: center;
 }
 
 .qualityTitle::after {
@@ -262,7 +265,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 2px;
 }
 
@@ -289,7 +292,7 @@
 .servicesTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #13244f;
+  color: #03C4D9;
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
@@ -303,7 +306,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 2px;
 }
 
@@ -362,7 +365,7 @@
 .galleryTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #13244f;
+  color: #03C4D9;
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
@@ -376,7 +379,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 2px;
 }
 
@@ -524,7 +527,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -669,5 +672,211 @@
   .indicator {
     width: 12px;
     height: 12px;
+  }
+}
+
+/* Process Section Styles */
+.processList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.processItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.processItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.processNumber {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #03C4D9, #13244f);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.processContent h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #13244f;
+  margin-bottom: 0.5rem;
+}
+
+.processContent p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Compliance Section Styles */
+.complianceContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.complianceDescription {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #4a5568;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.complianceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.complianceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.complianceItem:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  transform: translateX(10px);
+}
+
+.complianceIcon {
+  width: 30px;
+  height: 30px;
+  background: #03C4D9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.complianceItem span {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.complianceConclusion {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #03C4D9;
+  text-align: center;
+  font-weight: 600;
+  padding: 2rem;
+  background: #13244f;
+  color: white;
+  border-radius: 15px;
+  margin: 0;
+}
+
+/* Projects Section Styles */
+.projectsContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projectsDescription {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #4a5568;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Mission Section Styles */
+.missionSection {
+  padding: 4rem 2rem;
+  background: #13244f;
+}
+
+.missionContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.missionText {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  .processItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .processNumber {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .processContent h3 {
+    font-size: 1.3rem;
+  }
+  
+  .processContent p {
+    font-size: 1rem;
+  }
+  
+  .complianceItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .complianceIcon {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .complianceItem span {
+    font-size: 1rem;
+  }
+  
+  .complianceDescription,
+  .projectsDescription {
+    font-size: 1.2rem;
+  }
+  
+  .missionText {
+    font-size: 1.4rem;
   }
 } 

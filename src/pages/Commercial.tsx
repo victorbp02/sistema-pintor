@@ -75,29 +75,11 @@ export default function Commercial() {
               <div className={styles.textContent}>
                 <h2 className={styles.sectionTitle}>Professional Commercial Painting & Refinishing</h2>
                 <p className={styles.description}>
-                  Our commercial painting services are designed to enhance the appearance and value of your business property. 
-                  We specialize in painting commercial buildings, office spaces, retail stores, warehouses, and other business facilities. 
-                  Our experienced team ensures minimal disruption to your operations while delivering exceptional results.
+                  At World Pro Painting, we understand that your commercial property is more than just a building — it's a reflection of your brand and business values. Our comprehensive commercial painting services combine eco-friendly solutions, regulatory compliance, and expert craftsmanship to deliver results that enhance your property's value and create a positive impression for everyone who visits your business.
                 </p>
-                
-                <div className={styles.featuresList}>
-                  <div className={styles.feature}>
-                    <div className={styles.featureIcon}>✓</div>
-                    <span>Office Building Painting</span>
-                  </div>
-                  <div className={styles.feature}>
-                    <div className={styles.featureIcon}>✓</div>
-                    <span>Retail Store Painting</span>
-                  </div>
-                  <div className={styles.feature}>
-                    <div className={styles.featureIcon}>✓</div>
-                    <span>Warehouse Painting</span>
-                  </div>
-                  <div className={styles.feature}>
-                    <div className={styles.featureIcon}>✓</div>
-                    <span>Industrial Facility Painting</span>
-                  </div>
-                </div>
+                <p className={styles.description}>
+                  From initial consultation to final inspection, we work closely with you to ensure every aspect of your project meets your expectations and exceeds industry standards. We use premium paints and materials that are durable and suitable for commercial environments, ensuring your investment lasts for years to come.
+                </p>
               </div>
 
               {/* Slider Container */}
@@ -123,121 +105,218 @@ export default function Commercial() {
             </div>
           </section>
 
-                     {/* Commercial Interior Section */}
-           <section className={styles.interiorSection}>
-             <div className={styles.interiorContent}>
-               <div className={styles.interiorText}>
-                 <h2 className={styles.interiorTitle}>Commercial Interior Painting</h2>
-                              <p className={styles.interiorDescription}>
-                Our commercial interior painting services are specifically designed to enhance the productivity and
-                professional appearance of your business spaces. We understand that the interior environment directly
-                impacts employee morale, customer perception, and overall business success. Our team specializes in
-                painting office buildings, retail stores, restaurants, healthcare facilities, and other commercial
-                interiors with minimal disruption to your daily operations. We use premium paints and materials that
-                are durable, easy to maintain, and suitable for high-traffic commercial environments. From thorough
-                surface preparation to expert application techniques, we ensure a flawless finish that creates a
-                welcoming and professional atmosphere for your employees and customers.
-              </p>
-              <p className={styles.interiorDescription}>
-                Our comprehensive interior painting solutions include detailed color consultation to match your brand
-                identity, specialized coatings for different surfaces (drywall, concrete, metal, wood), and advanced
-                techniques for textured finishes and decorative elements. We offer flexible scheduling options including
-                after-hours and weekend work to minimize business disruption. Our certified painters are trained in
-                safety protocols and use eco-friendly, low-VOC paints that promote better indoor air quality. We also
-                provide maintenance programs and touch-up services to keep your commercial interiors looking fresh and
-                professional year-round. Whether you need a complete office renovation or just a refresh of high-traffic
-                areas, our team delivers exceptional results that enhance your business environment and reflect your
-                company's commitment to quality and professionalism.
-              </p>
-               </div>
-               
-               <div className={styles.interiorPhotos}>
-                 <div className={styles.interiorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(interior1, 'Commercial interior painting project 1', 0)}
-                     className={styles.interiorPhotoImg}
-                     alt="Office interior painting"
-                   />
-                 </div>
-                 <div className={styles.interiorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(interior3, 'Commercial interior painting project 2', 1)}
-                     className={styles.interiorPhotoImg}
-                     alt="Retail interior painting"
-                   />
-                 </div>
-                 <div className={styles.interiorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(exterior1, 'Commercial interior painting project 3', 2)}
-                     className={styles.interiorPhotoImg}
-                     alt="Commercial space painting"
-                   />
-                 </div>
-               </div>
-             </div>
-           </section>
+          {/* Why Choose Us Section */}
+          <section className={styles.interiorSection}>
+            <div className={styles.interiorContent}>
+              <div className={styles.interiorText}>
+                <h2 className={styles.interiorTitle}>Why Eco-Friendly Paints Matter for Your Commercial Property</h2>
+                <p className={styles.interiorDescription}>
+                  Sustainability is no longer just a trend — it's a smart business decision. At World Pro Painting, we offer a range of eco-friendly paint options that not only protect and enhance your property but also contribute to a healthier environment for your employees, customers, and the community.
+                </p>
+                
+                <div className={styles.complianceList}>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>Durability – Longer-lasting finishes mean fewer repaints, less waste, and reduced maintenance costs.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>Healthier Environment – Low-toxicity formulas create safer indoor and outdoor spaces for staff and visitors.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>Boost Your Brand Image – Show your commitment to sustainability and attract eco-conscious clients and partners.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>Low & Zero VOC Options – Our paints have low or zero volatile organic compounds (VOCs), reducing harmful emissions and improving air quality inside your building.</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.interiorPhotos}>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(interior1, 'Eco-friendly commercial painting 1', 0)}
+                    className={styles.interiorPhotoImg}
+                    alt="Eco-friendly commercial painting"
+                  />
+                </div>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(interior3, 'Eco-friendly commercial painting 2', 1)}
+                    className={styles.interiorPhotoImg}
+                    alt="Sustainable painting solutions"
+                  />
+                </div>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(exterior1, 'Eco-friendly commercial painting 3', 2)}
+                    className={styles.interiorPhotoImg}
+                    alt="Green commercial painting"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
 
-           {/* Commercial Exterior Section */}
-           <section className={styles.exteriorSection}>
-             <div className={styles.exteriorContent}>
-               <div className={styles.exteriorText}>
-                 <h2 className={styles.exteriorTitle}>Commercial Exterior Painting</h2>
-                 <p className={styles.exteriorDescription}>
-                   Our commercial exterior painting services are designed to protect and enhance the curb appeal of your
-                   business property while ensuring long-lasting durability against harsh weather conditions. We understand
-                   that the exterior appearance of your commercial building is the first impression customers and clients
-                   have of your business. Our experienced team specializes in painting commercial buildings, storefronts,
-                   warehouses, industrial facilities, and other commercial exteriors with minimal disruption to your
-                   operations. We use premium exterior paints and coatings that are specifically formulated to withstand
-                   UV rays, moisture, temperature fluctuations, and other environmental factors.
-                 </p>
-                 <p className={styles.exteriorDescription}>
-                   Our comprehensive exterior painting solutions include thorough surface preparation, power washing,
-                   caulking and sealing, and application of high-quality exterior coatings designed for commercial use.
-                   We offer flexible scheduling including after-hours and weekend work to minimize business disruption.
-                   Our certified painters are trained in safety protocols and use eco-friendly, weather-resistant paints
-                   that provide excellent protection and color retention. We also provide maintenance programs and
-                   touch-up services to keep your commercial exteriors looking professional and well-maintained year-round.
-                   Whether you need a complete building renovation or just a refresh of high-visibility areas, our team
-                   delivers exceptional results that enhance your property value and reflect your company's commitment to
-                   quality and professionalism.
-                 </p>
-               </div>
-               
-               <div className={styles.exteriorPhotos}>
-                 <div className={styles.exteriorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(exterior3, 'Commercial exterior painting project 1', 0)}
-                     className={styles.exteriorPhotoImg}
-                     alt="Commercial building exterior painting"
-                   />
-                 </div>
-                 <div className={styles.exteriorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(exterior5, 'Commercial exterior painting project 2', 1)}
-                     className={styles.exteriorPhotoImg}
-                     alt="Storefront exterior painting"
-                   />
-                 </div>
-                 <div className={styles.exteriorPhotoItem}>
-                   <img
-                     {...optimizeImageProps(exterior7, 'Commercial exterior painting project 3', 2)}
-                     className={styles.exteriorPhotoImg}
-                     alt="Industrial facility exterior painting"
-                   />
-                 </div>
-               </div>
-             </div>
-           </section>
+          {/* Compliance Section */}
+          <section className={styles.exteriorSection}>
+            <div className={styles.exteriorContent}>
+              <div className={styles.exteriorText}>
+                <h2 className={styles.exteriorTitle}>Staying Compliant with Bay Area Commercial Painting Regulations</h2>
+                <p className={styles.exteriorDescription}>
+                  In the Bay Area, commercial properties often need to comply with local building and maintenance regulations. At World Pro Painting, we help ensure your project meets all necessary requirements to avoid delays, fines, and unnecessary risks.
+                </p>
+                
+                <div className={styles.complianceList}>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>City and County Guidelines – Including color restrictions for specific districts or building types.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>Historical & Architectural Preservation Rules – Maintaining approved aesthetics in protected zones.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>OSHA Safety Standards – Protecting workers and building occupants during the project.</span>
+                  </div>
+                  <div className={styles.complianceItem}>
+                    <div className={styles.complianceIcon}>✓</div>
+                    <span>EPA Lead-Safe Practices – Following regulations when working on older buildings that may contain lead-based paint.</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.exteriorPhotos}>
+                <div className={styles.exteriorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(exterior3, 'Commercial compliance project 1', 0)}
+                    className={styles.exteriorPhotoImg}
+                    alt="Commercial compliance painting"
+                  />
+                </div>
+                <div className={styles.exteriorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(exterior5, 'Commercial compliance project 2', 1)}
+                    className={styles.exteriorPhotoImg}
+                    alt="Commercial safety standards"
+                  />
+                </div>
+                <div className={styles.exteriorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(exterior7, 'Commercial compliance project 3', 2)}
+                    className={styles.exteriorPhotoImg}
+                    alt="Commercial regulations compliance"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
 
-          {/* Quality Section */}
+          {/* Color Consultation Section */}
           <section className={styles.qualitySection}>
             <div className={styles.qualityContent}>
-              <h2 className={styles.qualityTitle}>Quality Commercial Painting Services</h2>
+              <h2 className={styles.qualityTitle}>Color Consultation for Commercial Spaces</h2>
               <p className={styles.qualityDescription}>
-                We understand the unique challenges of commercial painting projects. Our team is equipped to handle large-scale projects, 
-                work around business hours, and ensure minimal disruption to your operations. We use high-quality paints and materials 
-                that are durable and suitable for commercial environments, ensuring your investment lasts for years to come.
+                Choosing the right colors for your commercial space is crucial for creating the right atmosphere and brand impression. Our color consultation services help you select colors that align with your brand identity, enhance productivity, and create a welcoming environment for customers and employees.
+              </p>
+            </div>
+          </section>
+
+          {/* Bay Area Climate Section */}
+          <section className={styles.interiorSection}>
+            <div className={styles.interiorContent}>
+              <div className={styles.interiorText}>
+                <h2 className={styles.interiorTitle}>Bay Area Climate Considerations</h2>
+                <p className={styles.interiorDescription}>
+                  The Bay Area's unique climate — from coastal humidity to intense sunlight — requires special consideration when choosing commercial paint. We recommend paints designed for UV resistance, moisture protection, and mildew prevention to ensure your property maintains its professional appearance year-round.
+                </p>
+              </div>
+              
+              <div className={styles.interiorPhotos}>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(interior1, 'Bay Area climate project 1', 0)}
+                    className={styles.interiorPhotoImg}
+                    alt="Bay Area climate considerations"
+                  />
+                </div>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(interior3, 'Bay Area climate project 2', 1)}
+                    className={styles.interiorPhotoImg}
+                    alt="Climate-resistant painting"
+                  />
+                </div>
+                <div className={styles.interiorPhotoItem}>
+                  <img
+                    {...optimizeImageProps(exterior1, 'Bay Area climate project 3', 2)}
+                    className={styles.interiorPhotoImg}
+                    alt="Weather-resistant finishes"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs Section */}
+          <section className={styles.qualitySection}>
+            <div className={styles.qualityContent}>
+              <h2 className={styles.qualityTitle}>Commercial Painting FAQs</h2>
+              
+              <div className={styles.faqCardsGrid}>
+                <div className={styles.faqCard}>
+                  <h3>When is it time to repaint your commercial building?</h3>
+                  <ul className={styles.faqList}>
+                    <li>Fading or discoloration</li>
+                    <li>Peeling or cracking paint</li>
+                    <li>Bubbling or blistering surfaces</li>
+                    <li>Visible wear in high-traffic or weather-exposed areas</li>
+                  </ul>
+                </div>
+                
+                <div className={styles.faqCard}>
+                  <h3>Why is color choice so important in commercial spaces?</h3>
+                  <p className={styles.faqAnswer}>
+                    Colors influence customer perception, employee productivity, and overall brand image. The right palette can make your business more inviting and professional.
+                  </p>
+                </div>
+                
+                <div className={styles.faqCard}>
+                  <h3>What is a color consultation?</h3>
+                  <p className={styles.faqAnswer}>
+                    Our experts help you select colors that match your brand identity, align with your building's style, and create the desired atmosphere for your space.
+                  </p>
+                </div>
+                
+                <div className={styles.faqCard}>
+                  <h3>Are eco-friendly paints really worth it?</h3>
+                  <p className={styles.faqAnswer}>
+                    Yes. They are long-lasting, safer for people and the environment, and can improve your brand's public perception.
+                  </p>
+                </div>
+                
+                <div className={styles.faqCard}>
+                  <h3>How does the Bay Area climate affect paint choices?</h3>
+                  <p className={styles.faqAnswer}>
+                    With coastal humidity, salt air, and strong sunlight, we recommend paints designed for UV resistance, moisture protection, and mildew prevention to keep your property looking its best year-round.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Conclusion Section */}
+          <section className={styles.qualitySection}>
+            <div className={styles.qualityContent}>
+              <h2 className={styles.qualityTitle}>Transform Your Commercial Space</h2>
+              <p className={styles.qualityDescription}>
+                At World Pro Painting, we understand that your commercial property is more than just a building — it's a reflection of your brand and business values. Our comprehensive commercial painting services combine eco-friendly solutions, regulatory compliance, and expert craftsmanship to deliver results that enhance your property's value and create a positive impression for everyone who visits your business.
+              </p>
+              <p className={styles.qualityDescription}>
+                From initial consultation to final inspection, we work closely with you to ensure every aspect of your project meets your expectations and exceeds industry standards. Contact us today to discuss how we can help transform your commercial space with professional, sustainable painting solutions.
               </p>
             </div>
           </section>

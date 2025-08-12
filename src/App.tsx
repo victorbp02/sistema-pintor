@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+
 import Residential from './pages/Residential';
-import Hoa from './pages/Hoa';
 import Multifamily from './pages/Multifamily';
 import Commercial from './pages/Commercial';
 import Services from './pages/Services';
@@ -25,14 +24,10 @@ function App() {
       <div className='PagesContent'>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/residential" element={<Residential />} />
-          <Route path="/hoa" element={<Hoa />} />
+          <Route path="/hoa" element={<Multifamily />} />
           <Route path="/multifamily" element={<Multifamily />} />
           <Route path="/commercial" element={<Commercial />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/locations" element={<Locations />} />
-          <Route path="/reviews" element={<Reviews />} />
           <Route path="/interior-painting" element={<InteriorPainting />} />
           <Route path="/exterior-painting" element={<ExteriorPainting />} />
           <Route path="/cabinets" element={<Cabinets />} />

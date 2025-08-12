@@ -274,11 +274,13 @@
   text-align: justify;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Gallery Section */
 .gallerySection {
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
   background: white;
 }
 
@@ -303,77 +305,100 @@
   border-radius: 2px;
 }
 
-/* Services Grid */
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+ /* Services Grid */
+ .servicesGrid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 2.5rem;
+   max-width: 1400px;
+   margin: 0 auto;
+ }
 
-.serviceCategory {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border-radius: 20px;
-  padding: 2.5rem;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
-}
+ .serviceCard {
+   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+   border-radius: 20px;
+   padding: 2.5rem;
+   border: 1px solid #e2e8f0;
+   transition: all 0.4s ease;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+ }
 
-.serviceCategory:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  border-color: #3b82f6;
-}
+   .serviceCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: #03C4D9;
+  }
 
-.serviceCategory h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #03C4D9;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
+ 
 
-.serviceCategory h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: #03C4D9;
-  border-radius: 2px;
-}
+ .serviceCard h3 {
+   font-size: 1.6rem;
+   font-weight: 700;
+   color: #2d3748;
+   margin-bottom: 1rem;
+   position: relative;
+ }
 
-.serviceCategory ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
+ .serviceCard h3::after {
+   content: '';
+   position: absolute;
+   bottom: -8px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 50px;
+   height: 3px;
+   background: #03C4D9;
+   border-radius: 2px;
+   transition: width 0.3s ease;
+ }
 
-.serviceCategory li {
-  padding: 0.5rem 0;
-  color: #4a5568;
-  font-size: 1.1rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
+ .serviceCard:hover h3::after {
+   width: 80px;
+ }
 
-.serviceCategory li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #3b82f6;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+ .serviceCard p {
+   font-size: 1rem;
+   line-height: 1.6;
+   color: #4a5568;
+   margin-bottom: 1.5rem;
+   text-align: center;
+ }
 
-.serviceCategory p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #4a5568;
-  margin-top: 1rem;
-}
+ .serviceCard ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+ }
+
+ .serviceCard li {
+   padding: 0.4rem 0;
+   color: #4a5568;
+   font-size: 1rem;
+   position: relative;
+   padding-left: 1.5rem;
+   transition: color 0.3s ease;
+ }
+
+ .serviceCard li::before {
+   content: '✓';
+   position: absolute;
+   left: 0;
+   color: #03C4D9;
+   font-weight: bold;
+   font-size: 1rem;
+   transition: transform 0.3s ease;
+ }
+
+ .serviceCard:hover li::before {
+   transform: scale(1.2);
+ }
+
+ .serviceCard:hover li {
+   color: #2d3748;
+ }
 
 /* FAQ Grid */
 .faqGrid {
@@ -413,7 +438,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 1px;
 }
 
@@ -423,85 +448,350 @@
    color: #4a5568;
  }
 
- /* Finish Guide Styles */
- .finishGuide {
-   margin: 3rem 0;
-   padding: 2rem;
-   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-   border-radius: 20px;
-   border: 1px solid #e2e8f0;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
- }
+   /* Climate Info */
+  .climateInfo {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
 
- .finishGuide h3 {
-   font-size: 1.8rem;
-   font-weight: 700;
-   color: #03C4D9;
-   margin-bottom: 1.5rem;
-   text-align: center;
-   position: relative;
- }
+  .climateInfo h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #03C4D9;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+  }
 
- .finishGuide h3::after {
-   content: '';
-   position: absolute;
-   bottom: -8px;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 60px;
-   height: 3px;
-   background: #03C4D9;
-   border-radius: 2px;
- }
+  .climateInfo h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #03C4D9;
+    border-radius: 2px;
+  }
 
- .finishGrid {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 2rem;
-   margin-top: 2rem;
- }
+  /* Climate Grid */
+  .climateGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
- .finishItem {
-   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-   border-radius: 15px;
-   padding: 2rem;
-   border: 1px solid #e2e8f0;
-   transition: all 0.3s ease;
-   text-align: center;
- }
+  .climateCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
 
- .finishItem:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-   border-color: #03C4D9;
- }
+  .climateCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: #03C4D9;
+  }
 
- .finishItem h4 {
-   font-size: 1.4rem;
-   font-weight: 700;
-   color: #2d3748;
-   margin-bottom: 1rem;
-   position: relative;
- }
+  .climateIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: transform 0.3s ease;
+  }
 
- .finishItem h4::after {
-   content: '';
-   position: absolute;
-   bottom: -5px;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 40px;
-   height: 2px;
-   background: #03C4D9;
-   border-radius: 1px;
- }
+  .climateCard:hover .climateIcon {
+    transform: scale(1.1);
+  }
 
- .finishItem p {
-   font-size: 1.1rem;
-   line-height: 1.6;
-   color: #4a5568;
-   margin: 0;
- }
+  .climateCard h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .climateCard h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #03C4D9;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .climateCard:hover h4::after {
+    width: 80px;
+  }
+
+  .climateCard p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 0;
+  }
+
+  /* Finish Guide */
+  .finishGuide {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .finishGuide h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #03C4D9;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .finishGuide h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #03C4D9;
+    border-radius: 2px;
+  }
+
+  .finishIntro {
+    font-size: 1.2rem;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .finishGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .finishCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .finishCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: #03C4D9;
+  }
+
+  .finishHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .finishIcon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .finishCard:hover .finishIcon {
+    transform: scale(1.1);
+  }
+
+  .finishCard h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    position: relative;
+  }
+
+  .finishCard h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #03C4D9;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .finishCard:hover h4::after {
+    width: 60px;
+  }
+
+  .finishCard p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+  }
+
+  .finishFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .finishFeatures span {
+    font-size: 0.95rem;
+    color: #4a5568;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .finishFeatures span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: #03C4D9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Finish Conclusion */
+  .finishConclusion {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #03C4D9 0%, #0284a8 100%);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(3, 196, 217, 0.2);
+  }
+
+  .finishConclusion p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    color: white;
+  }
+
+  /* Preparation Grid */
+  .preparationGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .preparationCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preparationCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: #03C4D9;
+  }
+
+  .preparationCard h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .preparationCard h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #03C4D9;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .preparationCard:hover h3::after {
+    width: 80px;
+  }
+
+  .preparationCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .preparationCard li {
+    padding: 0.8rem 0;
+    color: #4a5568;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: color 0.3s ease;
+    line-height: 1.6;
+  }
+
+  .preparationCard li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #03C4D9;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .preparationCard:hover li::before {
+    transform: scale(1.2);
+  }
+
+  .preparationCard:hover li {
+    color: #2d3748;
+  }
 
 .galleryTitle::after {
   content: '';
@@ -511,7 +801,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  background: #03C4D9;
   border-radius: 2px;
 }
 
@@ -692,18 +982,20 @@
     padding: 3rem 1rem;
   }
   
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .serviceCategory {
-    padding: 2rem;
-  }
-  
-  .serviceCategory h3 {
-    font-size: 1.6rem;
-  }
+     .servicesGrid {
+     grid-template-columns: 1fr;
+     gap: 2rem;
+   }
+   
+   .serviceCard {
+     padding: 2rem;
+   }
+   
+   .serviceCard h3 {
+     font-size: 1.5rem;
+   }
+   
+   
   
   .faqGrid {
     grid-template-columns: 1fr;
@@ -731,10 +1023,71 @@
      font-size: 1.3rem;
    }
    
-   .finishGuide h3 {
-     font-size: 1.6rem;
-   }
- }
+         .climateInfo h3,
+    .finishGuide h3 {
+      font-size: 1.6rem;
+    }
+    
+    .finishIntro {
+      font-size: 1.1rem;
+    }
+    
+    .finishConclusion {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+    
+    .finishConclusion p {
+      font-size: 1.1rem;
+    }
+    
+    .climateGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .climateCard {
+      padding: 2rem;
+    }
+    
+    .climateCard h3 {
+      font-size: 1.4rem;
+    }
+    
+    .climateIcon {
+      font-size: 2.5rem;
+    }
+    
+    .finishGrid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .finishCard {
+      padding: 2rem;
+    }
+    
+    .finishCard h4 {
+      font-size: 1.5rem;
+    }
+    
+    .finishIcon {
+      font-size: 2rem;
+    }
+    
+    .preparationGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .preparationCard {
+      padding: 1.5rem;
+    }
+    
+    .preparationCard h3 {
+      font-size: 1.3rem;
+    }
+}
 
 @media (max-width: 480px) {
   .mainTitle {

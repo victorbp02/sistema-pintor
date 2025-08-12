@@ -83,7 +83,6 @@ export default function Navbar() {
     { path: '/services', label: 'SERVICES', icon: FiSettings },
     { path: '/locations', label: 'LOCATIONS', icon: FiHome },
     { path: '/reviews', label: 'REVIEWS', icon: FiStar },
-    { path: '/about-us', label: 'ABOUT US', icon: FiInfo },
   ];
 
   return (
@@ -191,7 +190,6 @@ export default function Navbar() {
                 )}
               </li>
               <li><Link to="/commercial" className={styles.navLink}>COMMERCIAL</Link></li>
-              <li><Link to="/about-us" className={styles.navLink}>ABOUT US</Link></li>
             </ul>
           </nav>
         </div>

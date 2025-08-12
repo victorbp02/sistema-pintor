@@ -46,10 +46,6 @@ export default function InteriorPainting() {
     preloadImages();
   }, [interiorPhotos]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
   useEffect(() => {
     if (!imagesLoaded) return;
 
@@ -132,30 +128,64 @@ export default function InteriorPainting() {
           </section>
 
           {/* Paint Longevity Section */}
-          <section className={styles.qualitySection}>
-            <div className={styles.qualityContent}>
-              <h2 className={styles.qualityTitle}>Paint Longevity in the Bay Area Climate</h2>
-              <p className={styles.qualityDescription}>
-                The Bay Area's varied climate — from coastal humidity to intense sunlight — can impact the durability of interior paint. Choosing the right products is key. We recommend high UV-stability paints for sun-filled rooms to prevent fading and discoloration.
-              </p>
-              
-              <div className={styles.finishGuide}>
-                <h3>The finish you select matters as well:</h3>
-                <div className={styles.finishGrid}>
-                  <div className={styles.finishItem}>
+          <section className={styles.gallerySection}>
+            <h2 className={styles.galleryTitle}>Paint Longevity in the Bay Area Climate</h2>
+            <p className={styles.qualityDescription}>
+              The Bay Area's varied climate — from coastal humidity to intense sunlight — can impact the durability of interior paint. Choosing the right products is key. We recommend high UV-stability paints for sun-filled rooms to prevent fading and discoloration.
+            </p>
+            
+            <div className={styles.climateInfo}>
+              <h3>Climate Considerations</h3>
+              <div className={styles.climateGrid}>
+                <div className={styles.climateCard}>
+                  <h4>Coastal Humidity</h4>
+                  <p>High humidity areas require moisture-resistant paints to prevent mold and mildew growth.</p>
+                </div>
+                
+                <div className={styles.climateCard}>
+                  <h4>Intense Sunlight</h4>
+                  <p>UV-resistant paints prevent fading and maintain color vibrancy in sun-filled rooms.</p>
+                </div>
+                
+                <div className={styles.climateCard}>
+                  <h4>Temperature Variations</h4>
+                  <p>Flexible paint formulations adapt to temperature changes without cracking or peeling.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.finishGuide}>
+              <h3>Finish Selection Guide</h3>
+              <p className={styles.finishIntro}>The finish you select matters as well. Here's what you need to know:</p>
+              <div className={styles.finishGrid}>
+                <div className={styles.finishCard}>
+                  <div className={styles.finishHeader}>
                     <h4>Matte Finishes</h4>
-                    <p>Offer a smooth, elegant look but are less resistant to wear in high-traffic spaces.</p>
                   </div>
-                  <div className={styles.finishItem}>
+                  <p>Offer a smooth, elegant look but are less resistant to wear in high-traffic spaces.</p>
+                  <div className={styles.finishFeatures}>
+                    <span>✓ Smooth appearance</span>
+                    <span>✓ Hides imperfections</span>
+                    <span>⚠ Less durable</span>
+                  </div>
+                </div>
+                
+                <div className={styles.finishCard}>
+                  <div className={styles.finishHeader}>
                     <h4>Eggshell & Semi-Gloss</h4>
-                    <p>Provide better durability and easier cleaning, making them ideal for kitchens, hallways, and family rooms.</p>
+                  </div>
+                  <p>Provide better durability and easier cleaning, making them ideal for kitchens, hallways, and family rooms.</p>
+                  <div className={styles.finishFeatures}>
+                    <span>✓ Easy to clean</span>
+                    <span>✓ Highly durable</span>
+                    <span>✓ Moisture resistant</span>
                   </div>
                 </div>
               </div>
-
-              <p className={styles.qualityDescription}>
-                Whether updating your living room or creating a relaxing bedroom retreat, we'll guide you to the best finishes for your needs.
-              </p>
+              
+              <div className={styles.finishConclusion}>
+                <p>Whether updating your living room or creating a relaxing bedroom retreat, we'll guide you to the best finishes for your needs.</p>
+              </div>
             </div>
           </section>
 
@@ -176,39 +206,99 @@ export default function InteriorPainting() {
           <section className={styles.gallerySection}>
             <h2 className={styles.galleryTitle}>Our Interior Painting Services Include:</h2>
             <div className={styles.servicesGrid}>
-              <div className={styles.serviceCategory}>
+              <div className={styles.serviceCard}>
+                <h3>Walls & Ceilings</h3>
+                <p>Professional painting for walls and ceilings of any height, ensuring flawless coverage and finish.</p>
                 <ul>
                   <li>Walls (any height)</li>
                   <li>Ceilings (any height)</li>
+                  <li>Textured surfaces</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceCard}>
+                <h3>Doors & Windows</h3>
+                <p>Expert painting for all types of doors and windows, including French doors and specialty finishes.</p>
+                <ul>
                   <li>Doors & Windows</li>
                   <li>French Doors & Windows</li>
-                  <li>Mantels & Built-ins</li>
-                  <li>Paneling & Wainscoting</li>
+                  <li>Window frames & sills</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceCard}>
+                <h3>Trim & Molding</h3>
+                <p>Precision painting for detailed trim work, crown molding, and architectural elements.</p>
+                <ul>
                   <li>Baseboards & Crown Molding</li>
                   <li>Chair Rails</li>
+                  <li>Paneling & Wainscoting</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceCard}>
+                <h3>Built-ins & Features</h3>
+                <p>Specialized painting for built-in features, mantels, and custom architectural elements.</p>
+                <ul>
+                  <li>Mantels & Built-ins</li>
                   <li>Cabinets & Shelving</li>
+                  <li>Custom architectural features</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceCard}>
+                <h3>Custom Finishes</h3>
+                <p>Premium custom colors and specialty finishes to match your unique style and preferences.</p>
+                <ul>
                   <li>Custom Colors & Finishes</li>
+                  <li>Specialty paint techniques</li>
+                  <li>Color consultation</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceCard}>
+                <h3>Premium Services</h3>
+                <p>Additional premium services including surface preparation, repairs, and post-painting care.</p>
+                <ul>
+                  <li>Surface preparation</li>
+                  <li>Minor repairs</li>
+                  <li>Post-painting cleanup</li>
                 </ul>
               </div>
             </div>
           </section>
 
           {/* Preparation Section */}
-          <section className={styles.qualitySection}>
-            <div className={styles.qualityContent}>
-              <h2 className={styles.qualityTitle}>How to Prepare for Interior Painting</h2>
-              <p className={styles.qualityDescription}>
-                Before we begin, here are steps to help the process go smoothly:
-              </p>
-              <ul className={styles.featuresList}>
-                <li>Move or cover furniture – Shift small pieces out of the room; move large items to the center and cover them.</li>
-                <li>Remove electronics – Protect appliances and devices; we can provide coverings if needed.</li>
-                <li>Take down wall decor – Remove photos, mirrors, and art pieces.</li>
-                <li>Store rugs and curtains – Roll up rugs, remove drapes, blinds, and valances.</li>
-                <li>Clear small items – Even minor objects should be stored safely.</li>
-                <li>Clean walls – Dust and dirt can affect paint adhesion.</li>
-                <li>Plan ahead – Avoid entering painted areas until work is complete.</li>
-              </ul>
+          <section className={styles.gallerySection}>
+            <h2 className={styles.galleryTitle}>How to Prepare for Interior Painting</h2>
+            <p className={styles.qualityDescription}>
+              Before we begin, here are steps to help the process go smoothly:
+            </p>
+            <div className={styles.preparationGrid}>
+              <div className={styles.preparationCard}>
+                <h3>Furniture & Items</h3>
+                <ul>
+                  <li>Move or cover furniture – Shift small pieces out of the room; move large items to the center and cover them.</li>
+                  <li>Remove electronics – Protect appliances and devices; we can provide coverings if needed.</li>
+                  <li>Clear small items – Even minor objects should be stored safely.</li>
+                </ul>
+              </div>
+              
+              <div className={styles.preparationCard}>
+                <h3>Wall Decor & Textiles</h3>
+                <ul>
+                  <li>Take down wall decor – Remove photos, mirrors, and art pieces.</li>
+                  <li>Store rugs and curtains – Roll up rugs, remove drapes, blinds, and valances.</li>
+                </ul>
+              </div>
+              
+              <div className={styles.preparationCard}>
+                <h3>Surface Preparation</h3>
+                <ul>
+                  <li>Clean walls – Dust and dirt can affect paint adhesion.</li>
+                  <li>Plan ahead – Avoid entering painted areas until work is complete.</li>
+                </ul>
+              </div>
             </div>
           </section>
 

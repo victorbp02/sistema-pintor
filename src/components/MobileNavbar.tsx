@@ -44,7 +44,6 @@ export default function MobileNavbar() {
     { path: '/services', label: 'SERVICES', icon: FiSettings },
     { path: '/locations', label: 'LOCATIONS', icon: FiMapPin },
     { path: '/reviews', label: 'REVIEWS', icon: FiStar },
-    { path: '/about-us', label: 'ABOUT US', icon: FiInfo },
   ];
 
   return (

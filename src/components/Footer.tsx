@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           
           <div className={styles.footerSection}>
-            <h3 className={styles.sectionTitle}>About Us</h3>
+            
             <div className={styles.aboutInfo}>
               <p>✓ Licensed & Insured</p>
               <p>✓ Free Estimates</p>

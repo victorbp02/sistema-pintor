@@ -72,9 +72,12 @@ export default function Multifamily() {
           <section className={styles.mainSection}>
             <div className={styles.contentGrid}>
               <div className={styles.textContent}>
-                <h2 className={styles.sectionTitle}>Professional HOA & Multi-Family Painting & Refinishing</h2>
+                <h2 className={styles.sectionTitle}>HOA & Multi-Family Painting in the Bay Area</h2>
                 <p className={styles.description}>
-                At World Pro Painting, we specialize in professional painting solutions for Homeowners Associations (HOAs) and Multi-Family properties throughout the Bay Area. We understand the unique demands of working in occupied communities and the importance of clear communication, schedule coordination, and delivering consistent results with minimal disruption to residents.
+                  At World Pro Painting, we understand that HOAs and Multi-Family communities require more than just a fresh coat of paint — they need a partner who can manage complex projects, maintain open communication, and deliver exceptional results that last.
+                </p>
+                <p className={styles.description}>
+                  With extensive experience in exterior and interior painting for HOAs, apartment complexes, and community associations, our team combines craftsmanship, efficiency, and proactive planning to keep your properties looking their best year-round.
                 </p>
               </div>
 
@@ -106,78 +109,126 @@ export default function Multifamily() {
             </div>
           </section>
 
-          {/* Services Section */}
+          {/* Why Choose Us Section */}
           <section className={styles.servicesSection}>
             <div className={styles.servicesContent}>
-              <h2 className={styles.servicesTitle}>Our Services Include:</h2>
+              <h2 className={styles.servicesTitle}>Why HOAs & Property Managers Choose Us</h2>
               <div className={styles.featuresList}>
                 <div className={styles.feature}>
                   <div className={styles.featureIcon}>✓</div>
-                  <span>Complete exterior and interior painting for condos, townhomes, apartment buildings, and Multi-Family communities</span>
+                  <span>Licensed, Insured & Bonded – Full compliance for peace of mind.</span>
                 </div>
                 <div className={styles.feature}>
                   <div className={styles.featureIcon}>✓</div>
-                  <span>Common area refinishing, including hallways, stairwells, lobbies, garages, and mailrooms</span>
+                  <span>Specialized in HOA & Multi-Family Projects – From small work orders to large-scale repainting.</span>
                 </div>
                 <div className={styles.feature}>
                   <div className={styles.featureIcon}>✓</div>
-                  <span>Fast-turnover unit painting to prepare vacant apartments for new tenants</span>
+                  <span>Minimized Disruption – We coordinate schedules to reduce impact on residents.</span>
                 </div>
                 <div className={styles.feature}>
                   <div className={styles.featureIcon}>✓</div>
-                  <span>Professional color consultation and assistance with HOA board approvals</span>
+                  <span>Durable, Long-Lasting Finishes – Premium paints and proven surface preparation methods.</span>
                 </div>
                 <div className={styles.feature}>
                   <div className={styles.featureIcon}>✓</div>
-                  <span>Surface preparation and repair, including stucco patching, light carpentry, and pressure washing</span>
-                </div>
-                <div className={styles.feature}>
-                  <div className={styles.featureIcon}>✓</div>
-                  <span>Flexible scheduling, including nights and weekends, to minimize disruption for residents</span>
+                  <span>Transparent Communication – Regular updates for HOA boards, managers, and residents.</span>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Quality Section */}
+          {/* Process Section */}
           <section className={styles.qualitySection}>
             <div className={styles.qualityContent}>
-              <h2 className={styles.qualityTitle}>Licensed, Bonded & Fully Insured</h2>
-              <p className={styles.qualityDescription}>
-                We are licensed, fully insured, and backed by high general liability coverage, meeting the strictest property management requirements. Our strong bonding capacity is ideal for large-scale HOA and Multi-Family projects, and we are fully compliant with OSHA and industry safety regulations.
+              <h2 className={styles.qualityTitle}>Our HOA Painting Process</h2>
+              <div className={styles.processList}>
+                <div className={styles.processItem}>
+                  <div className={styles.processNumber}>1</div>
+                  <div className={styles.processContent}>
+                    <h3>Detailed Site Evaluation</h3>
+                    <p>Identify repairs, surface preparation needs, and color compliance.</p>
+                  </div>
+                </div>
+                <div className={styles.processItem}>
+                  <div className={styles.processNumber}>2</div>
+                  <div className={styles.processContent}>
+                    <h3>HOA Board Consultation</h3>
+                    <p>Present clear proposals, color samples, and maintenance options.</p>
+                  </div>
+                </div>
+                <div className={styles.processItem}>
+                  <div className={styles.processNumber}>3</div>
+                  <div className={styles.processContent}>
+                    <h3>Professional Execution</h3>
+                    <p>Skilled crews, safe work practices, and on-time delivery.</p>
+                  </div>
+                </div>
+                <div className={styles.processItem}>
+                  <div className={styles.processNumber}>4</div>
+                  <div className={styles.processContent}>
+                    <h3>Final Walkthrough</h3>
+                    <p>Ensure quality standards and HOA approval.</p>
+                  </div>
+                </div>
+                <div className={styles.processItem}>
+                  <div className={styles.processNumber}>5</div>
+                  <div className={styles.processContent}>
+                    <h3>Ongoing Maintenance Plans</h3>
+                    <p>Keep the property looking its best year after year.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Compliance Section */}
+          <section className={styles.gallerySection}>
+            <h2 className={styles.galleryTitle}>Staying Compliant with Bay Area Painting Regulations</h2>
+            <div className={styles.complianceContent}>
+              <p className={styles.complianceDescription}>
+                In the Bay Area, property maintenance often comes with local and regional compliance requirements, especially for HOAs, historical buildings, and commercial properties. At World Pro Painting, we help you navigate:
               </p>
-              <p className={styles.qualityDescription}>
-                These coverages provide our clients with peace of mind, knowing their properties are protected and their vendors are fully qualified.
+              <div className={styles.complianceList}>
+                <div className={styles.complianceItem}>
+                  <div className={styles.complianceIcon}>✓</div>
+                  <span>HOA Guidelines – Ensuring color choices and finishes meet community standards.</span>
+                </div>
+                <div className={styles.complianceItem}>
+                  <div className={styles.complianceIcon}>✓</div>
+                  <span>Historical & Architectural Preservation Rules – Maintaining approved aesthetics in designated districts.</span>
+                </div>
+                <div className={styles.complianceItem}>
+                  <div className={styles.complianceIcon}>✓</div>
+                  <span>Safety Standards (OSHA) – Protecting residents, tenants, and workers throughout the project.</span>
+                </div>
+                <div className={styles.complianceItem}>
+                  <div className={styles.complianceIcon}>✓</div>
+                  <span>EPA Lead-Safe Practices – Following strict regulations when working on older buildings that may contain lead-based paint.</span>
+                </div>
+              </div>
+              <p className={styles.complianceConclusion}>
+                By staying compliant, we protect your property, your investment, and your community's reputation.
               </p>
             </div>
           </section>
 
-          {/* Why Choose Us Section */}
+          {/* Projects Section */}
           <section className={styles.gallerySection}>
-            <h2 className={styles.galleryTitle}>Why Property Managers and HOA Boards Choose Us:</h2>
-            <div className={styles.whyChooseUsContent}>
-              <div className={styles.whyChooseUsGrid}>
-                <div className={styles.whyChooseUsCard}>
-                  <h3>Deep Understanding</h3>
-                  <p>Deep understanding of HOA approval processes and Multi-Family workflows</p>
-                </div>
-                <div className={styles.whyChooseUsCard}>
-                  <h3>Clear Proposals</h3>
-                  <p>Clear proposals with defined scopes, timelines, and warranty options</p>
-                </div>
-                <div className={styles.whyChooseUsCard}>
-                  <h3>Professional Crews</h3>
-                  <p>Professional, clean, and respectful crews experienced in occupied settings</p>
-                </div>
-                <div className={styles.whyChooseUsCard}>
-                  <h3>Flexible Scheduling</h3>
-                  <p>Flexible scheduling and communication tailored to your residents' needs</p>
-                </div>
-                <div className={styles.whyChooseUsCard}>
-                  <h3>On-Time Delivery</h3>
-                  <p>On-time and on-budget execution — with no compromise on quality</p>
-                </div>
-              </div>
+            <h2 className={styles.galleryTitle}>Recent HOA & Multi-Family Projects</h2>
+            <div className={styles.projectsContent}>
+              <p className={styles.projectsDescription}>
+                From coastal properties needing weather-resistant coatings to large-scale apartment complexes requiring strict timelines, we've successfully completed projects across the Bay Area, always exceeding expectations in quality, safety, and communication.
+              </p>
+            </div>
+          </section>
+
+          {/* Mission Section */}
+          <section className={styles.missionSection}>
+            <div className={styles.missionContent}>
+              <p className={styles.missionText}>
+                Our mission is to provide long-lasting painting solutions, competitive value, and transparent communication, building trust at every stage of the project.
+              </p>
             </div>
           </section>
 

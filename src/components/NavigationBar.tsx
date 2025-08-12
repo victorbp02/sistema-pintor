@@ -12,7 +12,7 @@ const NavigationBar: React.FC = () => {
           <li><Link to="/hoa">HOA</Link></li>
           <li><Link to="/multifamily">MULTIFAMILY</Link></li>
           <li><Link to="/commercial">COMMERCIAL</Link></li>
-          <li><Link to="/about">ABOUT US</Link></li>
+          
         </ul>
       </nav>
     </div>

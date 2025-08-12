@@ -24,7 +24,7 @@ const MenuBar: React.FC = () => {
               <Link to="/commercial">COMMERCIAL</Link>
             </li>
             <li>
-              <Link to="/about">ABOUT US</Link>
+              
             </li>
           </ul>
         </nav>
