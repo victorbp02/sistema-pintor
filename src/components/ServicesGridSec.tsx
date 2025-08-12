@@ -1,4 +1,4 @@
-import { MdHome, MdApartment, MdBusiness, MdKitchen, MdBuild, MdColorLens, MdLocalCarWash } from 'react-icons/md';
+import { MdHome, MdApartment, MdBusiness, MdBuild } from 'react-icons/md';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/ServicesGridSec.module.css';
@@ -9,9 +9,9 @@ const services = [
     title: 'Residential',
     desc: "Transform your home with our comprehensive residential painting services. From interior walls and ceilings to exterior facades, we deliver exceptional results that enhance your living space and increase your property value.",
     dropdownItems: [
-      { name: 'Interior Painting', link: '/residential' },
-      { name: 'Exterior Painting', link: '/residential' },
-      { name: 'Gabinetes', link: '/residential' }
+      { name: 'Interior Painting', link: '/interior-painting' },
+      { name: 'Exterior Painting', link: '/exterior-painting' },
+      { name: 'Gabinetes', link: '/cabinets' }
     ]
   },
   {
@@ -31,8 +31,8 @@ const services = [
   },
   {
     icon: <MdBuild size={44} color="#03C4D9" />,
-    title: 'Other Services',
-    desc: 'Comprehensive painting solutions including cabinet refinishing, deck staining, texture application, color consultation, and specialized finishes. We handle all your painting needs with expertise and attention to detail.',
+    title: 'Outros Serviços',
+    desc: 'Additional specialized services including deck and fence painting, parking lot striping, epoxy floor coating, power washing, texture application, carpentry, and drywall services.',
     isSimpleButton: true,
     buttonLink: '/services'
   },

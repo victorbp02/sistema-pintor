@@ -6,8 +6,11 @@ import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
 import HomeReviewsSection from '../components/HomeReviewsSection';
 import TeamSection from '../components/TeamSection';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 export default function Home() {
+  useScrollToTop();
+
   return (
     <>
       <Hero />

@@ -147,18 +147,25 @@ export default function Navbar() {
                 {isResidentialDropdownOpen && (
                   <div className={styles.dropdown}>
                     <Link 
-                      to="/residential/interior-painting" 
+                      to="/interior-painting" 
                       className={styles.dropdownItem} 
                       onClick={closeResidentialDropdown}
                     >
                       INTERIOR PAINTING
                     </Link>
                     <Link 
-                      to="/residential/exterior-painting" 
+                      to="/exterior-painting" 
                       className={styles.dropdownItem} 
                       onClick={closeResidentialDropdown}
                     >
                       EXTERIOR PAINTING
+                    </Link>
+                    <Link 
+                      to="/cabinets" 
+                      className={styles.dropdownItem} 
+                      onClick={closeResidentialDropdown}
+                    >
+                      CABINETS
                     </Link>
                   </div>
                 )}
