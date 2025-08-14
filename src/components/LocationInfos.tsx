@@ -1,4 +1,4 @@
-import styles from '../styles/Locationinfos.module.css'
+import styles from '../styles/LocationInfos.module.css'
 
 function LocationInfos() {
   return (
@@ -12,7 +12,7 @@ function LocationInfos() {
             <div className={styles.textMap}>
 
                 <h3>Visit our location</h3>
-                <p> We are located in the heart of Concord, California, in a spot that’s easy to reach for all our clients. Feel free to stop by or contact us to schedule a visit.
+                <p> We are located in the heart of Concord, California, in a spot that's easy to reach for all our clients. Feel free to stop by or contact us to schedule a visit.
                     <br /> 📍 Address: 1001 Shary Cir, Concord, CA 94518, USA
                 </p>
 
