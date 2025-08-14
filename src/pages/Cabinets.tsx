@@ -301,10 +301,6 @@ export default function Cabinets() {
                   className={styles.galleryImg}
                   loading="lazy"
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Kitchen Cabinet Transformation</h3>
-                  <p>Complete kitchen cabinet refinishing with modern color scheme</p>
-                </div>
               </div>
               <div className={styles.galleryImage}>
                 <img
@@ -313,10 +309,6 @@ export default function Cabinets() {
                   className={styles.galleryImg}
                   loading="lazy"
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Bathroom Cabinet Refinishing</h3>
-                  <p>Professional bathroom cabinet painting and hardware upgrade</p>
-                </div>
               </div>
             </div>
           </section>

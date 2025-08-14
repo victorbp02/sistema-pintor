@@ -330,20 +330,12 @@ export default function Commercial() {
                   {...optimizeImageProps(exterior7, 'Commercial painting project 1', 0)}
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Office Building Transformation</h3>
-                  <p>Complete interior and exterior painting of a modern office complex</p>
-                </div>
               </div>
               <div className={styles.galleryImage}>
                 <img
                   {...optimizeImageProps(interior3, 'Commercial painting project 2', 1)}
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Retail Store Renovation</h3>
-                  <p>Professional painting services for retail spaces and shopping centers</p>
-                </div>
               </div>
             </div>
           </section>

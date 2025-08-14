@@ -10,6 +10,7 @@ import Reviews from './pages/Reviews';
 import InteriorPainting from './pages/InteriorPainting';
 import ExteriorPainting from './pages/ExteriorPainting';
 import Cabinets from './pages/Cabinets';
+import ContactUs from './pages/ContactUs';
 import MenuTop from "./components/MenuTop";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -28,9 +29,13 @@ function App() {
           <Route path="/hoa" element={<Multifamily />} />
           <Route path="/multifamily" element={<Multifamily />} />
           <Route path="/commercial" element={<Commercial />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/interior-painting" element={<InteriorPainting />} />
           <Route path="/exterior-painting" element={<ExteriorPainting />} />
           <Route path="/cabinets" element={<Cabinets />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>
       <Footer />

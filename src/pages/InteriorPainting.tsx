@@ -9,6 +9,14 @@ import interior3 from '../assets/interior3.jpeg';
 import interior4 from '../assets/interior4.jpeg';
 import interior5 from '../assets/interior5.jpeg';
 import interior6 from '../assets/interior6.jpeg';
+import interior7 from '../assets/interior15.jpeg';
+import interior8 from '../assets/interior16.jpeg';
+import interior9 from '../assets/interior17.jpeg';
+
+
+
+
+
 
 export default function InteriorPainting() {
   useScrollToTop();
@@ -23,7 +31,10 @@ export default function InteriorPainting() {
     interior3,
     interior4,
     interior5,
-    interior6
+    interior6,
+    interior7,
+    interior8,
+    interior9
   ];
 
   // Preload images for better performance
@@ -340,10 +351,6 @@ export default function InteriorPainting() {
                   className={styles.galleryImg}
                   loading="lazy"
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Living Room Transformation</h3>
-                  <p>Complete interior painting with modern color scheme</p>
-                </div>
               </div>
               <div className={styles.galleryImage}>
                 <img
@@ -352,10 +359,6 @@ export default function InteriorPainting() {
                   className={styles.galleryImg}
                   loading="lazy"
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Bedroom Renovation</h3>
-                  <p>Professional interior painting for peaceful spaces</p>
-                </div>
               </div>
             </div>
           </section>

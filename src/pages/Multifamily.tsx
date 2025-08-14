@@ -10,6 +10,16 @@ import multifamily3 from '../assets/multifamily3.jpeg';
 import multifamily4 from '../assets/multifamily4.jpeg';
 import multifamily5 from '../assets/multifamily5.jpeg';
 import multifamily6 from '../assets/multifamily6.jpeg';
+import multifamily7 from '../assets/multifamily7.png';
+import multifamily9 from '../assets/multifamly26.jpeg';
+import multifamily10 from '../assets/multifamly20.jpeg';
+import multifamily11 from '../assets/multifamly21.jpeg';
+import multifamily12 from '../assets/multifamly22.jpeg';
+import multifamily13 from '../assets/multifamly23.jpeg';
+import multifamily14 from '../assets/multifamly24.jpeg';
+import multifamily15 from '../assets/multifamly25.jpeg';
+
+
 
 export default function Multifamily() {
   useScrollToTop();
@@ -17,13 +27,22 @@ export default function Multifamily() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Array with 6 multifamily painting photos
+  // Array with multifamily painting photos
   const multifamilyPhotos = [
     multifamily1,
     multifamily2,
     multifamily3,
     multifamily4,
     multifamily5,
+    multifamily6,
+    multifamily7,
+    multifamily9,
+    multifamily10,
+    multifamily11,
+    multifamily12,
+    multifamily13,
+    multifamily14,
+    multifamily15
   ];
 
   // Preload images for better performance
@@ -41,9 +60,6 @@ export default function Multifamily() {
     loadImages();
   }, [multifamilyPhotos]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
 
   useEffect(() => {
     if (!imagesLoaded) return;
@@ -242,10 +258,6 @@ export default function Multifamily() {
                   alt="Multi-Family Painting Project 1" 
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Exterior Painting</h3>
-                  <p>Professional exterior painting for apartment complexes</p>
-                </div>
               </div>
               <div className={styles.galleryImage}>
                 <img 
@@ -253,10 +265,6 @@ export default function Multifamily() {
                   alt="Multi-Family Painting Project 2" 
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Interior Refinishing</h3>
-                  <p>Complete interior painting and refinishing services</p>
-                </div>
               </div>
             </div>
           </section>

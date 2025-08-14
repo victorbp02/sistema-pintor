@@ -11,6 +11,7 @@ import exterior4 from '../assets/exterior4.jpeg';
 import exterior5 from '../assets/exterior5.jpeg';
 import exterior6 from '../assets/exterior6.jpeg';
 import exterior7 from '../assets/exterior7.jpeg';
+import exterior8 from '../assets/exterior102.jpeg';
 
 export default function ExteriorPainting() {
   useScrollToTop();
@@ -23,9 +24,10 @@ export default function ExteriorPainting() {
     exterior1,
     exterior2,
     exterior3,
-    exterior4,
+    exterior8,
     exterior5,
-    exterior6
+    exterior6, 
+    exterior7
   ];
 
   // Preload images for better performance
@@ -254,20 +256,12 @@ export default function ExteriorPainting() {
                   {...optimizeImageProps(exterior5, 'Exterior painting project 1', 0)}
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>House Exterior Transformation</h3>
-                  <p>Complete exterior painting with modern color scheme</p>
-                </div>
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(exterior7, 'Exterior painting project 2', 1)}
+                  {...optimizeImageProps(exterior4, 'Exterior painting project 2', 1)}
                   className={styles.galleryImg}
                 />
-                <div className={styles.imageOverlay}>
-                  <h3>Commercial Building Renovation</h3>
-                  <p>Professional exterior painting for commercial properties</p>
-                </div>
               </div>
             </div>
           </section>

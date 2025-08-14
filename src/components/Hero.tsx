@@ -3,46 +3,90 @@ import RequestQuoteBtn from './RequestQuoteBtn';
 import { Link } from 'react-router-dom';
 import HeroSlider from './HeroSlider';
 import { useState } from 'react';
-import { FiUser, FiMail, FiPhone, FiHome, FiCalendar, FiMessageSquare, FiDollarSign, FiX } from 'react-icons/fi';
+import { FiUser, FiMail, FiPhone, FiHome, FiCalendar, FiMessageSquare, FiDollarSign, FiX, FiMapPin } from 'react-icons/fi';
+
 
 export default function Hero() {
   const [formData, setFormData] = useState({
-    name: '',
+    nome: '',
+    telefone: '',
     email: '',
-    phone: '',
-    serviceType: '',
-    projectSize: '',
-    message: '',
+    endereco: '',
+    servico: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Função para aplicar máscara de telefone (formato americano)
+  const applyPhoneMask = (value: string): string => {
+    // Remove tudo que não é dígito
+    const numbers = value.replace(/\D/g, '');
+    
+    // Aplica a máscara americana (XXX) XXX-XXXX
+    if (numbers.length <= 3) {
+      return `(${numbers}`;
+    } else if (numbers.length <= 6) {
+      return `(${numbers.slice(0, 3)}) ${numbers.slice(3)}`;
+    } else if (numbers.length <= 10) {
+      return `(${numbers.slice(0, 3)}) ${numbers.slice(3, 6)}-${numbers.slice(6)}`;
+    } else {
+      return `(${numbers.slice(0, 3)}) ${numbers.slice(3, 6)}-${numbers.slice(6, 10)}`;
+    }
+  };
+
+  // Função para validar e formatar email
+  const formatEmail = (value: string): string => {
+    // Remove espaços e converte para minúsculas
+    return value.toLowerCase().trim();
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    let formattedValue = value;
+
+    // Aplica máscaras específicas baseadas no campo
+    if (name === 'telefone') {
+      formattedValue = applyPhoneMask(value);
+    } else if (name === 'email') {
+      formattedValue = formatEmail(value);
+    }
+
+    setFormData({ ...formData, [name]: formattedValue });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simular envio
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Form data:', formData);
-    // Aqui você pode enviar para um backend futuramente
-    
-    setIsSubmitting(false);
-    // Reset form
-    setFormData({ 
-      name: '', 
-      email: '', 
-      phone: '', 
-      serviceType: '', 
-      projectSize: '', 
-      message: '' 
-    });
-    setIsModalOpen(false);
+    try {
+      // Simular envio para o backend (será implementado depois)
+      console.log('Dados do formulário:', formData);
+      
+      // Simular delay de envio
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Reset form
+      setFormData({ 
+        nome: '', 
+        telefone: '', 
+        email: '', 
+        endereco: '',
+        servico: ''
+      });
+      
+      // Fechar modal se estiver aberto
+      setIsModalOpen(false);
+      
+      // Mostrar mensagem de sucesso
+      alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+      
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      alert('Erro ao enviar formulário. Tente novamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openModal = () => {
@@ -53,15 +97,35 @@ export default function Hero() {
     setIsModalOpen(false);
   };
 
+  // Função para lidar com teclas especiais no campo de telefone
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Permite backspace, delete, tab, escape, enter
+    if ([8, 9, 27, 13, 46].indexOf(e.keyCode) !== -1 ||
+        // Permite Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+        (e.keyCode === 65 && e.ctrlKey === true) ||
+        (e.keyCode === 67 && e.ctrlKey === true) ||
+        (e.keyCode === 86 && e.ctrlKey === true) ||
+        (e.keyCode === 88 && e.ctrlKey === true) ||
+        // Permite home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+      return;
+    }
+    
+    // Permite apenas números
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <HeroSlider />
 
       {/* Formulário de Orçamento de Pintura */}
       <div className={styles.formCard}>
-        <div className={styles.formHeader}>
-          <h2>Orçamento Gratuito</h2>
-        </div>
+                 <div className={styles.formHeader}>
+           <h2>Free Estimate</h2>
+         </div>
         
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formRow}>
@@ -70,9 +134,9 @@ export default function Hero() {
                 <FiUser className={styles.inputIcon} />
                 <input
                   type="text"
-                  name="name"
-                  placeholder="Nome completo"
-                  value={formData.name}
+                  name="nome"
+                  placeholder="Full Name"
+                  value={formData.nome}
                   onChange={handleChange}
                   required
                   className={styles.formInput}
@@ -85,10 +149,11 @@ export default function Hero() {
                 <FiPhone className={styles.inputIcon} />
                 <input
                   type="tel"
-                  name="phone"
-                  placeholder="Telefone"
-                  value={formData.phone}
+                  name="telefone"
+                  placeholder="(650) 420-9772"
+                  value={formData.telefone}
                   onChange={handleChange}
+                  onKeyDown={handlePhoneKeyDown}
                   required
                   className={styles.formInput}
                 />
@@ -102,7 +167,7 @@ export default function Hero() {
               <input
                 type="email"
                 name="email"
-                placeholder="E-mail"
+                placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -111,60 +176,40 @@ export default function Hero() {
             </div>
           </div>
           
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
-              <div className={styles.inputWrapper}>
-                <FiHome className={styles.inputIcon} />
-                <select
-                  name="serviceType"
-                  value={formData.serviceType}
-                  onChange={handleChange}
-                  required
-                  className={styles.formSelect}
-                >
-                  <option value="">Tipo de serviço</option>
-                  <option value="residential">Residencial</option>
-                  <option value="commercial">Comercial</option>
-                  <option value="exterior">Pintura Externa</option>
-                  <option value="interior">Pintura Interna</option>
-                  <option value="texture">Textura</option>
-                  <option value="maintenance">Manutenção</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className={styles.formGroup}>
-              <div className={styles.inputWrapper}>
-                <FiCalendar className={styles.inputIcon} />
-                <select
-                  name="projectSize"
-                  value={formData.projectSize}
-                  onChange={handleChange}
-                  required
-                  className={styles.formSelect}
-                >
-                  <option value="">Tamanho do projeto</option>
-                  <option value="small">Pequeno (1-2 cômodos)</option>
-                  <option value="medium">Médio (3-5 cômodos)</option>
-                  <option value="large">Grande (6+ cômodos)</option>
-                  <option value="house">Casa completa</option>
-                  <option value="commercial">Comercial</option>
-                </select>
-              </div>
+          <div className={styles.formGroup}>
+            <div className={styles.inputWrapper}>
+              <FiMapPin className={styles.inputIcon} />
+              <input
+                type="text"
+                name="endereco"
+                placeholder="Complete Address"
+                value={formData.endereco}
+                onChange={handleChange}
+                required
+                className={styles.formInput}
+              />
             </div>
           </div>
           
           <div className={styles.formGroup}>
             <div className={styles.inputWrapper}>
-              <FiMessageSquare className={styles.inputIcon} />
-              <textarea
-                name="message"
-                placeholder="Project details, desired colors..."
-                rows={3}
-                value={formData.message}
+              <FiHome className={styles.inputIcon} />
+              <select
+                name="servico"
+                value={formData.servico}
                 onChange={handleChange}
-                className={styles.formTextarea}
-              />
+                required
+                className={styles.formSelect}
+              >
+                <option value="">Select Service</option>
+                <option value="pintura-residencial">Residential Painting</option>
+                <option value="pintura-comercial">Commercial Painting</option>
+                <option value="pintura-exterior">Exterior Painting</option>
+                <option value="pintura-interior">Interior Painting</option>
+                <option value="textura">Texture</option>
+                <option value="manutencao">Maintenance</option>
+                <option value="outro">Other</option>
+              </select>
             </div>
           </div>
           
@@ -212,116 +257,97 @@ export default function Hero() {
       {isModalOpen && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <div className={styles.modalHeader}>
-              <h3>Orçamento Gratuito</h3>
-              <button className={styles.closeBtn} onClick={closeModal}>
-                <FiX />
-              </button>
-            </div>
+                         <div className={styles.modalHeader}>
+               <h3>Free Estimate</h3>
+               <button className={styles.closeBtn} onClick={closeModal}>
+                 <FiX />
+               </button>
+             </div>
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <div className={styles.inputWrapper}>
                     <FiUser className={styles.inputIcon} />
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Nome completo"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className={styles.formInput}
-                    />
+                                         <input
+                       type="text"
+                       name="nome"
+                       placeholder="Full Name"
+                       value={formData.nome}
+                       onChange={handleChange}
+                       required
+                       className={styles.formInput}
+                     />
                   </div>
                 </div>
                 
                 <div className={styles.formGroup}>
                   <div className={styles.inputWrapper}>
                     <FiPhone className={styles.inputIcon} />
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Telefone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className={styles.formInput}
-                    />
+                                         <input
+                       type="tel"
+                       name="telefone"
+                       placeholder="(650) 420-9772"
+                       value={formData.telefone}
+                       onChange={handleChange}
+                       onKeyDown={handlePhoneKeyDown}
+                       required
+                       className={styles.formInput}
+                     />
                   </div>
                 </div>
               </div>
               
-              <div className={styles.formGroup}>
-                <div className={styles.inputWrapper}>
-                  <FiMail className={styles.inputIcon} />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className={styles.formInput}
-                  />
-                </div>
-              </div>
-              
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <div className={styles.inputWrapper}>
-                    <FiHome className={styles.inputIcon} />
-                    <select
-                      name="serviceType"
-                      value={formData.serviceType}
-                      onChange={handleChange}
-                      required
-                      className={styles.formSelect}
-                    >
-                      <option value="">Tipo de serviço</option>
-                      <option value="residential">Residencial</option>
-                      <option value="commercial">Comercial</option>
-                      <option value="exterior">Pintura Externa</option>
-                      <option value="interior">Pintura Interna</option>
-                      <option value="texture">Textura</option>
-                      <option value="maintenance">Manutenção</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <div className={styles.inputWrapper}>
-                    <FiCalendar className={styles.inputIcon} />
-                    <select
-                      name="projectSize"
-                      value={formData.projectSize}
-                      onChange={handleChange}
-                      required
-                      className={styles.formSelect}
-                    >
-                      <option value="">Tamanho do projeto</option>
-                      <option value="small">Pequeno (1-2 cômodos)</option>
-                      <option value="medium">Médio (3-5 cômodos)</option>
-                      <option value="large">Grande (6+ cômodos)</option>
-                      <option value="house">Casa completa</option>
-                      <option value="commercial">Comercial</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              
-              <div className={styles.formGroup}>
-                <div className={styles.inputWrapper}>
-                  <FiMessageSquare className={styles.inputIcon} />
-                  <textarea
-                    name="message"
-                    placeholder="Project details, desired colors..."
-                    rows={3}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className={styles.formTextarea}
-                  />
-                </div>
-              </div>
+                             <div className={styles.formGroup}>
+                 <div className={styles.inputWrapper}>
+                   <FiMail className={styles.inputIcon} />
+                   <input
+                     type="email"
+                     name="email"
+                     placeholder="Email Address"
+                     value={formData.email}
+                     onChange={handleChange}
+                     required
+                     className={styles.formInput}
+                   />
+                 </div>
+               </div>
+               
+               <div className={styles.formGroup}>
+                 <div className={styles.inputWrapper}>
+                   <FiMapPin className={styles.inputIcon} />
+                   <input
+                     type="text"
+                     name="endereco"
+                     placeholder="Complete Address"
+                     value={formData.endereco}
+                     onChange={handleChange}
+                     required
+                     className={styles.formInput}
+                   />
+                 </div>
+               </div>
+               
+               <div className={styles.formGroup}>
+                 <div className={styles.inputWrapper}>
+                   <FiHome className={styles.inputIcon} />
+                   <select
+                     name="servico"
+                     value={formData.servico}
+                     onChange={handleChange}
+                     required
+                     className={styles.formSelect}
+                   >
+                     <option value="">Select Service</option>
+                     <option value="pintura-residencial">Residential Painting</option>
+                     <option value="pintura-comercial">Commercial Painting</option>
+                     <option value="pintura-exterior">Exterior Painting</option>
+                     <option value="pintura-interior">Interior Painting</option>
+                     <option value="textura">Texture</option>
+                     <option value="manutencao">Maintenance</option>
+                     <option value="outro">Other</option>
+                   </select>
+                 </div>
+               </div>
               
               <button 
                 type="submit" 

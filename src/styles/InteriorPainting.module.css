@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, hsl(210, 16%, 93%) 100%);
 }
 
 .content {
@@ -65,6 +65,7 @@
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 /* Main Content Section */
@@ -274,7 +275,6 @@
   text-align: justify;
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -359,19 +359,19 @@
  }
 
  .serviceCard p {
-   font-size: 1rem;
-   line-height: 1.6;
-   color: #4a5568;
-   margin-bottom: 1.5rem;
-   text-align: center;
- }
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
 
  .serviceCard ul {
-   list-style: none;
-   padding: 0;
-   margin: 0;
-   text-align: left;
- }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+}
 
  .serviceCard li {
    padding: 0.4rem 0;
@@ -443,10 +443,11 @@
 }
 
  .faqItem p {
-   font-size: 1.1rem;
-   line-height: 1.6;
-   color: #4a5568;
- }
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  text-align: justify;
+}
 
    /* Climate Info */
   .climateInfo {
@@ -541,11 +542,12 @@
   }
 
   .climateCard p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a5568;
-    margin: 0;
-  }
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0;
+  text-align: justify;
+}
 
   /* Finish Guide */
   .finishGuide {
@@ -579,12 +581,12 @@
   }
 
   .finishIntro {
-    font-size: 1.2rem;
-    color: #4a5568;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    font-style: italic;
-  }
+  font-size: 1.2rem;
+  color: #4a5568;
+  text-align: justify;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
 
   .finishGrid {
     display: grid;
@@ -650,11 +652,12 @@
   }
 
   .finishCard p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #4a5568;
-    margin-bottom: 1.5rem;
-  }
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
 
   .finishFeatures {
     display: flex;
@@ -692,11 +695,10 @@
   .finishConclusion {
     margin-top: 3rem;
     padding: 2rem;
-    background: linear-gradient(135deg, #03C4D9 0%, #0284a8 100%);
+    background: #03C4D9;
     border-radius: 15px;
     text-align: center;
     color: white;
-    box-shadow: 0 10px 30px rgba(3, 196, 217, 0.2);
   }
 
   .finishConclusion p {
@@ -759,11 +761,11 @@
   }
 
   .preparationCard ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+}
 
   .preparationCard li {
     padding: 0.8rem 0;
