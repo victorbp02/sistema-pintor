@@ -1,90 +1,103 @@
-# Sistema Pintor - Frontend
+# World Pro Painting - Website
 
-Este é o frontend do Sistema Pintor, desenvolvido em React com TypeScript e Vite.
+Professional painting services website built with React, TypeScript, and Vite.
 
-## 🚀 Deploy no Vercel
+## 🚀 Deploy on Vercel
 
-### Pré-requisitos
-- Conta no [Vercel](https://vercel.com)
-- Node.js 18+ instalado
-- Git configurado
+This project is optimized for deployment on Vercel. Follow these steps:
 
-### Passos para Deploy
+### 1. Connect to Vercel
 
-1. **Instalar dependências:**
-   ```bash
-   npm install
-   ```
+1. Go to [vercel.com](https://vercel.com)
+2. Sign in with your GitHub account
+3. Click "New Project"
+4. Import your GitHub repository
+5. Vercel will automatically detect it's a Vite project
 
-2. **Testar build localmente:**
-   ```bash
-   npm run build
-   ```
+### 2. Build Settings
 
-3. **Deploy no Vercel:**
+The project is already configured with the correct build settings:
 
-   **Opção 1 - Via CLI:**
-   ```bash
-   # Instalar Vercel CLI
-   npm i -g vercel
-   
-   # Fazer login
-   vercel login
-   
-   # Deploy
-   vercel
-   ```
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
 
-   **Opção 2 - Via GitHub:**
-   - Conecte seu repositório GitHub ao Vercel
-   - Configure as seguintes variáveis de ambiente se necessário:
-     - `NODE_ENV=production`
+### 3. Environment Variables
 
-4. **Configurações do Projeto:**
-   - Framework Preset: Vite
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-   - Install Command: `npm install`
+No environment variables are required for this project.
 
-### Estrutura do Projeto
+### 4. Deploy
+
+Click "Deploy" and Vercel will automatically:
+- Install dependencies
+- Build the project
+- Deploy to a production URL
+
+## 🛠️ Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
 
 ```
 src/
-├── components/     # Componentes React
-├── pages/         # Páginas da aplicação
-├── styles/        # Arquivos CSS/SCSS
-├── assets/        # Imagens e recursos estáticos
-└── main.tsx       # Ponto de entrada
+├── components/     # React components
+├── pages/         # Page components
+├── styles/        # CSS modules
+├── assets/        # Images and static files
+├── utils/         # Utility functions
+└── services/      # API services
 ```
 
-### Scripts Disponíveis
+## 🎨 Features
 
-- `npm run dev` - Inicia servidor de desenvolvimento
-- `npm run build` - Gera build de produção
-- `npm run preview` - Visualiza build de produção
-- `npm run lint` - Executa linter
+- **Responsive Design**: Works on all devices
+- **Modern UI**: Clean and professional design
+- **Fast Loading**: Optimized for performance
+- **SEO Friendly**: Proper meta tags and structure
+- **Contact Form**: Complete quote request form
+- **Service Pages**: Detailed service information
 
-### Tecnologias Utilizadas
+## 🔧 Technologies
 
-- React 19
-- TypeScript
-- Vite
-- React Router DOM
-- React Icons
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **React Router** - Navigation
+- **React Icons** - Icon library
+- **CSS Modules** - Styling
 
-### Configurações do Vercel
+## 📱 Pages
 
-O arquivo `vercel.json` já está configurado com:
-- Build automático
-- Roteamento para SPA
-- Configurações de ambiente
+- **Home** - Landing page with services overview
+- **Residential** - Residential painting services
+- **Commercial** - Commercial painting services
+- **Multifamily** - Multi-family painting services
+- **Services** - All services overview
+- **Contact** - Quote request form
+- **Reviews** - Customer testimonials
+- **Locations** - Service areas
 
-### Variáveis de Ambiente
+## 🚀 Performance Optimizations
 
-Se necessário, configure as seguintes variáveis no Vercel:
-- `VITE_API_URL` - URL da API backend
-- `NODE_ENV` - Ambiente (production/development)
+- **Code Splitting**: Automatic chunk splitting
+- **Image Optimization**: Lazy loading and compression
+- **Bundle Optimization**: Tree shaking and minification
+- **Caching**: Proper cache headers for static assets
 
-### Suporte
+## 📄 License
 
-Para dúvidas sobre o deploy, consulte a [documentação do Vercel](https://vercel.com/docs).
+This project is private and proprietary.

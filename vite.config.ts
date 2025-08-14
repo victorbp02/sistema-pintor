@@ -14,9 +14,19 @@ export default defineConfig({
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    sourcemap: false,
+    target: 'es2015'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'react-icons']
+  },
+  server: {
+    port: 3000,
+    host: true
+  },
+  preview: {
+    port: 3000,
+    host: true
   }
 })
