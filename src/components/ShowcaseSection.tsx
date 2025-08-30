@@ -1,9 +1,11 @@
 import styles from '../styles/ShowcaseSection.module.css';
 import processofoto from '../assets/processofoto.jpeg';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function ShowcaseSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -13,8 +15,36 @@ export default function ShowcaseSection() {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          console.log('ShowcaseSection slide-in ativado');
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element);
+    };
+  }, []);
+
   return (
-    <section className={styles.showcase}>
+    <section 
+      ref={sectionRef}
+      className={`${styles.showcase} showcaseSection slide-in-up ${isVisible ? 'visible' : ''}`}
+    >
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Textos em cima */}

@@ -5,7 +5,6 @@ import { FiHome, FiStar, FiSettings, FiInfo, FiX, FiMail } from 'react-icons/fi'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHoaDropdownOpen, setIsHoaDropdownOpen] = useState(false);
   const [isResidentialDropdownOpen, setIsResidentialDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,14 +13,6 @@ export default function Navbar() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const toggleHoaDropdown = () => {
-    setIsHoaDropdownOpen(!isHoaDropdownOpen);
-  };
-
-  const closeHoaDropdown = () => {
-    setIsHoaDropdownOpen(false);
   };
 
   const toggleResidentialDropdown = () => {
@@ -37,26 +28,24 @@ export default function Navbar() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
       if (!target.closest(`.${styles.dropdownContainer}`)) {
-        setIsHoaDropdownOpen(false);
         setIsResidentialDropdownOpen(false);
       }
     };
 
-    if (isHoaDropdownOpen || isResidentialDropdownOpen) {
+    if (isResidentialDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isHoaDropdownOpen, isResidentialDropdownOpen]);
+  }, [isResidentialDropdownOpen]);
 
   // Fechar menu quando pressionar ESC
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         closeMenu();
-        closeHoaDropdown();
         closeResidentialDropdown();
       }
     };
@@ -77,8 +66,7 @@ export default function Navbar() {
   const menuItems = [
     { path: '/', label: 'HOME', icon: FiHome },
     { path: '/residential', label: 'RESIDENTIAL', icon: FiHome },
-    { path: '/hoa', label: 'HOA', icon: FiHome },
-    { path: '/multifamily', label: 'MULTIFAMILY', icon: FiHome },
+    { path: '/hoa', label: 'HOA/MULTI-FAMILY', icon: FiHome },
     { path: '/commercial', label: 'COMMERCIAL', icon: FiHome },
     { path: '/services', label: 'SERVICES', icon: FiSettings },
     { path: '/locations', label: 'LOCATIONS', icon: FiHome },
@@ -169,26 +157,7 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-              <li className={styles.dropdownContainer}>
-                <button 
-                  className={`${styles.navLink} ${styles.dropdownButton}`}
-                  onClick={toggleHoaDropdown}
-                >
-                  HOA
-                  <span className={styles.dropdownArrow}>▼</span>
-                </button>
-                {isHoaDropdownOpen && (
-                  <div className={styles.dropdown}>
-                    <Link 
-                      to="/multifamily" 
-                      className={styles.dropdownItem} 
-                      onClick={closeHoaDropdown}
-                    >
-                      MULTI-FAMILY
-                    </Link>
-                  </div>
-                )}
-              </li>
+              <li><Link to="/hoa" className={styles.navLink}>HOA/MULTI-FAMILY</Link></li>
               <li><Link to="/commercial" className={styles.navLink}>COMMERCIAL</Link></li>
             </ul>
           </nav>

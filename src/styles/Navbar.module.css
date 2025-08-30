@@ -350,7 +350,7 @@
   flex-direction: column;
   transition: left 0.3s ease;
   z-index: 1006;
-  overflow-y: auto;
+  overflow-y: hidden;
   transform: translateZ(0);
   will-change: transform;
   -webkit-transform: translateZ(0);

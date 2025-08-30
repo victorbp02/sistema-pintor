@@ -18,6 +18,7 @@ import './styles/PagesContent.css';
 import './styles/global.css';
 
 function App() {
+
   return (
     <>
       <ScrollToTop />

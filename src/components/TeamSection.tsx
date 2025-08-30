@@ -1,6 +1,7 @@
 import styles from '../styles/TeamSection.module.css';
 import { FiDroplet, FiEdit, FiEye, FiHeart, FiStar, FiCheckCircle, FiMail } from 'react-icons/fi';
 import paletadecores from '../assets/paletadecores.jpeg';
+import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 const colorServices = [
   { icon: <FiDroplet />, text: 'Professional color consultation' },
@@ -13,8 +14,16 @@ const colorServices = [
 ];
 
 export default function TeamSection() {
+  const fadeInProps = useSimpleFadeIn({
+    effect: 'fade-up',
+    duration: 'normal'
+  });
+
   return (
-    <section className={styles.teamSection}>
+    <section 
+      ref={fadeInProps.ref}
+      className={`${styles.teamSection} teamSection ${fadeInProps.className}`}
+    >
       <div className={styles.container}>
         {/* Título Centralizado */}
         <h2 className={styles.title}>

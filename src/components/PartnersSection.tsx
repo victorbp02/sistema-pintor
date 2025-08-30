@@ -1,4 +1,5 @@
 import styles from '../styles/PartnersSection.module.css';
+import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 // Importar imagens diretamente
 import pcaLogo from '../assets/PCA_logo_123.png';
@@ -7,8 +8,16 @@ import benjaminMoore from '../assets/Benjamin_Moore 123novaversao.png';
 import dunnEdwards from '../assets/dunn_edwards_no_outer_bg.png';
 
 export default function PartnersSection() {
+  const fadeInProps = useSimpleFadeIn({
+    effect: 'fade-up',
+    duration: 'normal'
+  });
+
   return (
-    <div className={styles.partnersSection}>
+    <section 
+      ref={fadeInProps.ref}
+      className={`${styles.partnersSection} partnersSection ${fadeInProps.className}`}
+    >
       <div className={styles.container}>
         <h2 className={styles.title}>Our Partners</h2>
         <div className={styles.logosContainer}>
@@ -42,6 +51,6 @@ export default function PartnersSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 } 

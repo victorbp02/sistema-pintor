@@ -1,5 +1,5 @@
 import { MdHome, MdApartment, MdBusiness, MdBuild } from 'react-icons/md';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/ServicesGridSec.module.css';
 
@@ -18,9 +18,8 @@ const services = [
     icon: <MdApartment size={44} color="#03C4D9" />,
     title: 'HOA',
     desc: 'Specialized painting services for Homeowners Associations. We handle common areas, building exteriors, and community spaces with precision and care, ensuring compliance with HOA guidelines and maintaining property standards.',
-    dropdownItems: [
-      { name: 'Multi-Family', link: '/multifamily' }
-    ]
+    isSimpleButton: true,
+    buttonLink: '/hoa'
   },
   {
     icon: <MdBusiness size={44} color="#03C4D9" />,
@@ -40,6 +39,8 @@ const services = [
 
 function ServicesGridSec() {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
@@ -49,9 +50,33 @@ function ServicesGridSec() {
     setOpenDropdown(null);
   };
 
+  useEffect(() => {
+    const element = gridRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element);
+    };
+  }, []);
+
   return (
     <div className={styles.GridSec}>
-      <div className={styles.grid}>
+      <div ref={gridRef} className={`${styles.grid} slide-in-stagger ${isVisible ? 'visible' : ''}`}>
           {services.map((service, i) => (
             <div className={styles.card} key={i}>
               <div className={styles.icon}>{service.icon}</div>

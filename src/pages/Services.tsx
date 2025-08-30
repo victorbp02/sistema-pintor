@@ -57,7 +57,7 @@ const Services: React.FC = () => {
   }, [servicesPhotos.length, imagesLoaded]);
 
   return (
-    <>
+    <section className="servicesPageSection">
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Hero Section */}
@@ -326,7 +326,7 @@ const Services: React.FC = () => {
           </section>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

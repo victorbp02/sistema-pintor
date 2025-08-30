@@ -1,9 +1,18 @@
 import styles from '../styles/ServicesSection.module.css';
 import ServicesGridSec from './ServicesGridSec';
+import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 export default function ServicesSection() {
+  const fadeInProps = useSimpleFadeIn({
+    effect: 'fade-up',
+    duration: 'normal'
+  });
+
   return (
-    <section className={styles.servicesBg}>
+    <section 
+      ref={fadeInProps.ref}
+      className={`${styles.servicesBg} servicesSection ${fadeInProps.className}`}
+    >
       <div className={styles.container}>
         <div className={styles.topArea}>
           <h2 className={styles.title}>

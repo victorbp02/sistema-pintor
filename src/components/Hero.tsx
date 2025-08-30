@@ -118,7 +118,7 @@ export default function Hero() {
   };
 
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} hero`}>
       <HeroSlider />
 
       {/* Formulário de Orçamento de Pintura */}

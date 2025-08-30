@@ -2,6 +2,7 @@ import styles from '../styles/HomeReviewsSection.module.css';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 const reviews = [
   {
@@ -39,6 +40,10 @@ const reviews = [
 export default function HomeReviewsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = Math.ceil(reviews.length / 3);
+  const fadeInProps = useSimpleFadeIn({
+    effect: 'fade-up',
+    duration: 'normal'
+  });
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -63,7 +68,10 @@ export default function HomeReviewsSection() {
   }, [currentSlide]);
 
   return (
-    <section className={styles.reviewsSection}>
+    <section 
+      ref={fadeInProps.ref}
+      className={`${styles.reviewsSection} reviewsSection ${fadeInProps.className}`}
+    >
       <div className={styles.container}>
         <div className={styles.header}>
           <h2>See what our customers say about our service</h2>

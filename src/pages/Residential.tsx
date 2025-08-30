@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Residential() {
   return (
-    <div style={{ paddingTop: '100px' }}>
+    <section className="residentialSection" style={{ paddingTop: '100px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
         <h1 style={{ 
           fontSize: '3rem', 
@@ -23,6 +23,6 @@ export default function Residential() {
         </p>
         {/* Add your residential content here */}
       </div>
-    </div>
+    </section>
   );
 } 
