@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/ServicesGridSec.module.css';
 
+
 const services = [
   {
     icon: <MdHome size={44} color="#03C4D9" />,
@@ -38,16 +39,16 @@ const services = [
 ];
 
 function ServicesGridSec() {
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [residentialAnchorEl, setResidentialAnchorEl] = useState<null | HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const toggleDropdown = (index: number) => {
-    setOpenDropdown(openDropdown === index ? null : index);
+  const handleResidentialClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setResidentialAnchorEl(event.currentTarget);
   };
 
-  const closeDropdown = () => {
-    setOpenDropdown(null);
+  const handleResidentialClose = () => {
+    setResidentialAnchorEl(null);
   };
 
   useEffect(() => {
@@ -74,6 +75,24 @@ function ServicesGridSec() {
     };
   }, []);
 
+  // Fechar dropdown quando clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (residentialAnchorEl && !(event.target as Element).closest(`.${styles.dropdownWrapper}`)) {
+        handleResidentialClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [residentialAnchorEl]);
+
+
+
+
+
   return (
     <div className={styles.GridSec}>
       <div ref={gridRef} className={`${styles.grid} slide-in-stagger ${isVisible ? 'visible' : ''}`}>
@@ -87,30 +106,32 @@ function ServicesGridSec() {
                   <Link 
                     to={service.buttonLink} 
                     className={styles.dropdownBtn}
-                    onClick={closeDropdown}
                   >
                     View Services
                   </Link>
                 ) : (
-                  <button 
-                    className={styles.dropdownBtn}
-                    onClick={() => toggleDropdown(i)}
-                  >
-                    View Services <span className={styles.arrow}>&#8595;</span>
-                  </button>
-                )}
-                {openDropdown === i && service.dropdownItems && (
-                  <div className={styles.dropdown}>
-                    {service.dropdownItems.map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={item.link} 
-                        className={styles.dropdownItem}
-                        onClick={closeDropdown}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <div className={styles.dropdownWrapper}>
+                    <button
+                      className={styles.dropdownBtn}
+                      onClick={handleResidentialClick}
+                    >
+                      View Services <span className={styles.arrow}>&#8595;</span>
+                    </button>
+                    
+                    {Boolean(residentialAnchorEl) && (
+                      <div className={styles.customDropdown}>
+                        {service.dropdownItems?.map((item, index) => (
+                          <Link
+                            key={index}
+                            to={item.link}
+                            className={styles.dropdownItem}
+                            onClick={handleResidentialClose}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
