@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "vercel-build": "npm run build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",
