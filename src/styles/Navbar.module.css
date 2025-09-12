@@ -8,6 +8,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 
 /* Barra Principal Azul Escura */
@@ -155,6 +156,8 @@
   width: 100%;
   position: relative;
   z-index: 10002;
+  overflow: visible;
+  isolation: isolate;
 }
 
 .navList {
@@ -217,85 +220,81 @@
   opacity: 1;
 }
 
-/* Dropdown Styles */
-.dropdownContainer {
-  position: relative;
-}
 
-.dropdownButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
-  color: #03C4D9;
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.dropdownButton:hover {
-  color: #13244F;
-}
 
 .dropdownArrow {
   font-size: 0.8rem;
   transition: transform 0.3s ease;
+  margin-left: 0.5rem;
 }
 
-.dropdownContainer:hover .dropdownArrow {
+/* Estilos para o botão Material-UI */
+.muiNavButton {
+  background: none !important;
+  border: none !important;
+  padding: 0.5rem 0 !important;
+  color: #03C4D9 !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  font-family: inherit !important;
+  min-width: auto !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.muiNavButton:hover {
+  background: none !important;
+  color: #13244F !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Rotação da seta quando o menu estiver aberto */
+.MuiMenu-root[data-state="open"] + .dropdownArrow {
   transform: rotate(180deg);
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #03C4D9;
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  min-width: 160px;
-  z-index: 10000;
-  padding: 4px 0;
-  animation: dropdownFadeIn 0.2s ease;
+/* Estilos para o menu Material-UI */
+.MuiMenu-paper {
+  background-color: #03C4D9 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+  min-width: 160px !important;
+  margin-top: 8px !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
 
-.dropdownItem {
-  display: block;
-  padding: 8px 16px;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+/* Prevenir mudanças no layout da página */
+body {
+  overflow-x: hidden !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
 }
 
-.dropdownItem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+/* Garantir que o menu não cause scroll */
+.MuiMenu-root {
+  overflow: visible !important;
 }
 
-.dropdownItem:last-child {
-  border-bottom: none;
+.MuiMenuItem-root {
+  color: white !important;
+  text-align: center !important;
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.2s ease !important;
 }
 
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+.MuiMenuItem-root:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.MuiMenuItem-root:last-child {
+  border-bottom: none !important;
 }
 
 /* Removidas classes do dropdown HOA */

@@ -2,10 +2,13 @@ import styles from '../styles/Navbar.module.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FiHome, FiStar, FiSettings, FiInfo, FiX, FiMail } from 'react-icons/fi';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isResidentialDropdownOpen, setIsResidentialDropdownOpen] = useState(false);
+  const [residentialAnchorEl, setResidentialAnchorEl] = useState<null | HTMLElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,38 +18,22 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const toggleResidentialDropdown = () => {
-    setIsResidentialDropdownOpen(!isResidentialDropdownOpen);
+  const handleResidentialClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setResidentialAnchorEl(event.currentTarget);
   };
 
-  const closeResidentialDropdown = () => {
-    setIsResidentialDropdownOpen(false);
+  const handleResidentialClose = () => {
+    setResidentialAnchorEl(null);
   };
 
-  // Fechar dropdown quando clicar fora
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest(`.${styles.dropdownContainer}`)) {
-        setIsResidentialDropdownOpen(false);
-      }
-    };
 
-    if (isResidentialDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isResidentialDropdownOpen]);
 
   // Fechar menu quando pressionar ESC
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         closeMenu();
-        closeResidentialDropdown();
+        handleResidentialClose();
       }
     };
 
@@ -62,6 +49,8 @@ export default function Navbar() {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+
 
   const menuItems = [
     { path: '/', label: 'HOME', icon: FiHome },
@@ -123,40 +112,66 @@ export default function Navbar() {
           <nav className={styles.navigation}>
             <ul className={styles.navList}>
               <li><Link to="/" className={styles.navLink}>HOME</Link></li>
-              <li className={styles.dropdownContainer}>
-                <button 
-                  className={`${styles.navLink} ${styles.dropdownButton}`}
-                  onClick={toggleResidentialDropdown}
-                >
-                  RESIDENTIAL
-                  <span className={styles.dropdownArrow}>▼</span>
-                </button>
-                {isResidentialDropdownOpen && (
-                  <div className={styles.dropdown}>
-                    <Link 
-                      to="/interior-painting" 
-                      className={styles.dropdownItem} 
-                      onClick={closeResidentialDropdown}
-                    >
-                      INTERIOR PAINTING
-                    </Link>
-                    <Link 
-                      to="/exterior-painting" 
-                      className={styles.dropdownItem} 
-                      onClick={closeResidentialDropdown}
-                    >
-                      EXTERIOR PAINTING
-                    </Link>
-                    <Link 
-                      to="/cabinets" 
-                      className={styles.dropdownItem} 
-                      onClick={closeResidentialDropdown}
-                    >
-                      CABINETS
-                    </Link>
-                  </div>
-                )}
-              </li>
+                             <li>
+                 <Button
+                   id="residential-button"
+                   aria-controls={Boolean(residentialAnchorEl) ? 'residential-menu' : undefined}
+                   aria-haspopup="true"
+                   aria-expanded={Boolean(residentialAnchorEl) ? 'true' : undefined}
+                   onClick={handleResidentialClick}
+                   className={`${styles.navLink} ${styles.muiNavButton}`}
+                 >
+                   RESIDENTIAL
+                   <span className={styles.dropdownArrow}>▼</span>
+                 </Button>
+                 <Menu
+                   id="residential-menu"
+                   anchorEl={residentialAnchorEl}
+                   open={Boolean(residentialAnchorEl)}
+                   onClose={handleResidentialClose}
+                   disableScrollLock={true}
+                   keepMounted={false}
+                   slotProps={{
+                     list: {
+                       'aria-labelledby': 'residential-button',
+                     },
+                   }}
+                   PaperProps={{
+                     style: {
+                       margin: 0,
+                       padding: 0
+                     }
+                   }}
+                   sx={{
+                     '& .MuiPaper-root': {
+                       margin: 0,
+                       padding: 0
+                     }
+                   }}
+                 >
+                   <MenuItem 
+                     onClick={handleResidentialClose}
+                     component={Link}
+                     to="/interior-painting"
+                   >
+                     INTERIOR PAINTING
+                   </MenuItem>
+                   <MenuItem 
+                     onClick={handleResidentialClose}
+                     component={Link}
+                     to="/exterior-painting"
+                   >
+                     EXTERIOR PAINTING
+                   </MenuItem>
+                   <MenuItem 
+                     onClick={handleResidentialClose}
+                     component={Link}
+                     to="/cabinets"
+                   >
+                     CABINETS
+                   </MenuItem>
+                 </Menu>
+               </li>
               <li><Link to="/hoa" className={styles.navLink}>HOA/MULTI-FAMILY</Link></li>
               <li><Link to="/commercial" className={styles.navLink}>COMMERCIAL</Link></li>
             </ul>
