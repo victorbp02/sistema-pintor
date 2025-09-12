@@ -10,6 +10,17 @@ import interior3 from '../assets/interior3.jpeg';
 import interior4 from '../assets/interior4.jpeg';
 import interior5 from '../assets/interior5.jpeg';
 import interior6 from '../assets/interior6.jpeg';
+import interior7 from '../assets/interior7.jpeg';
+import interior8 from '../assets/interior8.jpeg';
+import interior9 from '../assets/interior9.jpeg';
+import interior10 from '../assets/interior10.jpeg';
+import interior11 from '../assets/interior11.jpeg';
+import interior12 from '../assets/interior12.jpeg';
+import interior13 from '../assets/interior13.jpeg';
+import interior14 from '../assets/interior14.jpeg';
+import interior15 from '../assets/interior15 (2).jpeg';
+import interior18 from '../assets/interior18.jpeg';
+import interior19 from '../assets/interior19.jpeg';
 
 export default function InteriorPainting() {
   useScrollToTop();
@@ -24,7 +35,18 @@ export default function InteriorPainting() {
     interior3,
     interior4,
     interior5,
-    interior6
+    interior6,
+    interior7,
+    interior8,
+    interior9,
+    interior10,
+    interior11,
+    interior12,
+    interior13,
+    interior14,
+    interior15,
+    interior18,
+    interior19
   ];
 
   // Preload images for better performance
@@ -140,21 +162,21 @@ export default function InteriorPainting() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior1, 'Interior painting project 1', 0)}
+                    {...optimizeImageProps(interior7, 'Interior painting project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Interior painting project"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior2, 'Interior painting project 2', 1)}
+                    {...optimizeImageProps(interior8, 'Interior painting project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Interior painting solutions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior3, 'Interior painting project 3', 2)}
+                    {...optimizeImageProps(interior9, 'Interior painting project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Professional interior painting"
                   />
@@ -195,21 +217,21 @@ export default function InteriorPainting() {
               <div className={styles.exteriorPhotos}>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior4, 'Interior services project 1', 0)}
+                    {...optimizeImageProps(interior10, 'Interior services project 1', 0)}
                     className={styles.exteriorPhotoImg}
                     alt="Interior painting services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior5, 'Interior services project 2', 1)}
+                    {...optimizeImageProps(interior11, 'Interior services project 2', 1)}
                     className={styles.exteriorPhotoImg}
                     alt="Interior maintenance services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior6, 'Interior services project 3', 2)}
+                    {...optimizeImageProps(interior12, 'Interior services project 3', 2)}
                     className={styles.exteriorPhotoImg}
                     alt="Professional interior services"
                   />
@@ -241,21 +263,21 @@ export default function InteriorPainting() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior1, 'Interior preparation project 1', 0)}
+                    {...optimizeImageProps(interior13, 'Interior preparation project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Interior preparation"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior2, 'Interior preparation project 2', 1)}
+                    {...optimizeImageProps(interior14, 'Interior preparation project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Interior preparation guide"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior3, 'Interior preparation project 3', 2)}
+                    {...optimizeImageProps(interior15, 'Interior preparation project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Professional interior preparation"
                   />
@@ -327,13 +349,13 @@ export default function InteriorPainting() {
             <div className={styles.galleryGrid}>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(interior3, 'Interior painting project 1', 0)}
+                  {...optimizeImageProps(interior18, 'Interior painting project 1', 0)}
                   className={styles.galleryImg}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(interior4, 'Interior painting project 2', 1)}
+                  {...optimizeImageProps(interior19, 'Interior painting project 2', 1)}
                   className={styles.galleryImg}
                 />
               </div>

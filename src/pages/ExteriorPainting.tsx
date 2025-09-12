@@ -10,6 +10,18 @@ import exterior3 from '../assets/exterior3.jpeg';
 import exterior4 from '../assets/exterior4.jpeg';
 import exterior5 from '../assets/exterior5.jpeg';
 import exterior6 from '../assets/exterior6.jpeg';
+import exterior7 from '../assets/exterior7.jpeg';
+import exterior8 from '../assets/exterior8.jpeg';
+import exterior9 from '../assets/exterior9.jpeg';
+import exterior10 from '../assets/exterior10.jpeg';
+import exterior11 from '../assets/exterior11.jpeg';
+import exterior12 from '../assets/exterior12.jpeg';
+import exterior13 from '../assets/exterior13.jpeg';
+import exterior14 from '../assets/exterior14.jpeg';
+import exterior15 from '../assets/exterior15.jpeg';
+import exterior16 from '../assets/exterior16.jpeg';
+import exterior17 from '../assets/exterior17.jpeg';
+
 
 export default function ExteriorPainting() {
   useScrollToTop();
@@ -24,7 +36,18 @@ export default function ExteriorPainting() {
     exterior3,
     exterior4,
     exterior5,
-    exterior6
+    exterior6,
+    exterior7,
+    exterior8,
+    exterior9,
+    exterior10,
+    exterior11,
+    exterior12,
+    exterior13,
+    exterior14,
+    exterior15,
+    exterior16,
+    exterior17
   ];
 
   // Preload images for better performance
@@ -42,9 +65,6 @@ export default function ExteriorPainting() {
     loadImages();
   }, [exteriorPhotos]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
 
   useEffect(() => {
     if (!imagesLoaded) return;
@@ -140,21 +160,21 @@ export default function ExteriorPainting() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior1, 'Exterior painting project 1', 0)}
+                    {...optimizeImageProps(exterior7, 'Exterior painting project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Exterior painting project"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior2, 'Exterior painting project 2', 1)}
+                    {...optimizeImageProps(exterior8, 'Exterior painting project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Exterior painting solutions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior3, 'Exterior painting project 3', 2)}
+                    {...optimizeImageProps(exterior9, 'Exterior painting project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Professional exterior painting"
                   />
@@ -195,21 +215,21 @@ export default function ExteriorPainting() {
               <div className={styles.exteriorPhotos}>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior4, 'Exterior services project 1', 0)}
+                    {...optimizeImageProps(exterior10, 'Exterior services project 1', 0)}
                     className={styles.exteriorPhotoImg}
                     alt="Exterior painting services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior5, 'Exterior services project 2', 1)}
+                    {...optimizeImageProps(exterior11, 'Exterior services project 2', 1)}
                     className={styles.exteriorPhotoImg}
                     alt="Exterior maintenance services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior6, 'Exterior services project 3', 2)}
+                    {...optimizeImageProps(exterior12, 'Exterior services project 3', 2)}
                     className={styles.exteriorPhotoImg}
                     alt="Professional exterior services"
                   />
@@ -241,21 +261,21 @@ export default function ExteriorPainting() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior1, 'Exterior FAQ project 1', 0)}
+                    {...optimizeImageProps(exterior13, 'Exterior FAQ project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Exterior painting FAQ"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior2, 'Exterior FAQ project 2', 1)}
+                    {...optimizeImageProps(exterior14, 'Exterior FAQ project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Exterior painting questions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior3, 'Exterior FAQ project 3', 2)}
+                    {...optimizeImageProps(exterior15, 'Exterior FAQ project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Exterior painting information"
                   />
@@ -327,13 +347,13 @@ export default function ExteriorPainting() {
             <div className={styles.galleryGrid}>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(exterior5, 'Exterior painting project 1', 0)}
+                  {...optimizeImageProps(exterior16, 'Exterior painting project 1', 0)}
                   className={styles.galleryImg}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(exterior4, 'Exterior painting project 2', 1)}
+                  {...optimizeImageProps(exterior17, 'Exterior painting project 2', 1)}
                   className={styles.galleryImg}
                 />
               </div>

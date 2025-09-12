@@ -4,12 +4,23 @@ import { preloadImages, optimizeImageProps } from '../utils/imageOptimization';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 
 // Importar imagens diretamente - usando imagens que representam projetos comerciais
-import exterior1 from '../assets/exterior1.jpeg';
-import exterior3 from '../assets/exterior3.jpeg';
-import exterior5 from '../assets/exterior5.jpeg';
-import exterior7 from '../assets/exterior7.jpeg';
-import interior1 from '../assets/interior1.jpeg';
-import interior3 from '../assets/interior3.jpeg';
+import commercial1 from '../assets/commercial1.jpeg';
+import commercial2 from '../assets/commercial2.jpeg';
+import commercial3 from '../assets/commercial3.jpeg';
+import commercial4 from '../assets/commercial4.jpeg';
+import commercial5 from '../assets/commercial5.jpeg';
+import commercial6 from '../assets/commercial6.jpeg';
+import commercial7 from '../assets/commercial7.jpeg';
+import commercial8 from '../assets/commercial8.jpeg';
+import commercial9 from '../assets/commercial9.jpeg';
+import commercial10 from '../assets/commercial10.jpeg';
+import commercial11 from '../assets/commercial11.jpeg';
+import commercial12 from '../assets/commercial12.jpeg';
+import commercial13 from '../assets/commercial13.jpeg';
+import commercial14 from '../assets/commercial14.jpeg';
+import commercial15 from '../assets/commercial15.jpeg';
+import commercial16 from '../assets/commercial16.jpeg';
+import commercial18 from '../assets/commercial18.jpeg';
 
 export default function Commercial() {
   useScrollToTop();
@@ -19,12 +30,23 @@ export default function Commercial() {
 
   // Array with 6 commercial painting photos for the slider
   const commercialPhotos = [
-    interior1,
-    interior3,
-    exterior1,
-    exterior3,
-    exterior5,
-    exterior7
+    commercial1,
+    commercial2,
+    commercial3,
+    commercial4,
+    commercial5,
+    commercial6,
+    commercial7,
+    commercial8,
+    commercial9,
+    commercial10,
+    commercial11,
+    commercial12,
+    commercial13,
+    commercial14,
+    commercial15,
+    commercial16,
+    commercial18
   ];
 
   // Preload images for better performance
@@ -137,21 +159,21 @@ export default function Commercial() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior1, 'Eco-friendly commercial painting 1', 0)}
+                    {...optimizeImageProps(commercial7, 'Eco-friendly commercial painting 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Eco-friendly commercial painting"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior3, 'Eco-friendly commercial painting 2', 1)}
+                    {...optimizeImageProps(commercial8, 'Eco-friendly commercial painting 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Sustainable painting solutions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior1, 'Eco-friendly commercial painting 3', 2)}
+                    {...optimizeImageProps(commercial9, 'Eco-friendly commercial painting 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Green commercial painting"
                   />
@@ -192,21 +214,21 @@ export default function Commercial() {
               <div className={styles.exteriorPhotos}>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior3, 'Commercial compliance project 1', 0)}
+                    {...optimizeImageProps(commercial10, 'Commercial compliance project 1', 0)}
                     className={styles.exteriorPhotoImg}
                     alt="Commercial compliance painting"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior5, 'Commercial compliance project 2', 1)}
+                    {...optimizeImageProps(commercial11, 'Commercial compliance project 2', 1)}
                     className={styles.exteriorPhotoImg}
                     alt="Commercial safety standards"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior7, 'Commercial compliance project 3', 2)}
+                    {...optimizeImageProps(commercial12, 'Commercial compliance project 3', 2)}
                     className={styles.exteriorPhotoImg}
                     alt="Commercial regulations compliance"
                   />
@@ -238,21 +260,21 @@ export default function Commercial() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior1, 'Bay Area climate project 1', 0)}
+                    {...optimizeImageProps(commercial13, 'Bay Area climate project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Bay Area climate considerations"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(interior3, 'Bay Area climate project 2', 1)}
+                    {...optimizeImageProps(commercial14, 'Bay Area climate project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Climate-resistant painting"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(exterior1, 'Bay Area climate project 3', 2)}
+                    {...optimizeImageProps(commercial15, 'Bay Area climate project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Weather-resistant finishes"
                   />
@@ -327,13 +349,13 @@ export default function Commercial() {
             <div className={styles.galleryGrid}>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(exterior7, 'Commercial painting project 1', 0)}
+                  {...optimizeImageProps(commercial16, 'Commercial painting project 1', 0)}
                   className={styles.galleryImg}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(interior3, 'Commercial painting project 2', 1)}
+                  {...optimizeImageProps(commercial18, 'Commercial painting project 2', 1)}
                   className={styles.galleryImg}
                 />
               </div>

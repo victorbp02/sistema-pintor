@@ -4,12 +4,25 @@ import { preloadImages, optimizeImageProps } from '../utils/imageOptimization';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 
 // Importar imagens diretamente - usando imagens que representam projetos de gabinetes
-import gabinete10 from '../assets/gabinete10.jpeg';
+import gabinetes1 from '../assets/gabinetes1.jpeg';
 import gabinetes2 from '../assets/gabinetes2.jpeg';
 import gabinetes3 from '../assets/gabinetes3.jpeg';
+import gabinetes4 from '../assets/gabinetes4.jpeg';
+import gabinetes5 from '../assets/gabinetes5.jpeg';
 import gabinetes6 from '../assets/gabinetes6.jpeg';
-import gabinetes7 from '../assets/gabinetes7.png';
-import fotobanheiro from '../assets/banheiro.jpeg';
+import gabinetes7 from '../assets/gabinetes7.jpeg';
+import gabinetes8 from '../assets/gabinetes8.jpeg';
+import gabinetes9 from '../assets/gabinetes9.jpeg';
+import gabinetes10 from '../assets/gabinetes10.jpeg';
+import gabinetes11 from '../assets/gabinetes11.jpeg';
+import gabinetes12 from '../assets/gabinetes12.jpeg';
+import gabinetes13 from '../assets/gabinetes13.jpeg';
+import gabinetes14 from '../assets/gabinetes14.jpeg';
+import gabinetes15 from '../assets/gabinetes15.jpeg';
+import gabinetes16 from '../assets/gabinetes16.jpeg';
+import gabinetes17 from '../assets/gabinetes17.jpeg';
+
+
 
 export default function Cabinets() {
   useScrollToTop();
@@ -19,12 +32,23 @@ export default function Cabinets() {
 
   // Array with 6 cabinet painting photos for the slider
   const cabinetPhotos = [
-    gabinete10,
+    gabinetes1,
     gabinetes2,
     gabinetes3,
+    gabinetes4,
+    gabinetes5,
     gabinetes6,
     gabinetes7,
-    fotobanheiro
+    gabinetes8,
+    gabinetes9,
+    gabinetes10,
+    gabinetes11,
+    gabinetes12,
+    gabinetes13,
+    gabinetes14,
+    gabinetes15,
+    gabinetes16,
+    gabinetes17
   ];
 
   // Preload images for better performance
@@ -137,21 +161,21 @@ export default function Cabinets() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinete10, 'Cabinet painting project 1', 0)}
+                    {...optimizeImageProps(gabinetes7, 'Cabinet painting project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Cabinet painting project"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes2, 'Cabinet painting project 2', 1)}
+                    {...optimizeImageProps(gabinetes8, 'Cabinet painting project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Cabinet refinishing solutions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes3, 'Cabinet painting project 3', 2)}
+                    {...optimizeImageProps(gabinetes9, 'Cabinet painting project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Professional cabinet painting"
                   />
@@ -192,21 +216,21 @@ export default function Cabinets() {
               <div className={styles.exteriorPhotos}>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes6, 'Woodwork services project 1', 0)}
+                    {...optimizeImageProps(gabinetes10, 'Woodwork services project 1', 0)}
                     className={styles.exteriorPhotoImg}
                     alt="Woodwork staining services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes7, 'Woodwork services project 2', 1)}
+                    {...optimizeImageProps(gabinetes11, 'Woodwork services project 2', 1)}
                     className={styles.exteriorPhotoImg}
                     alt="Cabinet refinishing services"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(fotobanheiro, 'Woodwork services project 3', 2)}
+                    {...optimizeImageProps(gabinetes12, 'Woodwork services project 3', 2)}
                     className={styles.exteriorPhotoImg}
                     alt="Professional woodwork services"
                   />
@@ -238,21 +262,21 @@ export default function Cabinets() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinete10, 'Cabinet process project 1', 0)}
+                    {...optimizeImageProps(gabinetes13, 'Cabinet process project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Cabinet refinishing process"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes2, 'Cabinet process project 2', 1)}
+                    {...optimizeImageProps(gabinetes14, 'Cabinet process project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Cabinet preparation process"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(gabinetes3, 'Cabinet process project 3', 2)}
+                    {...optimizeImageProps(gabinetes15, 'Cabinet process project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Professional cabinet process"
                   />
@@ -324,13 +348,13 @@ export default function Cabinets() {
             <div className={styles.galleryGrid}>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(gabinetes7, 'Kitchen cabinet painting project', 0)}
+                  {...optimizeImageProps(gabinetes16, 'Kitchen cabinet painting project', 0)}
                   className={styles.galleryImg}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(fotobanheiro, 'Bathroom cabinet painting project', 1)}
+                  {...optimizeImageProps(gabinetes17, 'Bathroom cabinet painting project', 1)}
                   className={styles.galleryImg}
                 />
               </div>

@@ -10,6 +10,18 @@ import multifamily3 from '../assets/multifamily3.jpeg';
 import multifamily4 from '../assets/multifamily4.jpeg';
 import multifamily5 from '../assets/multifamily5.jpeg';
 import multifamily6 from '../assets/multifamily6.jpeg';
+import multifamily7 from '../assets/multifamily7.jpeg';
+import multifamily8 from '../assets/multifamily8.jpeg';
+import multifamily9 from '../assets/multifamily9.jpeg';
+import multifamily10 from '../assets/multifamily10.jpeg';
+import multifamily11 from '../assets/multifamily11.jpeg';
+import multifamily12 from '../assets/multifamily12.jpeg';
+import multifamily13 from '../assets/multifamily13.jpeg';
+import multifamily14 from '../assets/multifamily14.jpeg';
+import multifamily15 from '../assets/multifamily15.jpeg';
+import multifamily16 from '../assets/multifamily16.jpeg';
+import multifamily17 from '../assets/multifamily17.jpeg';
+
 
 export default function Multifamily() {
   useScrollToTop();
@@ -24,7 +36,18 @@ export default function Multifamily() {
     multifamily3,
     multifamily4,
     multifamily5,
-    multifamily6
+    multifamily6,
+    multifamily7,
+    multifamily8,
+    multifamily9,
+    multifamily10,
+    multifamily11,
+    multifamily12,
+    multifamily13,
+    multifamily14,
+    multifamily15,
+    multifamily16,
+    multifamily17
   ];
 
   // Preload images for better performance
@@ -137,21 +160,21 @@ export default function Multifamily() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily1, 'HOA painting project 1', 0)}
+                    {...optimizeImageProps(multifamily7, 'HOA painting project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="HOA painting project"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily2, 'HOA painting project 2', 1)}
+                    {...optimizeImageProps(multifamily8, 'HOA painting project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Multi-family painting solutions"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily3, 'HOA painting project 3', 2)}
+                    {...optimizeImageProps(multifamily9, 'HOA painting project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Community painting project"
                   />
@@ -192,21 +215,21 @@ export default function Multifamily() {
               <div className={styles.exteriorPhotos}>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily4, 'HOA compliance project 1', 0)}
+                    {...optimizeImageProps(multifamily10, 'HOA compliance project 1', 0)}
                     className={styles.exteriorPhotoImg}
                     alt="HOA compliance painting"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily5, 'HOA compliance project 2', 1)}
+                    {...optimizeImageProps(multifamily11, 'HOA compliance project 2', 1)}
                     className={styles.exteriorPhotoImg}
                     alt="Multi-family safety standards"
                   />
                 </div>
                 <div className={styles.exteriorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily6, 'HOA compliance project 3', 2)}
+                    {...optimizeImageProps(multifamily12, 'HOA compliance project 3', 2)}
                     className={styles.exteriorPhotoImg}
                     alt="Community regulations compliance"
                   />
@@ -238,21 +261,21 @@ export default function Multifamily() {
               <div className={styles.interiorPhotos}>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily1, 'Bay Area climate project 1', 0)}
+                    {...optimizeImageProps(multifamily13, 'Bay Area climate project 1', 0)}
                     className={styles.interiorPhotoImg}
                     alt="Bay Area climate considerations"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily2, 'Bay Area climate project 2', 1)}
+                    {...optimizeImageProps(multifamily14, 'Bay Area climate project 2', 1)}
                     className={styles.interiorPhotoImg}
                     alt="Climate-resistant painting"
                   />
                 </div>
                 <div className={styles.interiorPhotoItem}>
                   <img
-                    {...optimizeImageProps(multifamily3, 'Bay Area climate project 3', 2)}
+                    {...optimizeImageProps(multifamily15, 'Bay Area climate project 3', 2)}
                     className={styles.interiorPhotoImg}
                     alt="Weather-resistant finishes"
                   />
@@ -327,13 +350,13 @@ export default function Multifamily() {
             <div className={styles.galleryGrid}>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(multifamily4, 'Multi-family painting project 1', 0)}
+                  {...optimizeImageProps(multifamily16, 'Multi-family painting project 1', 0)}
                   className={styles.galleryImg}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <img
-                  {...optimizeImageProps(multifamily5, 'Multi-family painting project 2', 1)}
+                  {...optimizeImageProps(multifamily17, 'Multi-family painting project 2', 1)}
                   className={styles.galleryImg}
                 />
               </div>
