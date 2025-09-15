@@ -60,7 +60,8 @@ export default function Footer() {
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>Contact</h3>
             <div className={styles.contactInfo}>
-              <p>📞 +1 (650) 420-9772</p>
+              <p>📞 Appointment: (510) 203-5904</p>
+              <p>📞 Manager: (650) 420-9772</p>
               <p>📧 Contact@worldpropainting.com</p>
               <p>📍 Bay Area, California</p>
             </div>

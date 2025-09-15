@@ -60,26 +60,50 @@ export default function Hero() {
     setIsSubmitting(true);
     
     try {
-      // Simular envio para o backend (será implementado depois)
-      console.log('Dados do formulário:', formData);
+      // URL do Formcarry para envio de email
+      const formcarryUrl = 'https://formcarry.com/s/IZ1xUUuXOKM';
       
-      // Simular delay de envio
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Reset form
-      setFormData({ 
-        nome: '', 
-        telefone: '', 
-        email: '', 
-        endereco: '',
-        servico: ''
+      // Enviar dados para o Formcarry
+      const response = await fetch(formcarryUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          nome: formData.nome,
+          telefone: formData.telefone,
+          email: formData.email,
+          endereco: formData.endereco,
+          servico: formData.servico,
+          form_type: 'Free Estimate Request',
+          timestamp: new Date().toLocaleString('pt-BR')
+        })
       });
-      
-      // Fechar modal se estiver aberto
-      setIsModalOpen(false);
-      
-      // Mostrar mensagem de sucesso
-      alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+
+      if (response.ok) {
+        console.log('Email enviado com sucesso!');
+        
+        // Reset form
+        setFormData({ 
+          nome: '', 
+          telefone: '', 
+          email: '', 
+          endereco: '',
+          servico: ''
+        });
+        
+        // Fechar modal se estiver aberto
+        setIsModalOpen(false);
+        
+        // Mostrar mensagem de sucesso
+        alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+        
+      } else {
+        const errorData = await response.text();
+        console.error('Erro na resposta:', errorData);
+        throw new Error('Erro ao enviar formulário');
+      }
       
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
@@ -150,7 +174,7 @@ export default function Hero() {
                 <input
                   type="tel"
                   name="telefone"
-                  placeholder="(650) 420-9772"
+                  placeholder="(510) 203-5904"
                   value={formData.telefone}
                   onChange={handleChange}
                   onKeyDown={handlePhoneKeyDown}
@@ -286,7 +310,7 @@ export default function Hero() {
                                          <input
                        type="tel"
                        name="telefone"
-                       placeholder="(650) 420-9772"
+                       placeholder="(510) 203-5904"
                        value={formData.telefone}
                        onChange={handleChange}
                        onKeyDown={handlePhoneKeyDown}
