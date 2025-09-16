@@ -61,7 +61,7 @@ export default function Hero() {
     
     try {
       // URL do Formcarry para envio de email
-      const formcarryUrl = 'https://formcarry.com/s/IZ1xUUuXOKM';
+      const formcarryUrl = 'https://formcarry.com/s/wUXgfVKCOGH';
       
       // Enviar dados para o Formcarry
       const response = await fetch(formcarryUrl, {
