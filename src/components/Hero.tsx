@@ -97,17 +97,17 @@ export default function Hero() {
         setIsModalOpen(false);
         
         // Mostrar mensagem de sucesso
-        alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+        alert('Budget requested successfully! We will contact you soon.');
         
       } else {
         const errorData = await response.text();
         console.error('Erro na resposta:', errorData);
-        throw new Error('Erro ao enviar formulário');
+        throw new Error('Error sending form');
       }
       
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
-      alert('Erro ao enviar formulário. Tente novamente.');
+      alert('Error submitting the form. Please try again..');
     } finally {
       setIsSubmitting(false);
     }

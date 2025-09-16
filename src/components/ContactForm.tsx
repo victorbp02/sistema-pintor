@@ -56,11 +56,61 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you can add the logic to send the form
-    console.log('Form submitted:', formData);
-    alert('Thank you! Your quote request has been sent. We will contact you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formcarry.com/s/9WkWA7Ks5RS', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form after successful submission
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          address: '',
+          city: '',
+          state: '',
+          zipCode: '',
+          projectType: '',
+          urgency: '',
+          interiorRooms: '',
+          exteriorAreas: '',
+          cabinetWork: '',
+          squareFootage: '',
+          colorPreferences: '',
+          finishType: '',
+          budget: '',
+          timeline: '',
+          specialRequirements: '',
+          howDidYouHear: '',
+          preferredContact: 'email',
+          bestTime: '',
+          additionalNotes: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -453,10 +503,28 @@ export default function ContactForm() {
 
           {/* Submit Button */}
           <div className={styles.submitSection}>
-            <button type="submit" className={styles.submitButton}>
+            <button 
+              type="submit" 
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
               <FaEnvelope className={styles.submitIcon} />
-              Send Quote Request
+              {isSubmitting ? 'Sending...' : 'Send Quote Request'}
             </button>
+            
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className={styles.successMessage}>
+                ✅ Thank you! Your quote request has been sent successfully. We will contact you within 24 hours.
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className={styles.errorMessage}>
+                ❌ There was an error sending your request. Please try again or contact us directly.
+              </div>
+            )}
+            
             <p className={styles.submitNote}>
               * Required fields. We will contact you within 24 hours.
             </p>

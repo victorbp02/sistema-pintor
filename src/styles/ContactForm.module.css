@@ -212,8 +212,27 @@
 
 
 
+.submitButton:hover {
+  background: #02a8b8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(3, 196, 217, 0.4);
+}
+
 .submitButton:active {
   transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3);
+}
+
+.submitButton:disabled:hover {
+  background: #94a3b8;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3);
 }
 
 .submitIcon {
@@ -226,6 +245,39 @@
   font-size: 0.9rem;
   color: #64748b;
   font-style: italic;
+}
+
+.successMessage {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.errorMessage {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsividade */
