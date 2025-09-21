@@ -243,6 +243,16 @@
   .socialIcons {
     justify-content: center;
   }
+  
+  .logoArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {

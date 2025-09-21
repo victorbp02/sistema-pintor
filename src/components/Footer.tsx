@@ -5,13 +5,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerContent}>
+
           <div className={styles.footerSection}>
             <div className={styles.logoArea}>
               <div className={styles.logo}></div>
             </div>
             <p className={styles.description}>
               Professional painting services in the Bay Area. 
-              Residential, Hoa/Multi-family, commercial painting with quality and reliability.
+              Residential, Hoa/Multi-family, Commercial painting with quality and reliability.
             </p>
             <div className={styles.socialIcons}>
               <a href="https://instagram.com/worldpropainting" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>

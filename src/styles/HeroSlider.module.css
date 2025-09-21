@@ -91,15 +91,15 @@
 
 @media (max-width: 768px) {
   .sliderContainer {
-    height: 95vh;
+    height: 110vh;
   }
   
   .slides {
-    height: 95vh;
+    height: 110vh;
   }
   
   .slide {
-    height: 95vh;
+    height: 110vh;
   }
   
   .indicators {
@@ -114,28 +114,28 @@
 
 @media (max-width: 480px) {
   .sliderContainer {
-    height: 100vh;
+    height: 110vh;
   }
   
   .slides {
-    height: 100vh;
+    height: 110vh;
   }
   
   .slide {
-    height: 100vh;
+    height: 110vh;
   }
 }
 
 @media (max-width: 360px) {
   .sliderContainer {
-    height: 100vh;
+    height: 110vh;
   }
   
   .slides {
-    height: 100vh;
+    height: 110vh;
   }
   
   .slide {
-    height: 100vh;
+    height: 110vh;
   }
 } 

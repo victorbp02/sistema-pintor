@@ -78,24 +78,36 @@
     padding: 2rem 0;
   }
   
+  .container {
+    padding: 0 1rem;
+  }
+  
   .title {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
   
   .logosContainer {
-    gap: 2.5rem;
-    max-width: 700px;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100%;
+    padding: 0 1rem;
   }
   
   .logo {
-    max-width: 130px;
-    min-width: 100px;
+    max-width: 200px;
+    min-width: 150px;
+    width: 100%;
   }
   
   .logoPlaceholder {
     height: 80px;
     font-size: 1rem;
+  }
+  
+  .logoImage {
+    max-width: 200px;
+    max-height: 100px;
   }
 }
 
@@ -110,18 +122,26 @@
   }
   
   .logosContainer {
-    gap: 2rem;
-    max-width: 500px;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
   }
   
   .logo {
-    max-width: 90px;
-    min-width: 80px;
+    max-width: 180px;
+    min-width: 140px;
+    width: 100%;
   }
   
   .logoPlaceholder {
-    height: 60px;
+    height: 70px;
     font-size: 0.9rem;
+  }
+  
+  .logoImage {
+    max-width: 180px;
+    max-height: 90px;
   }
 }
 
@@ -131,13 +151,26 @@
     margin-bottom: 1.2rem;
   }
   
+  .logosContainer {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 100%;
+    padding: 0 0.3rem;
+  }
+  
   .logo {
-    max-width: 180px;
-    min-width: 160px;
+    max-width: 160px;
+    min-width: 120px;
+    width: 100%;
   }
   
   .logoPlaceholder {
     height: 60px;
     font-size: 0.9rem;
+  }
+  
+  .logoImage {
+    max-width: 160px;
+    max-height: 80px;
   }
 } 

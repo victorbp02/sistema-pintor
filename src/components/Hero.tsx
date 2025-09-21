@@ -1,12 +1,13 @@
 import styles from '../styles/Hero.module.css';
 import RequestQuoteBtn from './RequestQuoteBtn';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HeroSlider from './HeroSlider';
 import { useState } from 'react';
 import { FiUser, FiMail, FiPhone, FiHome, FiCalendar, FiMessageSquare, FiDollarSign, FiX, FiMapPin } from 'react-icons/fi';
 
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nome: '',
     telefone: '',
@@ -271,7 +272,7 @@ export default function Hero() {
         <button 
           type="button" 
           className={styles.heroBtn}
-          onClick={openModal}
+          onClick={() => navigate('/contact')}
         >
           <RequestQuoteBtn />
         </button>

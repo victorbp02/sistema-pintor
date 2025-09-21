@@ -303,7 +303,7 @@
 
 @media (max-width: 768px) {
   .contactFormContainer {
-    padding: 2rem 1rem;
+    padding: 10rem 1rem;
   }
   
   .formWrapper {
@@ -348,7 +348,7 @@
 
 @media (max-width: 480px) {
   .contactFormContainer {
-    padding: 1rem 0.5rem;
+    padding: 10rem 0.5rem;
   }
   
   .formWrapper {

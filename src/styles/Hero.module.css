@@ -43,6 +43,8 @@
   
   .heroBtn {
     display: block; /* Mostra apenas no mobile */
+    margin: 0 auto; /* Centraliza o botão */
+    width: fit-content; /* Ajusta largura ao conteúdo */
   }
   
   .modalContent {
@@ -973,6 +975,8 @@
   
   .heroBtn {
     display: block; /* Mostra apenas no mobile */
+    margin: 0 auto; /* Centraliza o botão */
+    width: fit-content; /* Ajusta largura ao conteúdo */
   }
   
   .modalContent {
@@ -1064,5 +1068,7 @@
 @media (max-width: 768px) {
   .heroBtn {
     display: block; /* Mostra apenas no mobile */
+    margin: 0 auto; /* Centraliza o botão */
+    width: fit-content; /* Ajusta largura ao conteúdo */
   }
 } 
