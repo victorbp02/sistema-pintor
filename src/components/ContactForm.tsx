@@ -63,20 +63,52 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
+    
     try {
-      const response = await fetch('https://formcarry.com/s/9WkWA7Ks5RS', {
+      // URL do Formcarry para envio de email
+      const formcarryUrl = 'https://formcarry.com/s/9WkWA7Ks5RS';
+      
+      // Enviar dados para o Formcarry
+      const response = await fetch(formcarryUrl, {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          city: formData.city,
+          state: formData.state,
+          zipCode: formData.zipCode,
+          projectType: formData.projectType,
+          urgency: formData.urgency,
+          interiorRooms: formData.interiorRooms,
+          exteriorAreas: formData.exteriorAreas,
+          cabinetWork: formData.cabinetWork,
+          squareFootage: formData.squareFootage,
+          colorPreferences: formData.colorPreferences,
+          finishType: formData.finishType,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          specialRequirements: formData.specialRequirements,
+          howDidYouHear: formData.howDidYouHear,
+          preferredContact: formData.preferredContact,
+          bestTime: formData.bestTime,
+          additionalNotes: formData.additionalNotes,
+          form_type: 'Detailed Quote Request',
+          timestamp: new Date().toLocaleString('en-US')
+        })
       });
 
       if (response.ok) {
+        console.log('Email enviado com sucesso!');
         setSubmitStatus('success');
-        // Reset form after successful submission
+        
+        // Reset form
         setFormData({
           firstName: '',
           lastName: '',
@@ -102,11 +134,15 @@ export default function ContactForm() {
           bestTime: '',
           additionalNotes: ''
         });
+        
       } else {
+        const errorData = await response.text();
+        console.error('Erro na resposta:', errorData);
         setSubmitStatus('error');
       }
+      
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Erro ao enviar formulário:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

@@ -107,12 +107,14 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
   flex: 1;
-  max-width: 350px;
-  min-height: 200px;
+  max-width: 380px;
+  min-height: 450px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .reviewCard:hover {
@@ -127,6 +129,10 @@
   margin: 1rem 0;
   font-style: italic;
   flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
 .author {
@@ -143,7 +149,10 @@
   
   .reviewCard {
     padding: 1.5rem;
-    max-width: 300px;
+    max-width: 320px;
+    min-height: 450px;
+    height: 450px;
+    overflow: hidden;
   }
 }
 
@@ -176,12 +185,19 @@
   
   .reviewCard {
     padding: 1.25rem;
-    max-width: 250px;
-    min-height: 180px;
+    max-width: 280px;
+    min-height: 350px;
+    height: 450px;
+    overflow: hidden;
   }
   
   .reviewText {
     font-size: 0.9rem;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
   }
   
   .author {
@@ -223,12 +239,19 @@
   
   .reviewCard {
     max-width: 100%;
-    min-height: auto;
+    min-height: 450px;
+    height: 450px;
     padding: 1.5rem;
+    overflow: hidden;
   }
   
   .reviewText {
     font-size: 0.95rem;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
   }
   
   .author {
@@ -253,10 +276,18 @@
   
   .reviewCard {
     padding: 1rem;
+    min-height: 450px;
+    height: 450px;
+    overflow: hidden;
   }
   
   .reviewText {
     font-size: 0.9rem;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
   
   .author {

@@ -2,12 +2,11 @@ import styles from '../styles/HomeReviewsSection.module.css';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
-import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 const reviews = [
   {
     name: "Levi McConnell",
-    review: "Raiff and his team were wonderful to work with. Raiff was responsive, detailed, and insightful. The communication was easy, and he got back to me on everything almost immediately. He was able to schedule the painting the first time we spoke. Raiff’s painters were super detailed about their business, especially protecting my furniture and floors. My house looks perfect and I would highly recommend Bay Area painting and use them again.",
+    review: "Raiff and his team were wonderful to work with. He was responsive, detailed, and made scheduling the painting easy from the very start. The painters were careful and professional, taking great care to protect my home, and the results look perfect. I would highly recommend Bay Area Painting and would definitely use them again",
     rating: 5
   },
   {
@@ -62,7 +61,7 @@ const reviews = [
   },
   {
     name: "Angela Evans",
-    review: "This review is a little overdue, but I couldn’t be happier with my decision to hire World Pro Painting to paint the exterior of my home. Raiff was incredibly communicative from the very start and gave me valuable guidance while I was selecting colors. He and Hector made a fantastic team—professional, efficient, and dedicated to delivering top-quality work. Their estimate and timeline were spot on, and they kept every promise. I absolutely love coming home to the fresh new look they created.",
+    review: "This review is a little overdue, but I couldn’t be happier with my decision to hire World Pro Painting for the exterior of my home. Raiff was communicative from the start and gave helpful guidance choosing colors. He and Hector worked as a great team—professional, efficient, and committed to quality. Their estimate and timeline were spot on, and I love the fresh new look they created.",
     rating: 5
   }
 ];
@@ -70,10 +69,6 @@ const reviews = [
 export default function HomeReviewsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = Math.ceil(reviews.length / 3);
-  const fadeInProps = useSimpleFadeIn({
-    effect: 'fade-up',
-    duration: 'normal'
-  });
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -99,8 +94,10 @@ export default function HomeReviewsSection() {
 
   return (
     <section 
-      ref={fadeInProps.ref}
-      className={`${styles.reviewsSection} reviewsSection ${fadeInProps.className}`}
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-delay="200"
+      className={`${styles.reviewsSection} reviewsSection`}
     >
       <div className={styles.container}>
         <div className={styles.header}>

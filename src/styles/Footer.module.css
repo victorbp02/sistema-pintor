@@ -5,6 +5,8 @@
   color: #fff;
   padding: 3rem 0 1rem 0;
   overflow: hidden;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .container {

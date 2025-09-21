@@ -31,7 +31,7 @@ const services = [
   },
   {
     icon: <MdBuild size={44} color="#03C4D9" />,
-    title: 'Outros Serviços',
+    title: 'Other Services',
     desc: 'Additional specialized services including deck and fence painting, parking lot striping, epoxy floor coating, power washing, texture application, carpentry, and drywall services.',
     isSimpleButton: true,
     buttonLink: '/services'

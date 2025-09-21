@@ -1,18 +1,35 @@
 import styles from '../styles/ShowcaseSection.module.css';
 import processofoto from '../assets/processofoto.jpeg';
 import { useState, useEffect, useRef } from 'react';
+import { Modal, Box, Typography, Button } from '@mui/material';
 
 export default function ShowcaseSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90vw',
+    maxWidth: 800,
+    maxHeight: '90vh',
+    bgcolor: 'background.paper',
+    border: 'none',
+    borderRadius: '16px',
+    boxShadow: 24,
+    p: 2,
+    outline: 'none',
   };
 
   useEffect(() => {
@@ -42,8 +59,10 @@ export default function ShowcaseSection() {
 
   return (
     <section 
-      ref={sectionRef}
-      className={`${styles.showcase} showcaseSection slide-in-up ${isVisible ? 'visible' : ''}`}
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-delay="200"
+      className={`${styles.showcase} showcaseSection`}
     >
       <div className={styles.container}>
         <div className={styles.content}>
@@ -97,10 +116,10 @@ export default function ShowcaseSection() {
           {/* Imagem abaixo dos cards */}
           <div className={styles.imageSection}>
             <div className={styles.projectCard}>
-              <div className={styles.imageContainer} onClick={openModal}>
+              <div className={styles.imageContainer} onClick={handleOpen}>
                 <img src={processofoto} alt="Our Painting Process" className={styles.projectImage} />
                 <div className={styles.imageOverlay}>
-                  <span className={styles.clickText}>Clique para ampliar</span>
+                  <span className={styles.clickText}>click to enlarge</span>
                 </div>
               </div>
             </div>
@@ -109,16 +128,26 @@ export default function ShowcaseSection() {
       </div>
 
       {/* Modal */}
-      {isModalOpen && (
-        <div className={styles.modal} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              ×
-            </button>
-            <img src={processofoto} alt="Our Painting Process" className={styles.modalImage} />
-          </div>
-        </div>
-      )}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <img 
+            src={processofoto} 
+            alt="Our Painting Process" 
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '80vh',
+              objectFit: 'contain',
+              borderRadius: '12px'
+            }}
+          />
+        </Box>
+      </Modal>
     </section>
   );
 } 

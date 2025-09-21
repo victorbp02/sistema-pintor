@@ -20,10 +20,15 @@ import './styles/global.css';
 function App() {
 
   return (
-    <>
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column',
+      position: 'relative'
+    }}>
       <ScrollToTop />
       <MenuTop />
-      <div className='PagesContent'>
+      <main className='PagesContent'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/residential" element={<Residential />} />
@@ -38,9 +43,9 @@ function App() {
           <Route path="/cabinets" element={<Cabinets />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
-      </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

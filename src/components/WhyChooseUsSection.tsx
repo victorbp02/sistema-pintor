@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/WhyChooseUsSection.module.css';
 import { FiAward, FiUsers, FiClock, FiShield, FiCheckCircle, FiStar } from 'react-icons/fi';
-import { useSimpleFadeIn } from '../hooks/useSimpleFadeIn';
 
 // Importar imagens diretamente
 import foto1slide from '../assets/foto1slide.jpeg';
@@ -17,10 +16,6 @@ import foto10slide from '../assets/foto10slide.jpeg';
 
 export default function WhyChooseUsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const fadeInProps = useSimpleFadeIn({
-    effect: 'fade-up',
-    duration: 'normal'
-  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,8 +43,10 @@ export default function WhyChooseUsSection() {
 
   return (
     <section 
-      ref={fadeInProps.ref}
-      className={`${styles.whyChooseUs} whyChooseUsSection ${fadeInProps.className}`}
+      data-aos="fade-up"
+      data-aos-duration="1100"
+      data-aos-delay="150"
+      className={`${styles.whyChooseUs} whyChooseUsSection`}
     >
       <div className={styles.container}>
         <div className={styles.header}>

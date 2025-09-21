@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 100vw;
   background: transparent;
-  padding: 7rem 0  0;
+  padding: 7rem 0 5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -299,6 +299,10 @@
 }
 
 @media (max-width: 700px) {
+  .servicesBg {
+    padding: 5rem 0 2rem 0;
+  }
+  
   .grid {
     grid-template-columns: 1fr;
   }
@@ -328,6 +332,10 @@
 }
 
 @media (max-width: 480px) {
+  .servicesBg {
+    padding: 4rem 0 1.5rem 0;
+  }
+  
   .title {
     font-size: 2rem;
   }
@@ -360,6 +368,10 @@
 }
 
 @media (max-width: 360px) {
+  .servicesBg {
+    padding: 3rem 0 1rem 0;
+  }
+  
   .title {
     font-size: 1.8rem;
   }
