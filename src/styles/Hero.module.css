@@ -65,9 +65,11 @@
   .hero {
     height: 70vh;
     padding: 1rem;
+    padding-top: 0;
     justify-content: flex-start;
     overflow: hidden;
     position: relative;
+    margin-top: 0 !important;
   }
   
   .heroContent {
@@ -158,9 +160,11 @@
   .hero {
     height: 65vh;
     padding: 0.8rem;
+    padding-top: 0;
     justify-content: flex-start;
     overflow: hidden;
     position: relative;
+    margin-top: 0 !important;
   }
   
   .heroContent {
@@ -947,12 +951,13 @@
     justify-content: flex-start;
     overflow: hidden;
     position: relative;
+    margin-top: 0 !important; /* Remove margem superior no mobile */
   }
   
   .heroContent {
     order: 1;
     margin-bottom: 2rem;
-    margin-top: 80px; /* Espaço para navbar mobile */
+    margin-top: 120px; /* Espaço para navbar mobile */
     width: 100%;
     max-width: 600px;
     z-index: 3;

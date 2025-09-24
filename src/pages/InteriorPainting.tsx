@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/Commercial.module.css'; // Usando o mesmo CSS do Commercial
+import styles from '../styles/Commercial.module.css'; 
 import { preloadImages, optimizeImageProps } from '../utils/imageOptimization';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 

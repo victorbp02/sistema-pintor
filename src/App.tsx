@@ -12,6 +12,7 @@ import ExteriorPainting from './pages/ExteriorPainting';
 import Cabinets from './pages/Cabinets';
 import ContactUs from './pages/ContactUs';
 import MenuTop from "./components/MenuTop";
+import MobileMenu from "./components/MobileMenu";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import './styles/PagesContent.css';
@@ -28,6 +29,7 @@ function App() {
     }}>
       <ScrollToTop />
       <MenuTop />
+      <MobileMenu />
       <main className='PagesContent'>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -710,6 +710,7 @@
   
   .sliderContainer {
     height: 500px;
+    top: 0 !important;
   }
   
   .interiorContent {
@@ -793,6 +794,7 @@
   
   .sliderContainer {
     height: 450px;
+    top: 0 !important;
   }
   
   .galleryImage {
@@ -876,10 +878,12 @@
   .heroSection {
     height: 50vh;
     min-height: 400px;
+    margin-top: 70px;
   }
   
   .sliderContainer {
     height: 400px;
+    top: 0 !important;
   }
   
   .galleryImage {
