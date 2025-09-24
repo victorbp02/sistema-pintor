@@ -236,7 +236,7 @@
 .sliderContainer {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 500px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -256,24 +256,32 @@
   height: 100%;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
   background-color: #f8fafc;
+}
+
+.slideImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 20px;
 }
 
 /* Ajustes específicos para mobile */
 @media (max-width: 768px) {
-  .slide {
-    background-size: contain !important;
-    background-position: center center !important;
+  .slideImg {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .slide {
-    background-size: contain !important;
-    background-position: center center !important;
+  .slideImg {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
   }
 }
 
@@ -472,7 +480,7 @@
   
   .sliderContainer {
     max-width: 500px;
-    height: 350px;
+    height: 400px;
   }
   
   .featuresGrid {
@@ -544,7 +552,7 @@
   }
   
   .sliderContainer {
-    height: 450px;
+    height: 350px;
     width: 100%;
     max-width: 100%;
     border-radius: 15px;
@@ -637,6 +645,7 @@
   
   .heroText h3 {
     font-size: 1.6rem;
+    text-align: center;
   }
   
   .heroText p {
@@ -651,7 +660,7 @@
   }
   
   .sliderContainer {
-    height: 420px;
+    height: 300px;
     width: 100%;
     max-width: 100%;
     border-radius: 12px;
@@ -738,17 +747,15 @@
   }
   
   .sliderContainer {
-    height: 400px;
+    height: 280px;
     width: 100%;
     max-width: 100%;
     border-radius: 10px;
   }
   
-  .slide {
-    background-size: contain !important;
-    background-position: center center !important;
-    width: 100%;
-    max-width: 100%;
+  .slideImg {
+    object-fit: cover;
+    object-position: center;
     border-radius: 10px;
   }
   

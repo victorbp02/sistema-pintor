@@ -12,7 +12,7 @@ const services = [
     dropdownItems: [
       { name: 'Interior Painting', link: '/interior-painting' },
       { name: 'Exterior Painting', link: '/exterior-painting' },
-      { name: 'Gabinetes', link: '/cabinets' }
+      { name: 'cabinets', link: '/cabinets' }
     ]
   },
   {

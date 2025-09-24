@@ -3,16 +3,17 @@ import styles from '../styles/WhyChooseUsSection.module.css';
 import { FiAward, FiUsers, FiClock, FiShield, FiCheckCircle, FiStar } from 'react-icons/fi';
 
 // Importar imagens diretamente
-import foto1slide from '../assets/foto1slide.jpeg';
-import foto2slide from '../assets/foto2slide.jpeg';
-import foto3slide from '../assets/foto3slide.jpeg';
-import foto4slide from '../assets/foto4slide.jpeg';
-import foto5slide from '../assets/foto5slide.jpeg';
-import foto6slide from '../assets/foto6slide.jpeg';
-import foto7slide from '../assets/foto7slide.jpeg';
+import interior1 from '../assets/interior1.jpeg';
+import interior2 from '../assets/interior2.jpeg';
+import exterior1 from '../assets/exterior1.jpeg';
+import exterior2 from '../assets/exterior2.jpeg';
+import services1 from '../assets/services1.jpeg';
+import services2 from '../assets/services2.jpeg';
+import multifamily7 from '../assets/multifamily7.jpeg';
+import multifamily8 from '../assets/multifamily8.jpeg';
 import foto8slide from '../assets/foto8slide.jpeg';
-import foto9slide from '../assets/foto9slide.jpeg';
-import foto10slide from '../assets/foto10slide.jpeg';
+import gabinetes3 from '../assets/gabinetes3.jpeg';
+import gabinetes4 from '../assets/gabinetes4.jpeg';
 
 export default function WhyChooseUsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,16 +30,17 @@ export default function WhyChooseUsSection() {
   }, []);
 
   const slides = [
-    foto1slide,
-    foto2slide,
-    foto3slide,
-    foto4slide,
-    foto5slide,
-    foto6slide,
-    foto7slide,
+    interior1,
+    interior2,
+    exterior1,
+    exterior2,
+    services1,
+    services2,
+    multifamily7,
+    multifamily8,
     foto8slide,
-    foto9slide,
-    foto10slide
+    gabinetes3,
+    gabinetes4
   ];
 
   return (
@@ -93,10 +95,13 @@ export default function WhyChooseUsSection() {
                     <div 
                       key={index}
                       className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
-                      style={{
-                        backgroundImage: `url(${slide})`
-                      }}
-                    />
+                    >
+                      <img
+                        src={slide}
+                        alt={`Project slide ${index + 1}`}
+                        className={styles.slideImg}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>

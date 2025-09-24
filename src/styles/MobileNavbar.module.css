@@ -23,8 +23,8 @@
 }
 
 .logo {
-  height: 50px;
-  width: 120px;
+  height: 120px;
+  width: 140px;
   background: url('../assets/WPP-DARK-LOGO.jpg') no-repeat center center;
   background-size: contain;
   border: none;
@@ -112,8 +112,8 @@
 }
 
 .mobileLogo .logo {
-  height: 50px;
-  width: 120px;
+  height: 120px;
+  width: 140px;
   background: url('../assets/WPP-DARK-LOGO.jpg') no-repeat center center;
   background-size: contain;
   border-radius: 8px;

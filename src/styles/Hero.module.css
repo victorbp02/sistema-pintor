@@ -942,7 +942,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     flex-direction: column;
     padding: 2rem 1rem;
     padding-top: 0; /* Remove espaço para navbar mobile */

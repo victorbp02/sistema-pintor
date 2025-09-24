@@ -37,10 +37,11 @@ export default function MobileMenu() {
 
   const menuItems = [
     { path: '/', label: 'HOME', icon: FiHome },
+    { path: '/interior-painting', label: 'RESIDENTIAL INTERIOR PAINTING', icon: FiHome },
+    { path: '/exterior-painting', label: 'RESIDENTIAL EXTERIOR PAINTING', icon: FiHome },
+    { path: '/cabinets', label: 'CABINETS', icon: FiHome },
     { path: '/hoa', label: 'HOA/MULTI-FAMILY', icon: FiHome },
     { path: '/commercial', label: 'COMMERCIAL', icon: FiHome },
-    { path: '/interior-painting', label: 'INTERIOR PAINTING', icon: FiHome },
-    { path: '/exterior-painting', label: 'EXTERIOR PAINTING', icon: FiHome },
     { path: '/services', label: 'SERVICES', icon: FiSettings },
     { path: '/contact', label: 'CONTACT', icon: FiUser },
   ];

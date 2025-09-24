@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/HeroSlider.module.css';
 
 // Importar imagens diretamente
-import foto1slide from '../assets/foto1slide.jpeg';
-import foto2slide from '../assets/foto2slide.jpeg';
-import foto3slide from '../assets/foto3slide.jpeg';
-import foto4slide from '../assets/foto4slide.jpeg';
-import foto5slide from '../assets/foto5slide.jpeg';
-import foto6slide from '../assets/foto6slide.jpeg';
-import foto7slide from '../assets/foto7slide.jpeg';
-import foto8slide from '../assets/foto8slide.jpeg';
-import foto9slide from '../assets/foto9slide.jpeg';
-import foto10slide from '../assets/foto10slide.jpeg';
+import interior18 from '../assets/interior18.jpeg';
+import interior19 from '../assets/interior19.jpeg';
+import exterior4 from '../assets/exterior4.jpeg';
+import exterior5 from '../assets/exterior5.jpeg';
+import multifamily1 from '../assets/multifamily1.jpeg';
+import multifamily2 from '../assets/multifamily2.jpeg';
+import gabinetes16 from '../assets/gabinetes16.jpeg';
+import services3 from '../assets/services3.jpeg';
+import commercial10 from '../assets/commercial10.jpeg';
+import commercial11 from '../assets/commercial11.jpeg';
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,16 +35,16 @@ export default function HeroSlider() {
 
   // Array com as 10 imagens numeradas em ordem
   const slides = [
-    foto1slide,
-    foto2slide,
-    foto3slide,
-    foto4slide,
-    foto5slide,
-    foto6slide,
-    foto7slide,
-    foto8slide,
-    foto9slide,
-    foto10slide
+    interior19,
+    interior18,
+    exterior4, 
+    exterior5,
+    multifamily1,
+    multifamily2,
+    gabinetes16,
+    services3,
+    commercial10,
+    commercial11
   ];
 
   return (
@@ -54,14 +54,13 @@ export default function HeroSlider() {
           <div 
             key={index}
             className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
-            style={{
-              backgroundImage: `url(${slide})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundColor: '#f0f0f0' // Fallback
-            }}
-          />
+          >
+            <img
+              src={slide}
+              alt={`Project slide ${index + 1}`}
+              className={styles.slideImg}
+            />
+          </div>
         ))}
       </div>
     </div>
