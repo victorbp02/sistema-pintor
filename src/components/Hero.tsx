@@ -264,7 +264,7 @@ export default function Hero() {
       {/* Texto e Botão padrão */}
       <div className={styles.heroContent}>
         <h1>
-          TOP-RATED PROFESSIONAL<br />BAY AREA PAINTERS
+          TOP-RATED<br />PROFESSIONAL<br /><span className={styles.mobileInline}>BAY AREA PAINTERS</span>
         </h1>
         <p>
           Ready to give your home or business a makeover with a fresh coat of paint?

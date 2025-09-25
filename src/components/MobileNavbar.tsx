@@ -50,16 +50,17 @@ export default function MobileNavbar() {
     <>
       {/* Navbar Mobile Fixa */}
       <header className={styles.mobileHeader}>
-        {/* Logo */}
+        {/* Logo Centralizada */}
         <div className={styles.logoArea}>
           <div className={styles.logo}></div>
         </div>
 
-        {/* Menu Hambúrguer */}
+        {/* Menu Hambúrguer - Posicionado à direita */}
         <button 
           className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          style={{ position: 'absolute', right: '1rem' }}
         >
           <span></span>
           <span></span>

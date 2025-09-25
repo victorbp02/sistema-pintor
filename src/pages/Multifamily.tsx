@@ -85,7 +85,7 @@ export default function Multifamily() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>HOA & Multi-Family Painting Services</h1>
+              <h1 className={styles.mainTitle}>HOA & Multi-Family<br /><span className={styles.mobileInline}>Painting Services</span></h1>
               <p className={styles.heroSubtitle}>
                 Professional painting solutions for apartment complexes, condominiums, and multi-unit properties
               </p>

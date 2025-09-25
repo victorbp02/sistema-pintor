@@ -86,7 +86,7 @@ export default function Cabinets() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>Cabinet Painting in the Bay Area</h1>
+              <h1 className={styles.mainTitle}>Cabinet Painting<br /><span className={styles.mobileInline}>in the Bay Area</span></h1>
               <p className={styles.heroSubtitle}>
                 High-Quality Cabinet Painting & Refinishing – New or Existing!
               </p>

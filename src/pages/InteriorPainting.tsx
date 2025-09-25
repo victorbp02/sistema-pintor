@@ -84,7 +84,7 @@ export default function InteriorPainting() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>Interior Painting in the Bay Area</h1>
+              <h1 className={styles.mainTitle}>Interior Painting<br /><span className={styles.mobileInline}>in the Bay Area</span></h1>
               <p className={styles.heroSubtitle}>
                 Professional interior painting services that transform and revitalize your living spaces
               </p>

@@ -148,6 +148,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .footerBottom {
@@ -272,6 +273,7 @@
   .footerLinks a,
   .contactInfo p {
     font-size: 0.9rem;
+    white-space: normal;
   }
   
   .description {
@@ -300,6 +302,7 @@
   .footerLinks a,
   .contactInfo p {
     font-size: 0.85rem;
+    white-space: normal;
   }
   
   .description {

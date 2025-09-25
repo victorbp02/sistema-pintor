@@ -84,7 +84,7 @@ export default function Commercial() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>Commercial Painting Services</h1>
+              <h1 className={styles.mainTitle}>Commercial Painting<br /><span className={styles.mobileInline}>Services</span></h1>
               <p className={styles.heroSubtitle}>
                 Professional painting solutions for commercial buildings, offices, and business facilities
               </p>

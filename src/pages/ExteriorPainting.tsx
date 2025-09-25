@@ -82,7 +82,7 @@ export default function ExteriorPainting() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>Exterior Painting in the Bay Area</h1>
+              <h1 className={styles.mainTitle}>Exterior Painting<br /><span className={styles.mobileInline}>in the Bay Area</span></h1>
               <p className={styles.heroSubtitle}>
                 Professional exterior painting services that protect and beautify your property
               </p>

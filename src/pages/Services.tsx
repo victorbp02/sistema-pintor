@@ -68,7 +68,7 @@ export default function Services() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroOverlay}>
-              <h1 className={styles.mainTitle}>Professional Services</h1>
+              <h1 className={styles.mainTitle}>Professional<br /><span className={styles.mobileInline}>Services</span></h1>
               <p className={styles.heroSubtitle}>
                 Discover our comprehensive range of professional painting and maintenance services designed to transform and protect your property
               </p>

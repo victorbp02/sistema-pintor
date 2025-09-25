@@ -47,12 +47,18 @@
 }
 
 .mainTitle {
+  font-family: 'Tusker Grotesk', sans-serif;
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 6500;
   margin-bottom: 1.5rem;
   color: #03C4D9;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   letter-spacing: -0.02em;
+}
+
+.mobileInline {
+  display: inline;
+  white-space: nowrap;
 }
 
 .heroSubtitle {
@@ -765,7 +771,9 @@
 
 @media (max-width: 768px) {
   .mainTitle {
+    font-family: 'Tusker Grotesk', sans-serif;
     font-size: 2.5rem;
+    font-weight: 6500;
     color: #03C4D9;
   }
   
@@ -872,7 +880,9 @@
 
 @media (max-width: 480px) {
   .mainTitle {
+    font-family: 'Tusker Grotesk', sans-serif;
     font-size: 2rem;
+    font-weight: 6500;
   }
   
   .heroSection {
