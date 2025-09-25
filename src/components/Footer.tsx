@@ -59,10 +59,12 @@ export default function Footer() {
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>Services</h3>
             <ul className={styles.footerLinks}>
-              <li><a href="/interior-painting">Interior Painting</a></li>
-              <li><a href="/exterior-painting">Exterior Painting</a></li>
-              <li><a href="/commercial">Commercial Painting</a></li>
-              <li><a href="/hoa">Hoa/Multi-family</a></li>
+              <li><a href="/interior-painting">RESIDENTIAL INTERIOR</a></li>
+              <li><a href="/exterior-painting">RESIDENTIAL EXTERIOR</a></li>
+              <li><a href="/cabinets">CABINETS</a></li>
+              <li><a href="/hoa">HOA/MULTI-FAMILY</a></li>
+              <li><a href="/commercial">COMMERCIAL</a></li>
+              <li><a href="/services">SERVICES</a></li>
             </ul>
           </div>
           
